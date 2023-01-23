@@ -115,8 +115,9 @@ h2 {
     background-color: none;
 }
 
-td {
-    text-align: justify;
+th, td {
+    padding: 15px;
+    text-align: left;
 }
 
 .infosect {
