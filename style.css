@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    background: #e7eaf6;
+    display: flex;
+    flex-direction: column;
+}
+
+#header{
+    background: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 2%;
+}
+
+h1{
+    margin-right: auto;
+    font-size: x-large;
+}
+
+h1.cvfont {
+    font-size: xx-large;
+}
+
+h2 {
+    font-size: x-large;
+}
+
+.general-titles{
+    text-align: center;
+}
+
+.menu-collapse {
+    padding: 0;
+    margin: 0;
+    background: 0;
+    border: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.sectioncard {
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    float: inline-start;
+    padding: 0 10px;
+    margin: 2%;
+    border-radius: 2.5%;
+}
+
+#about {
+    display: flex;
+    flex-direction: row;
+}
+
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;   
+    justify-content: space-around;
+    width: 100%;
+    background: none;
+}
+
+#experience {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;   
+    justify-content: space-around;
+    width: 100%;
+    background: none;
+}
+
+.skillcard {
+    background: #f9f9f9;
+}
+.card {
+    border-radius: 2.5%;
+    margin: 2%;
+    padding:  0 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 28%;
+    height: auto;
+}
+
+.general {
+    width: 30%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5%;
+    border-color: none;
+    box-shadow: none;
+    background:none;
+}
+
+.heropic {
+    padding: none;
+    display: flex;
+    width: 100%;
+
+}
+
+.table-info {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: auto;
+    background-color: none;
+}
+
+td {
+    text-align: justify;
+}
+
+.infosect {
+    background-color: #38598b;
+    box-shadow: 2 2 20px rgba(0, 0, 0, 0.15);
+}
+
+.general-text {
+    margin: 5%;
+    width: 60%;
+}
+
+h3.job-descr {
+    color: #455d7a;
+}
+
+.topnav {
+    background: #38598b;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 12px 12px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+.break {
+    text-align: center;
+}
+
+.imageicon {
+    border: none;
+    border-radius: 10%;
+    height: auto;
+
+}
+
+#vizportfolio {
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    border-radius: 2.5%;
+    margin: 2%;
+    padding:  0 2%;
+    box-shadow: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.vizcard {
+    margin:5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.gitclass {
+    background: none;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    margin: 2%;
+    padding:  0 2%;
+    text-align: center;
+    justify-content: center;
+}
+
+.filter-repos {
+    width: 70%;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+}
+
+.repo-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0em 0.5em;
+    margin: 0.5em 0;
+}
+
+.repo-list li {
+    background: #f9f9f9;
+    border-radius: 2.5%;
+    margin: 2%;
+    padding:  0 2%;
+    box-shadow: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: justify;
+    width: 28%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+a.portlink{
+    background-color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: black;
+    border: 2px solid 	#455d7a;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 40%;
+    align-self:center ;
+
+}
+
+.repo-list a {
+    background-color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: black;
+    border: 2px solid 	#455d7a;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 40%;
+    align-self:center ;
+}
+
+a:hover {
+    background-color: #38598b;
+}
+
+.repo-list li:hover {
+    background-color: #38598b;
+    box-shadow: 0 3px 6px var(--accent), 0 3px 6px var(--accent);
+}
+
+.link-btn {
+    padding: 10px 20px;
+    background: none;
+    border-radius: 30px;
+    border: 2px solid var(--accent);
+    color: var(--text);
+}
+
+.link-btn:hover {
+    background: var(--accent);
+    border: 2px solid var(--text);
+    transform: scale(1.1);
+}
+
+.repo-list p {
+    padding: 0em 0.5em;
+    margin: 0.5em 0;
+}
+
+#education {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.wrapper .icon{
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    display: inline-block;
+    align-items: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: #333;
+    text-decoration: none;
+  }
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    line-height: 1.5;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    align-items: center;
+  }
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background-color: #3b5999;
+    color: #ffffff;
+  }
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background-color: #46c1f6;
+    color: #ffffff;
+  }
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background-color: #e1306c;
+    color: #ffffff;
+  }
+  .wrapper .github:hover,
+  .wrapper .github:hover .tooltip,
+  .wrapper .github:hover .tooltip::before {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  .wrapper .youtube:hover,
+  .wrapper .youtube:hover .tooltip,
+  .wrapper .youtube:hover .tooltip::before {
+    background-color: #de463b;
+    color: #ffffff;
+  }
+
+
+.socials {
+    background:none;
+    align-items: center;
+  }
