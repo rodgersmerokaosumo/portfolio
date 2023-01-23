@@ -96,6 +96,7 @@ filterInput.addEventListener('input', function (e) {
     }
 });
 
+
 // for programming language icons
 const devicons = {
     Assembly: '<i class="devicon-labview-plain colored"></i> Assembly',
