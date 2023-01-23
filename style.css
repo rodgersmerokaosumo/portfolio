@@ -28,6 +28,11 @@ h1.cvfont {
 h2 {
     font-size: x-large;
 }
+#about {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+}
 
 .general-titles{
     text-align: center;
@@ -46,17 +51,10 @@ h2 {
     background: #f9f9f9;
     display: flex;
     flex-direction: row;
-    float: inline-start;
-    padding: 0 10px;
+    padding: 2%;
     margin: 2%;
     border-radius: 2.5%;
 }
-
-#about {
-    display: flex;
-    flex-direction: row;
-}
-
 #skills {
     display: flex;
     flex-wrap: wrap;
@@ -93,6 +91,7 @@ h2 {
     margin: 2%;
     display: flex;
     flex-direction: column;
+    flex-shrink: 5;
     padding: 0.5%;
     border-color: none;
     box-shadow: none;
@@ -110,7 +109,7 @@ h2 {
     border-collapse: collapse;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 400px;
+    min-width: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     width: auto;
     background-color: none;
@@ -126,8 +125,8 @@ td {
 }
 
 .general-text {
-    margin: 5%;
-    width: 60%;
+    margin: 2%;
+    width: 70%;
 }
 
 h3.job-descr {
