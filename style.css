@@ -55,6 +55,7 @@ h2 {
     background: #f9f9f9;
     display: flex;
     flex-direction: row;
+    flex-flow: column;
     padding: 2%;
     margin: 2%;
     border-radius: 2.5%;
@@ -62,8 +63,7 @@ h2 {
 #Skills {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;   
-    justify-content: space-around;
+    flex-direction: row;
     width: 100%;
     background: none;
 }
@@ -76,10 +76,6 @@ h2 {
     width: 100%;
     background: none;
 }
-
-.skillcard {
-    background: #f9f9f9;
-}
 .card {
     border-radius: 2.5%;
     margin: 2%;
@@ -87,7 +83,8 @@ h2 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 28%;
-    height: auto;
+    height: 28%;
+    background: #f9f9f9;
 }
 
 .general {
@@ -221,6 +218,7 @@ h3.job-descr {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 30%;
     padding: 0em 0.5em;
     margin: 0.5em 0;
 }
@@ -307,6 +305,7 @@ input[type=text] {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: auto;
 }
 
 .wrapper .icon{
@@ -397,4 +396,13 @@ input[type=text] {
 .socials {
     background:none;
     align-items: center;
+    margin: auto;
+    padding: auto;
   }
+
+@media screen and (max-width: 600px){
+    .card .repo-list .skillcard {
+       flex-direction: column;
+       width: auto;
+    }
+ }
