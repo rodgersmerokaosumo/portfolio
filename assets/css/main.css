@@ -8,14 +8,17 @@
 
 body {
   font-family: "Lora", serif;
-  color: #333333;
+  color: #264653;
   background-color: #ffffff;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.75;
+  background-color: #fafafa;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
-  margin-bottom: 1rem;
+  margin: 1.5em 0 0.5em;
+  line-height: 1.2;
 }
 
 a {
@@ -27,10 +30,77 @@ a:hover {
   text-decoration: underline;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+p {
+  margin: 1em 0;
+}
+
+.post-summary {
+  margin-bottom: 2rem;
+}
+.post-summary .post-meta {
+  font-size: 0.875rem;
+  color: rgb(128.0991735537, 177.0247933884, 196.9008264463);
+  margin-bottom: 0.5rem;
+}
+.post-summary .excerpt {
+  color: rgb(70.0330578512, 129.0082644628, 152.9669421488);
+  margin-bottom: 0.75rem;
+}
+.post-summary .read-more {
+  /* we already have class="button read-more" in the markup */
+  font-size: 0.875rem;
+}
+
+.post-featured-image {
+  margin-bottom: 2rem;
+}
+.post-featured-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post-content h1, .post-content h2, .post-content h3 {
+  font-family: "Montserrat", sans-serif;
+  margin: 1.5em 0 0.5em;
+  line-height: 1.2;
+}
+.post-content h1 {
+  font-size: 2rem;
+}
+.post-content h2 {
+  font-size: 1.5rem;
+}
+.post-content code, .post-content pre {
+  font-family: Menlo, Monaco, Consolas, monospace;
+  background: #f5f5f5;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+.post-content pre {
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
 .container {
   width: 90%;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .site-header,
@@ -50,31 +120,17 @@ a:hover {
   color: #ffffff;
 }
 
-.button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #2a9d8f;
-  color: #ffffff;
-  border-radius: 4px;
+.projects-grid {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin: 3rem 0;
+}
+
+.project-card {
+  /* we already have class="card project-card" in the markup */
   text-decoration: none;
-}
-
-.button:hover {
-  background-color: rgb(31.2361809045, 116.7638190955, 106.351758794);
-}
-
-.card {
-  border: 1px solid rgb(70.0330578512, 129.0082644628, 152.9669421488);
-  padding: 1rem;
-  border-radius: 4px;
-  background-color: #fafafa;
-  margin-bottom: 1.5rem;
-}
-
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  margin: 2rem 0;
+  color: inherit;
 }
 
 /*# sourceMappingURL=main.css.map */
