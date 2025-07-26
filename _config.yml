@@ -7,18 +7,25 @@ description  : "My portfolio & blog — building AI and data solutions for real-
 locale       : "en"
 
 # ── Where the site will live ──
-url      : "https://rodgers-osumo.github.io"
-baseurl  : "/portfolio"                 # "" if the repo itself is <username>.github.io
+url      : "https://rodgersmerokaosumo.github.io"
+baseurl  : "/portfolio"   # "" if this is a user site
 
 ###############################################################################
 #  Theme & plugins
 ###############################################################################
-theme: "minimal-mistakes-jekyll"        # using the gem, not remote_theme
+theme: "minimal-mistakes-jekyll"
 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate   # ← add the pagination plugin
+
+###############################################################################
+#  Pagination
+###############################################################################
+paginate: 5                     # posts per page
+paginate_path: "/blog/page:num/"  # where extra pages live
 
 ###############################################################################
 #  Author block
@@ -37,6 +44,8 @@ author:
 
 ###############################################################################
 #  Analytics (optional)
+###############################################################################
+# google_analytics: "G-XXXXXXXXXX"
 
 ###############################################################################
 #  Build settings

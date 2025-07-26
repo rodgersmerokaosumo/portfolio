@@ -13,8 +13,23 @@ gem "minimal-mistakes-jekyll", "~> 4.27"
 gem "jekyll-seo-tag", "~> 2.8"   # SEO metadata
 gem "jekyll-feed"                # /feed.xml
 gem "jekyll-sitemap"             # /sitemap.xml
+gem "jekyll-paginate"
+gem "jekyll-archives"            # archive pages
+gem "jekyll-redirect-from"       # redirects for old URLs
+gem "jekyll-optional-front-matter" # for optional front matter in posts
+gem "jekyll-include-cache"       # cache includes for performance
 
-# ── Local‐dev helper (needed on Ruby 3.x) ────────────────────────────────────
+# ── Optional plugins ────────────────────────────────────────────────────────
+# Uncomment if you want to use these features.
+# gem "jekyll-gist"              # Gist support
+# gem "jekyll-coffeescript"      # CoffeeScript support
+# gem "jekyll-sass-converter"    # Sass support (if not using SCSS)
+
+# ── Development tools ───────────────────────────────────────────────────────
 group :development do
+  gem "rubocop", "~> 1.0"         # Code linting
+  gem "pry", "~> 0.14"            # Debugging
+  gem "jekyll-watch", "~> 2.2"    # Live reloading
+  gem "jekyll-remote-theme", "~> 0.4" # For remote
   gem "webrick", "~> 1.8"
 end
