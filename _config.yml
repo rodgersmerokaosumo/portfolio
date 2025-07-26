@@ -1,7 +1,7 @@
 title: "Rodgers Meroka Osumo"
 tagline: "Data Scientist & AI Strategist"
 url: "https://rodgersmerokaosumo.github.io"
-baseurl: ""          # keep empty
+baseurl: "/portfolio"       # keep empty
 remote_theme: "mmistakes/minimal-mistakes"
 
 plugins:
