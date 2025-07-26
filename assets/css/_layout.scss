@@ -1,37 +1,120 @@
-.container {
-  width: 90%;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.site-header,
-.site-footer {
+// Sidebar base
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
   background-color: $color-secondary;
-  color: #ffffff;
-  padding: 1rem 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
-.site-title {
-  font-family: $font-heading;
+// Collapsed state moves it off-screen
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+// Main content sits to the right of sidebar
+.main-content {
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+  padding: 2rem;
+}
+
+// When sidebar is hidden, content fills full width
+.main-content.expanded {
+  margin-left: 0;
+}
+
+// Style the toggle button
+.sidebar-toggle {
+  background: none;
+  border: none;
+  color: #fff;
   font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  align-self: flex-end;  // stick to top-right of sidebar
 }
 
-.site-nav a {
-  margin-left: 1rem;
-  color: #ffffff;
+// Adjust your container inside header/footer if needed
+.site-header .container,
+.site-footer .container {
+  padding: 1.5rem;
 }
 
-.projects-grid {
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  margin: 3rem 0;
+@media (max-width: $bp-tablet) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.collapsed {
+    transform: translateX(0);
+  }
+  .main-content {
+    margin-left: 0 !important;
+  }
 }
 
-.project-card {
-/* we already have class="card project-card" in the markup */
-  text-decoration: none;
-  color: inherit;
+// Define the width of your sidebar
+:root {
+  --sidebar-width: 240px;
 }
 
+// Sidebar base (you should already have this)
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: $color-secondary;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+// When collapsed, slide entirely off–screen
+.sidebar.collapsed {
+  transform: translateX(calc(-1 * var(--sidebar-width)));
+}
+
+// Your page content shifts over by the sidebar width…
+.main-content {
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease;
+  padding: 2rem;
+}
+
+// …but when collapsed, it takes full width
+.main-content.expanded {
+  margin-left: 0;
+}
+
+// Floating toggle button
+.sidebar-toggle {
+  position: fixed;
+  top: 1rem;
+  // Position it just to the right of the sidebar
+  left: var(--sidebar-width);
+  background-color: $color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  z-index: 1101;
+  transition: left 0.3s ease;
+}
+
+// When sidebar is hidden, slide the button back to the edge
+.sidebar.collapsed + .sidebar-toggle {
+  left: 1rem;
+}

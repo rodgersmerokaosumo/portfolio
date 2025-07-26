@@ -1,13 +1,31 @@
+<!-- themes/journal-clone/_layouts/default.html -->
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.locale }}">
   <head>
     {% include head.html %}
   </head>
   <body>
-    {% include header.html %}
-    <main class="content">
+    <aside class="sidebar" id="sidebar">
+      {% include header.html %}
+      {% include footer.html %}
+    </aside>
+
+    <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+
+    <div class="main-content" id="main-content">
       {{ content }}
-    </main>
-    {% include footer.html %}
+    </div>
+
+    <script>
+      const sidebar = document.getElementById('sidebar');
+      const toggle  = document.getElementById('sidebar-toggle');
+      const main    = document.getElementById('main-content');
+
+      toggle.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+        main.classList.toggle('expanded');
+      });
+    </script>
   </body>
-</html>--
+</html>
+

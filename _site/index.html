@@ -1,3 +1,4 @@
+<!-- themes/journal-clone/_layouts/default.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,7 +30,8 @@
 
   </head>
   <body>
-    <header class="site-header">
+    <aside class="sidebar" id="sidebar">
+      <header class="site-header">
   <div class="container">
     <a class="site-title" href="/portfolio/">Rodgers Meroka Osumo</a>
     <nav class="site-nav">
@@ -48,7 +50,17 @@
   </div>
 </header>
 
-    <main class="content">
+      <footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 Rodgers Meroka Osumo</p>
+  </div>
+</footer>
+
+    </aside>
+
+    <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+
+    <div class="main-content" id="main-content">
       <section class="hero">
   <div class="container">
     <h1>Rodgers Meroka Osumo</h1>
@@ -65,12 +77,18 @@
   
 </nav>
 
-    </main>
-    <footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2025 Rodgers Meroka Osumo</p>
-  </div>
-</footer>
+    </div>
 
+    <script>
+      const sidebar = document.getElementById('sidebar');
+      const toggle  = document.getElementById('sidebar-toggle');
+      const main    = document.getElementById('main-content');
+
+      toggle.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+        main.classList.toggle('expanded');
+      });
+    </script>
   </body>
-</html>--
+</html>
+
