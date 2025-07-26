@@ -1,12 +1,50 @@
-title: "Rodgers Meroka Osumo"
-tagline: "Data Scientist & AI Strategist"
-url: "https://rodgersmerokaosumo.github.io"
-baseurl: "/portfolio"       # keep empty
-remote_theme: "mmistakes/minimal-mistakes"
+###############################################################################
+#  Site identity
+###############################################################################
+title        : "Rodgers Meroka Osumo"
+tagline      : "Data Scientist & AI Strategist"
+description  : "My portfolio & blog — building AI and data solutions for real-world impact."
+locale       : "en"
+
+# ── Where the site will live ──
+url      : "https://rodgers-osumo.github.io"   # DO NOT include /portfolio here
+baseurl  : "/portfolio"                        # "" if the repo itself is <username>.github.io
+
+###############################################################################
+#  Theme & plugins
+###############################################################################
+theme: "minimal-mistakes-jekyll"   # we’re using the gem directly
 
 plugins:
-  - jekyll-remote-theme
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
+  - jekyll-feed          # RSS/Atom feed → /feed.xml
+  - jekyll-sitemap       # /sitemap.xml for SEO
+  - jekyll-seo-tag       # <title>, <meta>, OpenGraph, etc.
 
+###############################################################################
+#  Author block (shows in footer & sidebar widgets)
+###############################################################################
+author:
+  name     : "Rodgers Osumo"
+  avatar   : "/assets/img/avatar.jpg"      # replace with your photo later
+  location : "Nairobi, Kenya"
+  links:
+    - label: "GitHub"
+      icon : "fab fa-github"
+      url  : "https://github.com/rodgersmerokaosumo"
+    - label: "LinkedIn"
+      icon : "fab fa-linkedin"
+      url  : "https://www.linkedin.com/in/rodgers-osumo"
+
+###############################################################################
+#  Analytics (optional) – delete if not using GA-4
+###############################################################################
+google_analytics: "G-XXXXXXXXXX"   # paste your GA-4 Measurement ID or remove line
+
+###############################################################################
+#  Build settings
+###############################################################################
+markdown    : kramdown
+highlighter : rouge
+
+#  Make future posts visible immediately during local dev
+future : true
