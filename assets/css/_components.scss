@@ -1,26 +1,52 @@
-.button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: $color-primary;
-  color: #ffffff;
-  border-radius: 4px;
-  text-decoration: none;
+// Post summary card tweaks
+.post-summary {
+  margin-bottom: 2rem;
+  .post-meta {
+    font-size: 0.875rem;
+    color: lighten($color-secondary, 40%);
+    margin-bottom: 0.5rem;
+  }
+  .excerpt {
+    color: lighten($color-secondary, 20%);
+    margin-bottom: 0.75rem;
+  }
+  .read-more {
+    /* we already have class="button read-more" in the markup */
+    font-size: 0.875rem;
+  }
 }
 
-.button:hover {
-  background-color: darken($color-primary, 10%);
+// Featured image on post pages
+.post-featured-image {
+  margin-bottom: 2rem;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
 }
 
-.card {
-  border: 1px solid lighten($color-secondary, 20%);
-  padding: 1rem;
-  border-radius: 4px;
-  background-color: #fafafa;
-  margin-bottom: 1.5rem;
-}
+// Heading styles inside posts
+.post-content {
+  h1, h2, h3 {
+    font-family: $font-heading;
+    margin: 1.5em 0 0.5em;
+    line-height: 1.2;
+  }
+  h1 { font-size: $size-2xl; }
+  h2 { font-size: $size-xl; }
 
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  margin: 2rem 0;
+  // Inline code & code blocks
+  code, pre {
+    font-family: Menlo, Monaco, Consolas, monospace;
+    background: #f5f5f5;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+  }
+  pre {
+    padding: 1em;
+    overflow-x: auto;
+    margin: 1.5em 0;
+  }
 }

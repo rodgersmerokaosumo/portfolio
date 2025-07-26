@@ -1,11 +1,19 @@
 ---
 layout: default
 ---
-<article class="post">
+
+<article class="post container">
+  {% if page.featured_image %}
+    <div class="post-featured-image">
+      <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+    </div>
+  {% endif %}
+
   <header>
     <h1>{{ page.title }}</h1>
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
   </header>
+
   <div class="post-content">
     {{ content }}
   </div>

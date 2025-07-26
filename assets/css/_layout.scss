@@ -1,7 +1,8 @@
 .container {
   width: 90%;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .site-header,
@@ -20,3 +21,17 @@
   margin-left: 1rem;
   color: #ffffff;
 }
+
+.projects-grid {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin: 3rem 0;
+}
+
+.project-card {
+/* we already have class="card project-card" in the markup */
+  text-decoration: none;
+  color: inherit;
+}
+

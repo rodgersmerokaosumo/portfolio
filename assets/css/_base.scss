@@ -10,14 +10,17 @@
 // Base styles
 body {
   font-family: $font-body;
-  color: $color-text;
+  color: $color-secondary;
   background-color: $color-bg;
-  line-height: 1.6;
+  font-size: $size-base;
+  line-height: 1.75;
+  background-color: #fafafa;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
-  margin-bottom: 1rem;
+  margin: 1.5em 0 0.5em;
+  line-height: 1.2;
 }
 
 a {
@@ -28,3 +31,13 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+
+h1 { font-size: $size-2xl; }
+h2 { font-size: $size-xl; }
+h3 { font-size: $size-lg; }
+
+p {
+  margin: 1em 0;
+}
+
