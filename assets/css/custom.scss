@@ -5,3 +5,18 @@
 // @import "minimal-mistakes-jekyll/_variables";
 // @import "minimal-mistakes-jekyll/_custom";
 // You can override variables before the `@import` lines.
+// No front-matter needed unless you’re using YAML data, but the dashes
+// stop Jekyll from trying to parse this as a Markdown file.
+/* ─── Variable overrides ───────────────────────────────── */
+$body-font-family: 'Open Sans', sans-serif !default;  
+$base-font-size: 18px !default;  
+
+// Change the primary link color
+$link-color: #1e90ff !default;  
+
+// Make the header background dark
+$header-bg: #222 !default;  
+$header-text-color: #fff !default;  
+
+/* ─── Finally, import the theme ─────────────────────────── */
+@import "minimal-mistakes-jekyll";
