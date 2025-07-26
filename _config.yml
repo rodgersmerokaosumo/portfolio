@@ -7,28 +7,26 @@ description  : "My portfolio & blog — building AI and data solutions for real-
 locale       : "en"
 
 # ── Where the site will live ──
-url      : "https://rodgersmerokaosumo.github.io"
-baseurl  : "/portfolio"   # "" if this is a user site
+url      : "https://rodgersmerokaosumo.github.io"   # DO NOT include /portfolio here
+baseurl  : "/portfolio"                        # "" if your repo is <username>.github.io
 
 ###############################################################################
 #  Theme & plugins
 ###############################################################################
-theme: "minimal-mistakes-jekyll"
+theme: "minimal-mistakes-jekyll"   # using the gem directly :contentReference[oaicite:5]{index=5}
 
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-paginate   # ← add the pagination plugin
+  - jekyll-feed          # RSS/Atom feed → /feed.xml :contentReference[oaicite:6]{index=6}
+  - jekyll-sitemap       # /sitemap.xml for SEO :contentReference[oaicite:7]{index=7}
+  - jekyll-seo-tag       # <title>, <meta>, OpenGraph, etc. :contentReference[oaicite:8]{index=8}
+  - jekyll-paginate      # classic pagination plugin
+
+# paginate: number of posts per page
+paginate: 5
+paginate_path: "/blog/page:num/"
 
 ###############################################################################
-#  Pagination
-###############################################################################
-paginate: 5                     # posts per page
-paginate_path: "/blog/page:num/"  # where extra pages live
-
-###############################################################################
-#  Author block
+#  Author block (shows in footer & sidebar widgets)
 ###############################################################################
 author:
   name     : "Rodgers Osumo"
@@ -45,7 +43,7 @@ author:
 ###############################################################################
 #  Analytics (optional)
 ###############################################################################
-# google_analytics: "G-XXXXXXXXXX"
+google_analytics: "G-XXXXXXXXXX"   # replace or remove if not using
 
 ###############################################################################
 #  Build settings
@@ -53,16 +51,3 @@ author:
 markdown    : kramdown
 highlighter : rouge
 future      : true
-
-
-sass:
-  style: compressed
-
-# Tell Jekyll (and the theme) to also compile your custom.scss
-defaults:
-  - scope:
-      path: ""            # all files
-      type: "assets"
-    values:
-      css: ["assets/css/custom.scss"]
-
