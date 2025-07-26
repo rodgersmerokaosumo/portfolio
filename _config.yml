@@ -9,20 +9,29 @@ locale:      "en"
 # ── Where the site will live ──
 url:     "https://rodgersmerokaosumo.github.io"
 baseurl: "/portfolio"   # "" if repo is <username>.github.io
+timezone: "Africa/Nairobi"
 
 ###############################################################################
 # Theme & plugins
 ###############################################################################
-theme: "minimal-mistakes-jekyll"
+theme: "jekyll-theme-journal-clone"
 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate
 
 # Ensure Jekyll processes your custom stylesheet
 include:
   - assets/css/main.scss
+
+
+###############################################################################
+# Pagination settings
+###############################################################################
+paginate: 5
+paginate_path: "/blog/page:num/"
 
 ###############################################################################
 # Build settings
@@ -30,3 +39,58 @@ include:
 markdown:    kramdown
 highlighter: rouge
 future:      true
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+###############################################################################
+# Layout defaults
+###############################################################################
+defaults:
+  -
+    scope:
+      path: ""          
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""          
+      type: "pages"
+    values:
+      layout: "page"
+
+###############################################################################
+# Navigation (header links)
+###############################################################################
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "Blog"
+    url: "/blog/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "About"
+    url: "/about/"
+  - title: "Contact"
+    url: "/contact/"
+
+###############################################################################
+# Author & Social (for footer or bio includes)
+###############################################################################
+author:
+  name: "Rodgers Meroka Osumo"
+  avatar: "/assets/img/avatar.jpg"
+
+social_links:
+  twitter: your_twitter_handle
+  github: rodgersmerokaosumo
+  linkedin: your_linkedin_username
+
+###############################################################################
+# Google Analytics (optional)
+###############################################################################
+# google_analytics: UA-XXXXXXX-X
+

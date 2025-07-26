@@ -1,6 +1,6 @@
 ---
-layout: splash
-title: "Welcome"
+layout: home
+title: "Home"
 subtitle: "I build AI & data solutions for real-world impact."
 ---
 

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Hello World"
 date: 2025-07-26
 categories: [blog]

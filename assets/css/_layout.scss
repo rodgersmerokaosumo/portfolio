@@ -1,0 +1,22 @@
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.site-header,
+.site-footer {
+  background-color: $color-secondary;
+  color: #ffffff;
+  padding: 1rem 0;
+}
+
+.site-title {
+  font-family: $font-heading;
+  font-size: 1.5rem;
+}
+
+.site-nav a {
+  margin-left: 1rem;
+  color: #ffffff;
+}

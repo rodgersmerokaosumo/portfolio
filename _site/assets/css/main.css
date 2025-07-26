@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lora", serif;
+  color: #333333;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #2a9d8f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.site-header,
+.site-footer {
+  background-color: #264653;
+  color: #ffffff;
+  padding: 1rem 0;
+}
+
+.site-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+}
+
+.site-nav a {
+  margin-left: 1rem;
+  color: #ffffff;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #2a9d8f;
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: rgb(31.2361809045, 116.7638190955, 106.351758794);
+}
+
+.card {
+  border: 1px solid rgb(70.0330578512, 129.0082644628, 152.9669421488);
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: #fafafa;
+  margin-bottom: 1.5rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+/*# sourceMappingURL=main.css.map */
