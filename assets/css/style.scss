@@ -1,0 +1,12 @@
+---
+---
+
+/* ─── Your overrides ─────────────────────────── */
+$body-font-family: 'Open Sans', sans-serif;
+$base-font-size: 18px;
+$link-color: #1e90ff;
+$header-bg: #222;
+$header-text-color: #fff;
+
+/* ─── Then import the theme ─────────────────── */
+@import "minimal-mistakes-jekyll";
