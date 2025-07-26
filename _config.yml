@@ -1,53 +1,32 @@
 ###############################################################################
-#  Site identity
+# Site identity
 ###############################################################################
-title        : "Rodgers Meroka Osumo"
-tagline      : "Data Scientist & AI Strategist"
-description  : "My portfolio & blog — building AI and data solutions for real-world impact."
-locale       : "en"
+title:       "Rodgers Meroka Osumo"
+tagline:     "Data Scientist & AI Strategist"
+description: "My portfolio & blog — building AI and data solutions for real-world impact."
+locale:      "en"
 
 # ── Where the site will live ──
-url      : "https://rodgersmerokaosumo.github.io"   # DO NOT include /portfolio here
-baseurl  : "/portfolio"                        # "" if your repo is <username>.github.io
+url:     "https://rodgersmerokaosumo.github.io"
+baseurl: "/portfolio"   # "" if repo is <username>.github.io
 
 ###############################################################################
-#  Theme & plugins
+# Theme & plugins
 ###############################################################################
-theme: "minimal-mistakes-jekyll"   # using the gem directly :contentReference[oaicite:5]{index=5}
+theme: "minimal-mistakes-jekyll"
 
 plugins:
-  - jekyll-feed          # RSS/Atom feed → /feed.xml :contentReference[oaicite:6]{index=6}
-  - jekyll-sitemap       # /sitemap.xml for SEO :contentReference[oaicite:7]{index=7}
-  - jekyll-seo-tag       # <title>, <meta>, OpenGraph, etc. :contentReference[oaicite:8]{index=8}
-  - jekyll-paginate      # classic pagination plugin
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-# paginate: number of posts per page
-paginate: 5
-paginate_path: "/blog/page:num/"
-
-###############################################################################
-#  Author block (shows in footer & sidebar widgets)
-###############################################################################
-author:
-  name     : "Rodgers Osumo"
-  avatar   : "/assets/img/avatar.jpeg"
-  location : "Nairobi, Kenya"
-  links:
-    - label: "GitHub"
-      icon : "fab fa-github"
-      url  : "https://github.com/rodgersmerokaosumo"
-    - label: "LinkedIn"
-      icon : "fab fa-linkedin"
-      url  : "https://www.linkedin.com/in/rodgers-osumo"
+# Ensure Jekyll processes your custom stylesheet
+include:
+  - assets/css/main.scss
 
 ###############################################################################
-#  Analytics (optional)
+# Build settings
 ###############################################################################
-google_analytics: "G-XXXXXXXXXX"   # replace or remove if not using
-
-###############################################################################
-#  Build settings
-###############################################################################
-markdown    : kramdown
-highlighter : rouge
-future      : true
+markdown:    kramdown
+highlighter: rouge
+future:      true
