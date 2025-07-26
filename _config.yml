@@ -32,7 +32,7 @@ paginate_path: "/blog/page:num/"  # where extra pages live
 ###############################################################################
 author:
   name     : "Rodgers Osumo"
-  avatar   : "/assets/img/avatar.jpg"
+  avatar   : "/assets/img/avatar.jpeg"
   location : "Nairobi, Kenya"
   links:
     - label: "GitHub"
@@ -53,3 +53,16 @@ author:
 markdown    : kramdown
 highlighter : rouge
 future      : true
+
+
+sass:
+  style: compressed
+
+# Tell Jekyll (and the theme) to also compile your custom.scss
+defaults:
+  - scope:
+      path: ""            # all files
+      type: "assets"
+    values:
+      css: ["assets/css/custom.scss"]
+
