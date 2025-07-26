@@ -1,5 +1,7 @@
+# .github/workflows/gh-pages.yml
 name: Deploy Jekyll site to Pages
 
+# Run the workflow every time you push to main
 on:
   push:
     branches: [main]
@@ -7,15 +9,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
+      # 1. Check out your repository code
       - uses: actions/checkout@v4
+
+      # 2. Set up Ruby 3.2 and enable Bundler caching
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3'
+          ruby-version: '3.2'
+          bundler-cache: true   # speeds up subsequent runs
+
+      # 3. Build the site (output goes to ./_site)
       - run: |
-          gem install bundler
-          bundle install --jobs 4 --retry 3
-          JEKYLL_ENV=production bundle exec jekyll build
+          bundle exec jekyll build
+
+      # 4. Deploy the generated site to the gh-pages branch
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
