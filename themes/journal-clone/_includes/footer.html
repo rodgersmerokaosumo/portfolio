@@ -1,5 +1,25 @@
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}</p>
-  </div>
-</footer>
+<div class="social-icons">
+  {% if site.social_links.twitter %}
+    <a href="https://twitter.com/{{ site.social_links.twitter }}" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  {% endif %}
+  {% if site.social_links.github %}
+    <a href="https://github.com/{{ site.social_links.github }}" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  {% endif %}
+  {% if site.social_links.linkedin %}
+    <a href="https://linkedin.com/in/{{ site.social_links.linkedin }}" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  {% endif %}
+  {% if site.social_links.instagram %}
+    <a href="https://instagram.com/{{ site.social_links.instagram }}" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  {% endif %}
+</div>
+<p class="sidebar-copyright">
+  &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}
+</p>

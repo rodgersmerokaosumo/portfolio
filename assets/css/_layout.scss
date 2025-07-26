@@ -1,120 +1,124 @@
-// Sidebar base
+// Sidebar width
+:root { --sidebar-width: 240px; }
+
+// Sidebar container
 .sidebar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 240px;
+  top: 0; left: 0;
+  width: var(--sidebar-width);
   height: 100vh;
-  background-color: $color-secondary;
+  background-color: #1a1a1a;
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
   transition: transform 0.3s ease;
   z-index: 1000;
+  overflow-y: auto;
 }
-
-// Collapsed state moves it off-screen
 .sidebar.collapsed {
   transform: translateX(-100%);
 }
 
-// Main content sits to the right of sidebar
-.main-content {
-  margin-left: 240px;
-  transition: margin-left 0.3s ease;
-  padding: 2rem;
+// Header inside sidebar
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.sidebar-title {
+  font-family: $font-heading;
+  font-size: 2rem;
+  color: $color-primary;
+  margin-bottom: 0.5rem;
+}
+.sidebar-tagline {
+  font-size: 1rem;
+  color: lighten(#fff, 40%);
 }
 
-// When sidebar is hidden, content fills full width
-.main-content.expanded {
-  margin-left: 0;
+// Navigation links
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
-
-// Style the toggle button
-.sidebar-toggle {
-  background: none;
-  border: none;
+.sidebar-nav li + li {
+  margin-top: 1rem;
+}
+.sidebar-nav a {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: lighten(#fff, 40%);
+  text-decoration: none;
+  font-size: 1.125rem;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+}
+.sidebar-nav a:hover {
+  background-color: rgba(255,255,255,0.1);
   color: #fff;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  align-self: flex-end;  // stick to top-right of sidebar
 }
 
-// Adjust your container inside header/footer if needed
-.site-header .container,
-.site-footer .container {
-  padding: 1.5rem;
-}
-
-@media (max-width: $bp-tablet) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-  .sidebar.collapsed {
-    transform: translateX(0);
-  }
-  .main-content {
-    margin-left: 0 !important;
-  }
-}
-
-// Define the width of your sidebar
-:root {
-  --sidebar-width: 240px;
-}
-
-// Sidebar base (you should already have this)
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--sidebar-width);
-  height: 100vh;
-  background-color: $color-secondary;
-  color: #fff;
+// Social icons at bottom
+.social-icons {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease;
-  z-index: 1000;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: auto;
+  padding: 1.5rem 0;
+}
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem; height: 2.5rem;
+  background-color: #333;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: background 0.2s;
+}
+.social-icons a:hover {
+  background-color: $color-primary;
 }
 
-// When collapsed, slide entirely off–screen
-.sidebar.collapsed {
-  transform: translateX(calc(-1 * var(--sidebar-width)));
-}
-
-// Your page content shifts over by the sidebar width…
-.main-content {
-  margin-left: var(--sidebar-width);
-  transition: margin-left 0.3s ease;
-  padding: 2rem;
-}
-
-// …but when collapsed, it takes full width
-.main-content.expanded {
-  margin-left: 0;
+// Copyright text
+.sidebar-copyright {
+  font-size: 0.875rem;
+  color: lighten(#fff, 60%);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 // Floating toggle button
 .sidebar-toggle {
   position: fixed;
   top: 1rem;
-  // Position it just to the right of the sidebar
   left: var(--sidebar-width);
   background-color: $color-primary;
   color: #fff;
   border: none;
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
+  font-size: 1.2rem;
   cursor: pointer;
   z-index: 1101;
   transition: left 0.3s ease;
 }
-
-// When sidebar is hidden, slide the button back to the edge
 .sidebar.collapsed + .sidebar-toggle {
   left: 1rem;
+}
+
+// Main content shifts over to accommodate sidebar
+.main-content {
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease;
+  padding: 2rem;
+}
+.main-content.expanded {
+  margin-left: 0;
 }
