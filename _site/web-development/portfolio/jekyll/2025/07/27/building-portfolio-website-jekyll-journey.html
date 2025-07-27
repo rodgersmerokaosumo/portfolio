@@ -95,17 +95,17 @@
     <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
 
     <div class="main-content" id="main-content">
-      <article class="post">
+      <div class="container">
+  <article class="post">
+    
 
-  <header class="post-header">
-    <h1 class="post-title">Building My Portfolio Website: A Jekyll Journey from Vision to Reality</h1>
-    <time datetime="2025-07-27T00:00:00+03:00">
-      July 27, 2025
-    </time>
-  </header>
+    <header>
+      <h1>Building My Portfolio Website: A Jekyll Journey from Vision to Reality</h1>
+      <p class="post-meta">July 27, 2025</p>
+    </header>
 
-  <div class="post-content">
-    <p>Building a portfolio website as a data scientist might seem straightforward, but the journey from concept to completion taught me more about web development, design principles, and personal branding than I initially anticipated. Here’s the story of how I built this site and what I learned along the way.</p>
+    <div class="post-content">
+      <p>Building a portfolio website as a data scientist might seem straightforward, but the journey from concept to completion taught me more about web development, design principles, and personal branding than I initially anticipated. Here’s the story of how I built this site and what I learned along the way.</p>
 
 <h2 id="the-quest-for-the-right-platform">The Quest for the Right Platform</h2>
 
@@ -268,26 +268,28 @@
 
 <p><em>Want to discuss web development, Jekyll, or portfolio design? Connect with me on <a href="https://www.linkedin.com/in/rodgersmerokaosumo/">LinkedIn</a> or <a href="https://twitter.com/osumo_meroka">Twitter</a>.</em></p>
 
-  </div>
-    <div id="disqus_thread"></div>
-    <script>
-      var disqus_config = function () {
-        this.page.url = "http://localhost:4000/portfolio/web-development/portfolio/jekyll/2025/07/27/building-portfolio-website-jekyll-journey.html";
-        this.page.identifier = "/web-development/portfolio/jekyll/2025/07/27/building-portfolio-website-jekyll-journey";
-      };
-      (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://portfolio-iuncitmsgs.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
-    <noscript>
-      Please enable JavaScript to view the comments powered by Disqus.
-    </noscript>
-  
+    </div>
+  </article>
 
-</article>
+  
+    <section class="comments">
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = "http://localhost:4000/portfolio/web-development/portfolio/jekyll/2025/07/27/building-portfolio-website-jekyll-journey.html";
+          this.page.identifier = "/web-development/portfolio/jekyll/2025/07/27/building-portfolio-website-jekyll-journey";
+        };
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://portfolio-iuncitmsgs.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </section>
+  
+</div>
 
     </div>
 
