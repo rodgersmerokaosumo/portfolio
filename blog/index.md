@@ -1,10 +1,7 @@
 ---
-layout: default
+layout: blog
 title: "Blog"
-permalink: /blog/
-paginate: 5
-paginate_path: "/blog/page:num/"
 ---
+Welcome to my blog—check back soon for updates!
 
-Welcome to my blog—check back for updates!
 

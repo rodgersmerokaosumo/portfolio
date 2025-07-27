@@ -20,7 +20,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
 # Ensure Jekyll processes your custom stylesheet
 include:
@@ -30,8 +30,14 @@ include:
 ###############################################################################
 # Pagination settings
 ###############################################################################
-paginate: 5
-paginate_path: "/blog/page:num/"
+
+pagination:                       # global settings for paginate-v2
+  enabled: true                   # turn it on
+  collection: posts               # paginate your posts
+  per_page: 5                     # 5 posts per page
+  permalink: "/blog/page/:num/"   # URL pattern for page 2+
+  first_page_url: "/blog/"        # your blog’s main page
+
 
 ###############################################################################
 # Build settings
@@ -88,6 +94,11 @@ social_links:
   twitter: your_twitter_handle
   github: rodgersmerokaosumo
   linkedin: your_linkedin_username
+
+# Disqus comments
+disqus:
+  shortname: portfolio-iuncitmsgs
+
 
 ###############################################################################
 # Google Analytics (optional)
