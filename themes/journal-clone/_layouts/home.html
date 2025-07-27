@@ -2,33 +2,35 @@
 layout: default
 ---
 
-<section class="hero">
-  <div class="container">
+<div class="container">
+  <section class="hero">
     <h1>{{ site.title }}</h1>
     <p class="tagline">{{ site.tagline }}</p>
-  </div>
-</section>
+  </section>
 
-<main class="post-list container">
-  {% for post in paginator.posts %}
-    <article class="card post-summary">
-      <header>
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-        <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-      </header>
-      <div class="excerpt">
-        {{ post.excerpt }}
-      </div>
-      <a class="button read-more" href="{{ post.url | relative_url }}">Read more</a>
-    </article>
-  {% endfor %}
-</main>
+  <main class="post-list">
+    {% for post in paginator.posts %}
+      <article class="post-summary">
+        <header>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+        </header>
+        <div class="excerpt">
+          {{ post.excerpt }}
+        </div>
+        <a class="read-more" href="{{ post.url | relative_url }}">Read more</a>
+      </article>
+    {% endfor %}
+  </main>
 
-<nav class="pagination container">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">&larr; Newer posts</a>
+  {% if paginator.total_pages > 1 %}
+    <nav class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">← Newer posts</a>
+      {% endif %}
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="next">Older posts →</a>
+      {% endif %}
+    </nav>
   {% endif %}
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}" class="next">Older posts &rarr;</a>
-  {% endif %}
-</nav>
+</div>

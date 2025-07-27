@@ -2,26 +2,45 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-
-<ul class="posts-list">
-  {% for post in paginator.posts %}
-    <li>
-      <time datetime="{{ post.date | date_to_xmlschema }}">
-        {{ post.date | date: "%b %-d, %Y" }}
-      </time>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
-
-{% if paginator.total_pages > 1 %}
-  <nav class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | relative_url }}">&lt; Newer Posts</a>
+<section class="archive">
+  <h1>{{ page.title }}</h1>
+  
+  {% if content != empty %}
+    <div class="page-description">
+      {{ content }}
+    </div>
+  {% endif %}
+  
+  <ul>
+    {% if paginator.posts %}
+      {% for post in paginator.posts %}
+        <li>
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%b %-d, %Y" }}
+          </time>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    {% else %}
+      {% for post in site.posts %}
+        <li>
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%b %-d, %Y" }}
+          </time>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
     {% endif %}
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | relative_url }}">Older Posts &gt;</a>
-    {% endif %}
-  </nav>
-{% endif %}
+  </ul>
+
+  {% if paginator.total_pages > 1 %}
+    <nav class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">← Newer Posts</a>
+      {% endif %}
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="next">Older Posts →</a>
+      {% endif %}
+    </nav>
+  {% endif %}
+</section>

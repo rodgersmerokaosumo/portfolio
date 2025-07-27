@@ -1,18 +1,50 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ page.title }} | {{ site.title }}</title>
+<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} | {{ site.tagline }}{% endif %}</title>
+
+<!-- Preconnect for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Fonts - Journal-inspired typography -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FontAwesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Main stylesheet -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<!-- SEO Meta Tags -->
 <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | truncate: 160 }}">
-<meta property="og:title"   content="{{ page.title | default: site.title }}">
-<meta property="og:description" content="{{ page.excerpt | default: site.description }}">
-<meta property="og:url"     content="{{ page.url | absolute_url }}">
-<meta property="og:image"   content="{{ page.image | default: site.social_image | absolute_url }}">
-<meta name="twitter:card"   content="summary_large_image">
+<meta name="author" content="{{ site.author.name }}">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | truncate: 160 }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ page.image | default: site.og_image | absolute_url }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | truncate: 160 }}">
+<meta name="twitter:image" content="{{ page.twitter_image | default: site.twitter_image | absolute_url }}">
+{% if site.social_links.twitter %}
+<meta name="twitter:site" content="@{{ site.social_links.twitter }}">
+<meta name="twitter:creator" content="@{{ site.social_links.twitter }}">
+{% endif %}
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="{{ '/assets/img/favicon.ico' | relative_url }}">
+
+<!-- Feed -->
+<link rel="alternate" type="application/rss+xml" title="{{ site.feed.title | default: site.title }}" href="{{ '/feed.xml' | relative_url }}">
+
 {% if site.google_analytics %}
   {% include ga.html %}
 {% endif %}
+
 {% seo %}

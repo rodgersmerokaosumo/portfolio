@@ -1,37 +1,41 @@
 ---
 layout: default
 ---
-{% if site.disqus.shortname and page.comments != false %}
-  <div id="disqus_thread"></div>
-  <script>
-    var disqus_config = function () {
-      this.page.url = "{{ page.url | absolute_url }}";
-      this.page.identifier = "{{ page.id | default: page.url }}";
-    };
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://{{ site.disqus.shortname }}.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-{% endif %}
 
+<div class="container">
+  <article class="post">
+    {% if page.featured_image %}
+      <div class="post-featured-image">
+        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+      </div>
+    {% endif %}
 
-<article class="post container">
-  {% if page.featured_image %}
-    <div class="post-featured-image">
-      <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+    <header>
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+    </header>
+
+    <div class="post-content">
+      {{ content }}
     </div>
+  </article>
+
+  {% if site.disqus.shortname and page.comments != false %}
+    <section class="comments">
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = "{{ page.url | absolute_url }}";
+          this.page.identifier = "{{ page.id | default: page.url }}";
+        };
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://{{ site.disqus.shortname }}.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </section>
   {% endif %}
-
-  <header>
-    <h1>{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
-  </header>
-
-  <div class="post-content">
-    {{ content }}
-  </div>
-</article>
+</div>
