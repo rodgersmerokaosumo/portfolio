@@ -147,3 +147,17 @@ Organized into modular files:
 - **URL Corrections**: Fixed all links to include `/portfolio/` prefix for proper routing
 - **Link Verification**: All internal navigation now works correctly in local development
 - **Error Resolution**: Eliminated 404 errors for projects, blog, about, contact, and resume links
+
+### Sidebar Avatar Integration (July 2025)
+- **Personal Branding**: Added circular avatar image to sidebar header for enhanced personal connection
+- **Professional Styling**: 80px circular image with subtle border and hover effects
+- **Visual Hierarchy**: Positioned above name and tagline for optimal user experience
+- **Interactive Design**: Hover effects with color transition and scale animation
+- **Asset Integration**: Uses existing `/assets/img/avatar.jpeg` with proper responsive handling
+
+#### Avatar Technical Implementation
+- **File Structure**: Added to `themes/journal-clone/_includes/header.html`
+- **CSS Styling**: Implemented in `assets/css/_layout.scss` with `.sidebar-avatar` class
+- **Responsive Design**: Maintains consistent 80px size across all devices
+- **Accessibility**: Includes proper alt text and semantic markup
+- **Performance**: Optimized with `object-fit: cover` for perfect circular display
