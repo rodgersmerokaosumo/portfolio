@@ -5,6 +5,8 @@ title:       "Rodgers Meroka Osumo"
 tagline:     "Data Scientist & AI Strategist"
 description: "My portfolio & blog — building AI and data solutions for real-world impact."
 locale:      "en"
+og_image:    "/assets/img/avatar.jpeg"
+twitter_image: "/assets/img/avatar.jpeg"
 
 # ── Where the site will live ──
 url:     "https://rodgersmerokaosumo.github.io"
@@ -21,6 +23,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate-v2
+  - jekyll-archives
 
 # Ensure Jekyll processes your custom stylesheet
 include:
@@ -91,13 +94,19 @@ author:
   avatar: "/assets/img/avatar.jpg"
 
 social_links:
-  twitter: your_twitter_handle
+  twitter: osumo_meroka
   github: rodgersmerokaosumo
-  linkedin: your_linkedin_username
+  linkedin: https://www.linkedin.com/in/rodgersmerokaosumo/
 
 # Disqus comments
 disqus:
   shortname: portfolio-iuncitmsgs
+
+feed:
+  path: feed.xml
+  title: "Osumo Rodgers Blog Updates"
+  description: "Stay up to date with my latest posts"
+
 
 
 ###############################################################################
