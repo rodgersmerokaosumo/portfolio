@@ -1,2 +1,351 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://rodgersmerokaosumo.github.io/portfolio/feed.xml" rel="self" type="application/atom+xml" /><link href="https://rodgersmerokaosumo.github.io/portfolio/" rel="alternate" type="text/html" /><updated>2025-07-27T09:00:56+03:00</updated><id>https://rodgersmerokaosumo.github.io/portfolio/feed.xml</id><title type="html">Rodgers Meroka Osumo</title><subtitle>My portfolio &amp; blog — building AI and data solutions for real-world impact.</subtitle><author><name>Rodgers Meroka Osumo</name></author><entry><title type="html">Hello World</title><link href="https://rodgersmerokaosumo.github.io/portfolio/blog/2025/07/26/hello-world.html" rel="alternate" type="text/html" title="Hello World" /><published>2025-07-26T00:00:00+03:00</published><updated>2025-07-26T00:00:00+03:00</updated><id>https://rodgersmerokaosumo.github.io/portfolio/blog/2025/07/26/hello-world</id><content type="html" xml:base="https://rodgersmerokaosumo.github.io/portfolio/blog/2025/07/26/hello-world.html"><![CDATA[<p>First post on the new site—checking that the blog works.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://rodgersmerokaosumo.github.io/portfolio/feed.xml" rel="self" type="application/atom+xml" /><link href="https://rodgersmerokaosumo.github.io/portfolio/" rel="alternate" type="text/html" /><updated>2025-07-27T22:16:17+03:00</updated><id>https://rodgersmerokaosumo.github.io/portfolio/feed.xml</id><title type="html">Rodgers Meroka Osumo</title><subtitle>My portfolio &amp; blog — building AI and data solutions for real-world impact.</subtitle><author><name>Rodgers Meroka Osumo</name></author><entry><title type="html">Balancing MSc and Work: The Challenge of Dual Pursuits in Data Science</title><link href="https://rodgersmerokaosumo.github.io/portfolio/education/career/data-science/2025/07/27/balancing-msc-and-work-the-challenge-of-dual-pursuits.html" rel="alternate" type="text/html" title="Balancing MSc and Work: The Challenge of Dual Pursuits in Data Science" /><published>2025-07-27T00:00:00+03:00</published><updated>2025-07-27T00:00:00+03:00</updated><id>https://rodgersmerokaosumo.github.io/portfolio/education/career/data-science/2025/07/27/balancing-msc-and-work-the-challenge-of-dual-pursuits</id><content type="html" xml:base="https://rodgersmerokaosumo.github.io/portfolio/education/career/data-science/2025/07/27/balancing-msc-and-work-the-challenge-of-dual-pursuits.html"><![CDATA[<p>When I decided to pursue a Master’s degree in Data Science while working full-time, well-meaning friends and colleagues had mixed reactions. Some admired the ambition, others questioned the sanity. Six months in, I can confidently say both responses were justified. Here’s the unvarnished truth about balancing graduate studies with a demanding career.</p>
+
+<h2 id="the-decision-point-why-now">The Decision Point: Why Now?</h2>
+
+<p>The decision to pursue an MSc wasn’t made lightly. As a working professional in the data field, I was constantly encountering the boundaries of my undergraduate knowledge. While practical experience taught me tools and techniques, I craved the theoretical foundation that only formal education could provide.</p>
+
+<p><strong>The catalysts were clear:</strong></p>
+
+<ul>
+  <li><strong>Rapid field evolution</strong>: Data science moves fast, and staying current requires more than just reading papers</li>
+  <li><strong>Career advancement</strong>: Many senior positions increasingly require advanced degrees</li>
+  <li><strong>Knowledge gaps</strong>: Real-world problems often demanded statistical and mathematical concepts I hadn’t formally studied</li>
+  <li><strong>Personal growth</strong>: The intellectual challenge of rigorous academic work appealed to me</li>
+</ul>
+
+<p>The question wasn’t whether to pursue further education, but when and how.</p>
+
+<h2 id="the-reality-check-time-is-finite">The Reality Check: Time Is Finite</h2>
+
+<p>The first month was a brutal wake-up call. Suddenly, my evenings and weekends weren’t my own. The romantic notion of becoming a “scholar-practitioner” quickly gave way to the harsh mathematics of time allocation.</p>
+
+<h3 id="a-typical-week-breakdown">A Typical Week Breakdown:</h3>
+
+<ul>
+  <li><strong>Work</strong>: 40-45 hours (plus commute and preparation)</li>
+  <li><strong>Classes</strong>: 6-8 hours (including travel time)</li>
+  <li><strong>Study/Assignments</strong>: 15-20 hours</li>
+  <li><strong>Research/Projects</strong>: 10-15 hours</li>
+  <li><strong>Sleep</strong>: Let’s not talk about it</li>
+</ul>
+
+<p>The numbers don’t lie—something had to give, and initially, it was my social life, hobbies, and any semblance of work-life balance.</p>
+
+<h2 id="the-challenges-more-than-just-time-management">The Challenges: More Than Just Time Management</h2>
+
+<h3 id="1-context-switching-fatigue">1. <strong>Context Switching Fatigue</strong></h3>
+
+<p>The most underestimated challenge was mental context switching. Moving from business stakeholder meetings to advanced statistical modeling required a cognitive gear shift that was genuinely exhausting.</p>
+
+<p>One Tuesday, I found myself in a morning meeting discussing quarterly revenue projections, then rushing to an evening lecture on Bayesian inference. The intellectual whiplash was real.</p>
+
+<h3 id="2-imposter-syndrome-on-steroids">2. <strong>Imposter Syndrome on Steroids</strong></h3>
+
+<p>Being surrounded by younger, full-time students with fresh undergraduate knowledge while juggling work responsibilities amplified imposter syndrome. They had time to dive deep into every concept; I was lucky to grasp the fundamentals before the next assignment was due.</p>
+
+<h3 id="3-quality-vs-quantity-dilemma">3. <strong>Quality vs. Quantity Dilemma</strong></h3>
+
+<p>With limited time, every choice became strategic. Do I spend three hours perfecting an assignment for maximum learning, or settle for “good enough” to maintain my work performance? These micro-decisions accumulated into constant stress.</p>
+
+<h3 id="4-professional-relationship-strain">4. <strong>Professional Relationship Strain</strong></h3>
+
+<p>Colleagues noticed my divided attention. Missing after-work networking events and declining weekend work requests created tension. Some viewed my studies as a sign I was planning to leave, others saw it as not being fully committed to current projects.</p>
+
+<h2 id="the-unexpected-benefits">The Unexpected Benefits</h2>
+
+<p>Despite the challenges, the dual pursuit has yielded surprising advantages:</p>
+
+<h3 id="1-immediate-application"><strong>1. Immediate Application</strong></h3>
+
+<p>Unlike traditional students, I could immediately apply theoretical concepts to real problems. Learning about ensemble methods in class meant implementing them in production systems the next week. This created a powerful feedback loop that accelerated both learning and professional impact.</p>
+
+<h3 id="2-enhanced-problem-solving"><strong>2. Enhanced Problem-Solving</strong></h3>
+
+<p>The rigorous thinking required for coursework improved my professional problem-solving. Academic training in hypothesis formation and testing made me more methodical in business contexts.</p>
+
+<h3 id="3-credibility-boost"><strong>3. Credibility Boost</strong></h3>
+
+<p>While pursuing the degree, my technical opinions carried more weight with senior leadership. The “studying advanced analytics” narrative opened doors to high-visibility projects I might not have accessed otherwise.</p>
+
+<h3 id="4-network-expansion"><strong>4. Network Expansion</strong></h3>
+
+<p>The program connected me with professors conducting cutting-edge research and classmates from diverse industries. These relationships have already led to collaboration opportunities and career insights.</p>
+
+<h2 id="strategies-that-actually-work">Strategies That Actually Work</h2>
+
+<p>Through trial and error (mostly error), I’ve developed strategies that make this dual pursuit sustainable:</p>
+
+<h3 id="time-management"><strong>Time Management</strong></h3>
+
+<ul>
+  <li><strong>Time blocking</strong>: Strict calendar management with dedicated study blocks</li>
+  <li><strong>Micro-learning</strong>: Using commute time for lecture reviews and reading</li>
+  <li><strong>Weekend intensive</strong>: One full day each weekend dedicated to major assignments</li>
+</ul>
+
+<h3 id="energy-management"><strong>Energy Management</strong></h3>
+
+<ul>
+  <li><strong>Peak hours alignment</strong>: Scheduling demanding coursework during my natural peak performance times</li>
+  <li><strong>Recovery rituals</strong>: Protecting small pockets of time for mental recovery</li>
+  <li><strong>Exercise maintenance</strong>: Counterintuitive but crucial—physical activity improves cognitive performance</li>
+</ul>
+
+<h3 id="strategic-prioritization"><strong>Strategic Prioritization</strong></h3>
+
+<ul>
+  <li><strong>Course selection</strong>: Choosing electives that align with current work projects</li>
+  <li><strong>Assignment focus</strong>: Investing more effort in assignments that build portfolio-worthy projects</li>
+  <li><strong>Networking selection</strong>: Attending only the most valuable professional and academic events</li>
+</ul>
+
+<h3 id="communication"><strong>Communication</strong></h3>
+
+<ul>
+  <li><strong>Manager alignment</strong>: Regular updates with my manager about how studies enhance my work contribution</li>
+  <li><strong>Team transparency</strong>: Being upfront about time constraints while maintaining reliability</li>
+  <li><strong>Boundary setting</strong>: Clear communication about availability and response times</li>
+</ul>
+
+<h2 id="the-learning-curve-what-i-wish-id-known">The Learning Curve: What I Wish I’d Known</h2>
+
+<h3 id="1-your-standards-will-evolve"><strong>1. Your Standards Will Evolve</strong></h3>
+
+<p>Initially, I tried to maintain the same perfectionist standards I applied to work projects. Learning to accept “B+” academic work while maintaining “A+” professional work was crucial for survival.</p>
+
+<h3 id="2-integration-is-key"><strong>2. Integration Is Key</strong></h3>
+
+<p>The most successful assignments were those that solved real problems from my work environment. When possible, I aligned coursework with professional challenges, creating value for both contexts.</p>
+
+<h3 id="3-the-marathon-mindset"><strong>3. The Marathon Mindset</strong></h3>
+
+<p>This isn’t a sprint—it’s a multi-year commitment. Developing sustainable rhythms and accepting that some weeks will be harder than others prevented burnout.</p>
+
+<h3 id="4-support-systems-matter"><strong>4. Support Systems Matter</strong></h3>
+
+<p>Building relationships with other working professionals in the program created a crucial support network. We shared strategies, commiserated about challenges, and celebrated milestones together.</p>
+
+<h2 id="career-impact-the-professional-perspective">Career Impact: The Professional Perspective</h2>
+
+<p>From a professional standpoint, the investment is already paying dividends:</p>
+
+<ul>
+  <li><strong>Technical depth</strong>: Deeper understanding of algorithms improves my ability to architect robust solutions</li>
+  <li><strong>Research skills</strong>: Academic training in literature review and methodology strengthens my approach to novel problems</li>
+  <li><strong>Communication</strong>: Explaining complex concepts to classmates improved my ability to communicate with non-technical stakeholders</li>
+  <li><strong>Strategic thinking</strong>: The broader perspective gained from coursework influences my approach to business problems</li>
+</ul>
+
+<h2 id="the-financial-reality">The Financial Reality</h2>
+
+<p>Let’s address the elephant in the room—cost. Pursuing an MSc while working is expensive, not just in tuition but in opportunity costs:</p>
+
+<ul>
+  <li><strong>Direct costs</strong>: Tuition, books, technology, transportation</li>
+  <li><strong>Opportunity costs</strong>: Missed overtime, declined consulting work, reduced networking</li>
+  <li><strong>Hidden costs</strong>: Stress management, productivity tools, additional support services</li>
+</ul>
+
+<p>However, the return on investment extends beyond immediate salary increases. The combination of practical experience and advanced education creates a unique value proposition in the job market.</p>
+
+<h2 id="advice-for-fellow-travelers">Advice for Fellow Travelers</h2>
+
+<p>For those considering a similar path:</p>
+
+<h3 id="before-you-start"><strong>Before You Start:</strong></h3>
+
+<ol>
+  <li><strong>Audit your commitments</strong>: Honestly assess what you can temporarily reduce or eliminate</li>
+  <li><strong>Financial planning</strong>: Ensure you can sustain the financial commitment without undue stress</li>
+  <li><strong>Support system</strong>: Build understanding with family, friends, and colleagues before starting</li>
+  <li><strong>Program research</strong>: Choose programs designed for working professionals with flexible scheduling</li>
+</ol>
+
+<h3 id="during-the-journey"><strong>During the Journey:</strong></h3>
+
+<ol>
+  <li><strong>Embrace imperfection</strong>: Good enough is often actually good enough</li>
+  <li><strong>Leverage synergies</strong>: Look for ways to make coursework relevant to your work and vice versa</li>
+  <li><strong>Maintain perspective</strong>: Remember why you started when motivation wanes</li>
+  <li><strong>Celebrate milestones</strong>: Acknowledge progress in both academic and professional spheres</li>
+</ol>
+
+<h2 id="looking-forward-the-long-game">Looking Forward: The Long Game</h2>
+
+<p>As I write this, I’m halfway through the program, and the challenges haven’t diminished—they’ve just become more familiar. What has changed is my confidence in managing them and my clarity about the long-term value.</p>
+
+<p>The combination of practical experience and rigorous academic training is creating opportunities I couldn’t have accessed through either path alone. More importantly, the intellectual stimulation and personal growth have been worth the sacrifice.</p>
+
+<h2 id="final-reflections">Final Reflections</h2>
+
+<p>Pursuing an MSc while working full-time isn’t for everyone, and it certainly isn’t easy. It requires sacrifice, strategic thinking, and a tolerance for sustained discomfort. But for those willing to embrace the challenge, it offers a unique path to career advancement and personal growth.</p>
+
+<p>The question isn’t whether it’s difficult—it absolutely is. The question is whether the long-term benefits justify the short-term costs. For me, six months in, the answer remains a resounding yes.</p>
+
+<p>To fellow travelers on this path: you’re not alone in feeling overwhelmed, and you’re not crazy for choosing this difficult route. We’re investing in our future selves, one exhausting week at a time.</p>
+
+<hr />
+
+<p><em>Are you considering graduate school while working, or currently navigating this challenge? I’d love to hear about your experiences and strategies. Connect with me on <a href="https://www.linkedin.com/in/rodgersmerokaosumo/">LinkedIn</a> to continue the conversation.</em></p>]]></content><author><name>Rodgers Meroka Osumo</name></author><category term="education" /><category term="career" /><category term="data-science" /><summary type="html"><![CDATA[Pursuing a Master's degree while working full-time isn't just about time management—it's about strategic learning, career growth, and maintaining your sanity. Here's my honest take on the challenges and rewards.]]></summary></entry><entry><title type="html">Building My Portfolio Website: A Jekyll Journey from Vision to Reality</title><link href="https://rodgersmerokaosumo.github.io/portfolio/web-development/portfolio/jekyll/2025/07/27/building-portfolio-website-jekyll-journey.html" rel="alternate" type="text/html" title="Building My Portfolio Website: A Jekyll Journey from Vision to Reality" /><published>2025-07-27T00:00:00+03:00</published><updated>2025-07-27T00:00:00+03:00</updated><id>https://rodgersmerokaosumo.github.io/portfolio/web-development/portfolio/jekyll/2025/07/27/building-portfolio-website-jekyll-journey</id><content type="html" xml:base="https://rodgersmerokaosumo.github.io/portfolio/web-development/portfolio/jekyll/2025/07/27/building-portfolio-website-jekyll-journey.html"><![CDATA[<p>Building a portfolio website as a data scientist might seem straightforward, but the journey from concept to completion taught me more about web development, design principles, and personal branding than I initially anticipated. Here’s the story of how I built this site and what I learned along the way.</p>
+
+<h2 id="the-quest-for-the-right-platform">The Quest for the Right Platform</h2>
+
+<p>When I decided to create a professional portfolio, I faced the classic developer dilemma: which platform to choose? WordPress felt too heavy for my needs, plain HTML seemed too limiting, and modern JavaScript frameworks felt like overkill for a static site.</p>
+
+<p>Enter <strong>Jekyll</strong> – a static site generator that struck the perfect balance. As someone who appreciates clean code and minimal dependencies, Jekyll’s philosophy resonated with me:</p>
+
+<ul>
+  <li><strong>Markdown-based content</strong> for easy writing and maintenance</li>
+  <li><strong>Git-based workflow</strong> that integrates with my development process</li>
+  <li><strong>GitHub Pages hosting</strong> for seamless deployment</li>
+  <li><strong>Ruby ecosystem</strong> with powerful theming capabilities</li>
+</ul>
+
+<p>The decision felt right, but little did I know the rabbit hole I was about to dive into.</p>
+
+<h2 id="the-theme-dilemma-off-the-shelf-vs-custom">The Theme Dilemma: Off-the-Shelf vs. Custom</h2>
+
+<p>Initially, I browsed through dozens of Jekyll themes, looking for something that would represent my professional brand. I found beautiful options, but each had limitations:</p>
+
+<ul>
+  <li>Some were too blog-focused, lacking portfolio elements</li>
+  <li>Others were visually stunning but overly complex</li>
+  <li>Many required compromises on functionality or aesthetics</li>
+</ul>
+
+<p>That’s when I discovered the <strong>Journal theme</strong> – minimalist, elegant, and perfectly aligned with my vision. There was just one problem: it was a paid theme, and more importantly, I wanted something uniquely mine.</p>
+
+<h2 id="the-custom-theme-adventure">The Custom Theme Adventure</h2>
+
+<p>Instead of purchasing an existing theme, I decided to create a custom one inspired by Journal’s clean aesthetic. This decision transformed a simple website project into a comprehensive web development learning experience.</p>
+
+<h3 id="building-the-foundation">Building the Foundation</h3>
+
+<p>I started with Jekyll’s theme structure, creating a local gem called <code class="language-plaintext highlighter-rouge">jekyll-theme-journal-clone</code>. The architecture included:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>themes/journal-clone/
+├── _layouts/          # Page templates
+├── _includes/         # Reusable components
+├── _sass/            # Stylesheets
+└── jekyll-theme-journal-clone.gemspec
+</code></pre></div></div>
+
+<h3 id="design-system-development">Design System Development</h3>
+
+<p>Creating a coherent design system was more complex than I anticipated. I established:</p>
+
+<p><strong>Color Palette</strong>: A minimal scheme with deep blacks (#111111) for headings, medium grays (#555555) for body text, and subtle blue accents (#007acc) for interactive elements.</p>
+
+<p><strong>Typography</strong>: Inter for headings (modern, clean) paired with Georgia for body text (readable, professional).</p>
+
+<p><strong>Spacing Scale</strong>: Consistent spacing using a rem-based scale from 0.25rem to 4rem for visual hierarchy.</p>
+
+<h3 id="the-scss-architecture">The SCSS Architecture</h3>
+
+<p>I organized the styles into four main files:</p>
+
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">_variables.scss</code></strong> - Design tokens and configuration</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">_base.scss</code></strong> - Typography and fundamental styles</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">_layout.scss</code></strong> - Grid system and page structure</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">_components.scss</code></strong> - UI components and interactive elements</li>
+</ol>
+
+<p>This modular approach made the codebase maintainable and allowed for easy customization.</p>
+
+<h2 id="technical-challenges-and-solutions">Technical Challenges and Solutions</h2>
+
+<h3 id="sidebar-navigation-design">Sidebar Navigation Design</h3>
+
+<p>Creating an elegant sidebar presented several challenges:</p>
+
+<p><strong>Challenge</strong>: Achieving the right balance of functionality and aesthetics while maintaining responsiveness.</p>
+
+<p><strong>Solution</strong>: A fixed-position sidebar with smooth animations and a toggle system for mobile devices. The key was using CSS custom properties for consistent spacing and transform animations for smooth interactions.</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.sidebar</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">sidebar-width</span><span class="p">);</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="nf">translateX</span><span class="p">(</span><span class="m">-100%</span><span class="p">);</span> <span class="c1">// Hidden by default on mobile</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">transform</span> <span class="m">0</span><span class="mi">.3s</span> <span class="nb">ease</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="typography-hierarchy">Typography Hierarchy</h3>
+
+<p><strong>Challenge</strong>: Creating a readable, scannable content hierarchy that works across devices.</p>
+
+<p><strong>Solution</strong>: A carefully crafted type scale with optimal line heights and spacing. I spent considerable time fine-tuning font sizes, margins, and line spacing to achieve the right reading rhythm.</p>
+
+<h3 id="content-organization">Content Organization</h3>
+
+<p><strong>Challenge</strong>: Structuring content to showcase both technical projects and written content effectively.</p>
+
+<p><strong>Solution</strong>: A flexible layout system that adapts to different content types - from blog posts to project showcases - while maintaining visual consistency.</p>
+
+<h2 id="lessons-learned">Lessons Learned</h2>
+
+<h3 id="1-design-systems-are-worth-the-investment">1. Design Systems Are Worth the Investment</h3>
+
+<p>Creating a comprehensive design system upfront saved countless hours later. Having consistent spacing, colors, and typography rules made every subsequent design decision easier and more coherent.</p>
+
+<h3 id="2-mobile-first-is-non-negotiable">2. Mobile-First is Non-Negotiable</h3>
+
+<p>Starting with mobile constraints forced better design decisions. The desktop experience became an enhancement rather than the primary focus, resulting in a more accessible site overall.</p>
+
+<h3 id="3-performance-matters-more-than-features">3. Performance Matters More Than Features</h3>
+
+<p>I resisted the urge to add unnecessary animations and complex interactions. The site’s fast loading time and clean interface serve users better than flashy effects would.</p>
+
+<h3 id="4-content-strategy-drives-design">4. Content Strategy Drives Design</h3>
+
+<p>The most beautiful website is useless without compelling content. I learned to design around my content needs rather than forcing content into predetermined layouts.</p>
+
+<h2 id="the-technical-stack">The Technical Stack</h2>
+
+<p>The final implementation includes:</p>
+
+<ul>
+  <li><strong>Jekyll 4.3.4</strong> for static site generation</li>
+  <li><strong>Custom SCSS</strong> with a modular architecture</li>
+  <li><strong>Responsive design</strong> with CSS Grid and Flexbox</li>
+  <li><strong>GitHub Pages</strong> for hosting and CI/CD</li>
+  <li><strong>Jekyll plugins</strong> for SEO, feeds, and pagination</li>
+</ul>
+
+<h2 id="results-and-reflections">Results and Reflections</h2>
+
+<p>The website successfully achieves its goals:</p>
+
+<ul>
+  <li><strong>Professional presentation</strong> of my work and expertise</li>
+  <li><strong>Fast, accessible experience</strong> across all devices</li>
+  <li><strong>Easy content management</strong> through Markdown</li>
+  <li><strong>SEO optimization</strong> with proper meta tags and structure</li>
+</ul>
+
+<p>More importantly, building this site taught me valuable lessons about web development, design thinking, and the importance of user experience in professional branding.</p>
+
+<h2 id="whats-next">What’s Next</h2>
+
+<p>This portfolio is a living project. Future enhancements include:</p>
+
+<ul>
+  <li>Adding interactive project demonstrations</li>
+  <li>Implementing a search feature for blog content</li>
+  <li>Creating detailed case studies of data science projects</li>
+  <li>Optimizing for Core Web Vitals and accessibility standards</li>
+</ul>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>Building a custom portfolio website was more than a technical exercise – it was an exercise in understanding my professional identity and how to communicate it effectively. Every design decision, from color choices to typography, reflects the attention to detail and systematic thinking I bring to data science work.</p>
+
+<p>For fellow developers considering a similar journey: embrace the learning process. Yes, using an existing theme would have been faster, but creating something uniquely yours provides insights into web development, design, and personal branding that extend far beyond the final product.</p>
+
+<p>The code for this website is available on <a href="https://github.com/rodgersmerokaosumo/portfolio">GitHub</a>, and I welcome questions about the implementation or design decisions. After all, the best part of building in public is sharing the knowledge gained along the way.</p>
+
+<hr />
+
+<p><em>Want to discuss web development, Jekyll, or portfolio design? Connect with me on <a href="https://www.linkedin.com/in/rodgersmerokaosumo/">LinkedIn</a> or <a href="https://twitter.com/osumo_meroka">Twitter</a>.</em></p>]]></content><author><name>Rodgers Meroka Osumo</name></author><category term="web-development" /><category term="portfolio" /><category term="jekyll" /><summary type="html"><![CDATA[From choosing Jekyll to crafting a custom theme inspired by minimalist design principles, here's the story of building my portfolio website and the lessons learned along the way.]]></summary></entry><entry><title type="html">Hello World</title><link href="https://rodgersmerokaosumo.github.io/portfolio/blog/2025/07/26/hello-world.html" rel="alternate" type="text/html" title="Hello World" /><published>2025-07-26T00:00:00+03:00</published><updated>2025-07-26T00:00:00+03:00</updated><id>https://rodgersmerokaosumo.github.io/portfolio/blog/2025/07/26/hello-world</id><content type="html" xml:base="https://rodgersmerokaosumo.github.io/portfolio/blog/2025/07/26/hello-world.html"><![CDATA[<p>First post on the new site—checking that the blog works.
 New Changes</p>]]></content><author><name>Rodgers Meroka Osumo</name></author><category term="blog" /><summary type="html"><![CDATA[First post on the new site—checking that the blog works. New Changes]]></summary></entry></feed>
