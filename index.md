@@ -28,7 +28,7 @@ permalink: /
   <div class="content-grid">
     <div class="featured-section">
       <h2>Latest Projects</h2>
-      <p>Explore my recent work in machine learning, data analysis, and AI solutions.</p>
+      <p>Explore my recent work in Spatial analysis, machine learning, data analysis, and AI solutions.</p>
       <a href="/portfolio/projects" class="read-more">See All Projects →</a>
     </div>
     

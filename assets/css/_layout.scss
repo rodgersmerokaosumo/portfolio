@@ -31,6 +31,7 @@
   margin-bottom: $space-3xl;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: $space-xl;
+  text-align: center;
 }
 
 .sidebar-title {
@@ -48,6 +49,25 @@
   color: rgba($sidebar-text, 0.7);
   font-style: italic;
   line-height: 1.4;
+}
+
+// Sidebar avatar styling
+.sidebar-avatar {
+  margin-bottom: $space-lg;
+  
+  .avatar-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      border-color: $color-accent;
+      transform: scale(1.05);
+    }
+  }
 }
 
 // Clean navigation
