@@ -24,4 +24,8 @@
 <url>
 <loc>http://localhost:4000/portfolio/</loc>
 </url>
+<url>
+<loc>http://localhost:4000/portfolio/assets/resume.pdf</loc>
+<lastmod>2025-07-27T22:53:46+03:00</lastmod>
+</url>
 </urlset>

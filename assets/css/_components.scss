@@ -258,6 +258,170 @@
     transform: translateY(-1px);
     color: $color-bg;
   }
+  
+  i {
+    margin-right: $space-sm;
+  }
+}
+
+.button-primary {
+  background-color: $color-accent;
+  color: $color-bg;
+  
+  &:hover {
+    background-color: darken($color-accent, 10%);
+    color: $color-bg;
+  }
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: $color-accent;
+  border: 2px solid $color-accent;
+  
+  &:hover {
+    background-color: $color-accent;
+    color: $color-bg;
+  }
+}
+
+// Homepage Intro Section
+.homepage-intro {
+  padding: $space-3xl 0;
+  background-color: lighten($color-bg, 2%);
+  
+  .intro-content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 $space-xl;
+    text-align: center;
+    
+    .intro-lead {
+      font-size: $size-xl;
+      line-height: 1.6;
+      color: $color-secondary;
+      margin-bottom: $space-2xl;
+      font-weight: 400;
+    }
+    
+    .intro-actions {
+      display: flex;
+      gap: $space-md;
+      justify-content: center;
+      flex-wrap: wrap;
+      
+      @media (max-width: $bp-mobile) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// Featured Content Grid
+.featured-content {
+  padding: $space-3xl 0;
+  
+  .content-grid {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 $space-xl;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $space-2xl;
+    
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: 1fr;
+      gap: $space-xl;
+    }
+  }
+  
+  .featured-section {
+    text-align: center;
+    padding: $space-xl;
+    background-color: $color-bg;
+    border-radius: 8px;
+    border: 1px solid $color-border;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      font-size: $size-xl;
+      font-weight: 600;
+      color: $color-primary;
+      margin-bottom: $space-md;
+    }
+    
+    p {
+      color: $color-secondary;
+      line-height: 1.6;
+      margin-bottom: $space-lg;
+    }
+    
+    .read-more {
+      color: $color-accent;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: darken($color-accent, 15%);
+      }
+    }
+  }
+}
+
+// About Intro Section (for About page)
+.about-intro {
+  padding: $space-3xl 0;
+  background-color: lighten($color-bg, 2%);
+  
+  .intro-content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 $space-xl;
+    
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $color-primary;
+      margin-bottom: $space-xl;
+      text-align: center;
+    }
+    
+    .intro-text {
+      font-size: $size-lg;
+      line-height: 1.8;
+      color: $color-secondary;
+      margin-bottom: $space-lg;
+      
+      strong {
+        color: $color-primary;
+        font-weight: 600;
+      }
+      
+      em {
+        color: $color-accent;
+        font-style: italic;
+      }
+    }
+    
+    .intro-actions {
+      display: flex;
+      gap: $space-md;
+      justify-content: center;
+      margin-top: $space-2xl;
+      
+      @media (max-width: $bp-mobile) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
 }
 
 // Comments section
@@ -324,8 +488,8 @@
   
   .hero-image {
     position: relative;
-    height: 60vh;
-    min-height: 400px;
+    height: 40vh;
+    min-height: 250px;
     overflow: hidden;
     
     img {
@@ -349,8 +513,8 @@
   }
   
   .hero-gradient {
-    height: 50vh;
-    min-height: 350px;
+    height: 40vh;
+    min-height: 250px;
     background: linear-gradient(135deg, $color-primary 0%, $color-accent 100%);
     display: flex;
     align-items: center;

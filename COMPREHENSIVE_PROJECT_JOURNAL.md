@@ -409,4 +409,153 @@ bundle update
 
 ---
 
-This comprehensive journal documents the complete architecture, component relationships, and operational aspects of the portfolio website, providing a thorough understanding of how each part contributes to the overall system functionality.
+## Recent Development Updates (July 27, 2025)
+
+### Blog Hero Section Optimization
+**Objective**: Create a compact, visually appealing blog homepage header
+**Implementation**:
+- Reduced hero height from 60vh to 40vh (250px minimum) for better content balance
+- Switched from `object-fit: contain` to `object-fit: cover` to eliminate empty spaces
+- Maintained consistent styling between image and gradient fallback modes
+- Added hero image support with automatic fallback to gradient background
+
+**Technical Details**:
+```scss
+.blog-hero {
+  .hero-image {
+    height: 40vh;
+    min-height: 250px;
+    img {
+      object-fit: cover; // Fills width completely
+    }
+  }
+  .hero-gradient {
+    height: 40vh;
+    min-height: 250px;
+  }
+}
+```
+
+### Homepage Content Architecture Redesign
+**Problem**: Homepage had too much personal detail, reducing landing page effectiveness
+**Solution**: Strategic content reorganization for better user experience
+
+**Homepage Changes**:
+1. **Concise Value Proposition**: 2-sentence professional summary
+2. **Strategic CTAs**: "View My Work" (primary), "About Me", "Resume" 
+3. **Featured Content Grid**: Three-section layout driving traffic to key areas
+   - Latest Projects → Projects section
+   - Recent Insights → Blog homepage  
+   - Get In Touch → Contact page
+
+**About Page Enhancement**:
+1. **Complete Personal Narrative**: INTP-J personality, "red" decision-making style
+2. **Professional Background**: MSc pursuit while working full-time
+3. **Core Expertise**: ML/AI, Data Visualization, Statistical Analysis, Business Intelligence
+4. **Personal Interests**: Hiking, superhero movies, human psychology exploration
+5. **Professional Actions**: Resume download and contact options
+
+### Technical Implementation Details
+
+**New CSS Components**:
+```scss
+// Homepage-specific sections
+.homepage-intro {
+  padding: 4rem 0;
+  background-color: lighten($color-bg, 2%);
+  text-align: center;
+}
+
+.featured-content {
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+  }
+  
+  .featured-section {
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+```
+
+**Button System Enhancement**:
+- **Primary Buttons**: Solid background for main actions
+- **Secondary Buttons**: Outlined style for secondary actions  
+- **Icon Support**: FontAwesome integration for download icons
+- **Responsive Layout**: Stack vertically on mobile devices
+
+### Resume Management System
+**Organization**: Moved resume from root directory to `/assets/resume.pdf`
+**Access Points**: Available from both homepage and about page
+**Download Behavior**: Automatically downloads as "Ozeks_Resume.pdf"
+**Integration**: Consistent button styling across pages
+
+### Navigation System Fixes
+**Issue**: Internal links failing due to missing `/portfolio/` prefix
+**Resolution**: Updated all internal navigation links
+
+**Fixed Links**:
+- Homepage: `/projects` → `/portfolio/projects`
+- Homepage: `/about` → `/portfolio/about`  
+- Homepage: `/blog` → `/portfolio/blog`
+- Homepage: `/contact` → `/portfolio/contact`
+- Resume: `/assets/resume.pdf` → `/portfolio/assets/resume.pdf`
+
+### Layout Architecture Updates
+
+**Home Layout Simplification**:
+```html
+<!-- themes/journal-clone/_layouts/home.html -->
+---
+layout: default
+---
+{{ content }}
+```
+
+**Content Structure**:
+1. **Hero Section**: Name and professional tagline
+2. **Homepage Intro**: Value proposition with centered CTAs
+3. **Featured Content**: Three-column responsive grid
+
+**Responsive Behavior**:
+- Desktop: Three-column grid layout
+- Tablet: Single column with maintained spacing
+- Mobile: Stacked layout with touch-friendly buttons
+
+### User Experience Improvements
+
+**Homepage Flow**:
+1. **Immediate Value**: Clear professional positioning
+2. **Action-Oriented**: Prominent "View My Work" button
+3. **Information Architecture**: Easy access to About, Resume, Projects
+4. **Content Discovery**: Featured sections guide exploration
+
+**About Page Flow**:
+1. **Personal Connection**: "Hello, I'm Ozeks" opening
+2. **Professional Story**: INTP-J personality and approach
+3. **Expertise Showcase**: Technical skills and experience
+4. **Call to Action**: Resume download and contact options
+
+### Development Workflow Enhancements
+
+**Asset Organization**:
+- Resume: `/assets/resume.pdf` (organized location)
+- Images: `/assets/img/` (centralized image management)
+- Styles: `/assets/css/` (modular SCSS architecture)
+
+**Content Management**:
+- Homepage: Strategic landing page content
+- About: Comprehensive personal and professional narrative
+- Blog: Hero-enhanced listing with pagination support
+
+---
+
+This comprehensive journal documents the complete architecture, component relationships, and operational aspects of the portfolio website, including the latest July 2025 homepage redesign and content optimization updates, providing a thorough understanding of how each part contributes to the overall system functionality.
