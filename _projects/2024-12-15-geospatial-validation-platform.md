@@ -1,7 +1,7 @@
 ---
 title: "Geospatial Data Validation Platform"
 date: 2024-12-15
-featured_image: "/assets/img/projects/geospatial-validation.jpg"
+featured_image: "/assets/img/projects/geospatial.jpg"
 client: "TechGIS Solutions"
 tech_stack:
   - "Python"

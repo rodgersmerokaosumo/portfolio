@@ -5,6 +5,7 @@ date: 2025-07-27
 categories: [web-development, portfolio, jekyll]
 tags: ["Project Journey"]
 excerpt: "From choosing Jekyll to crafting a custom theme inspired by minimalist design principles, here's the story of building my portfolio website and the lessons learned along the way."
+featured_image: "/assets/img/blog/portfolio.jpg"
 ---
 
 Building a portfolio website as a data scientist might seem straightforward, but the journey from concept to completion taught me more about web development, design principles, and personal branding than I initially anticipated. Here's the story of how I built this site and what I learned along the way.

@@ -1,7 +1,7 @@
 ---
 title: "ML-Driven Financial Risk Assessment System"
 date: 2024-10-05
-featured_image: "/assets/img/projects/financial-risk-ml.jpg"
+featured_image: "/assets/img/projects/financial.jpg"
 client: "FinanceSecure Bank"
 tech_stack:
   - "Python"

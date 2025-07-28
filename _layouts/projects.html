@@ -2,38 +2,91 @@
 layout: default
 ---
 
-<!-- Projects Hero Section -->
-<section class="projects-hero">
-  {% if page.hero_image %}
-    <div class="hero-image">
-      <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}">
-      <div class="hero-overlay">
-        <div class="hero-content">
-          <h1>{{ page.title }}</h1>
-          {% if content != empty %}
-            <p class="hero-description">{{ content | strip_html | truncate: 150 }}</p>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  {% else %}
-    <!-- Default gradient hero when no image is provided -->
-    <div class="hero-gradient">
-      <div class="hero-content">
-        <h1>{{ page.title }}</h1>
-        {% if content != empty %}
-          <p class="hero-description">{{ content | strip_html }}</p>
-        {% endif %}
-      </div>
-    </div>
-  {% endif %}
-</section>
-
-<!-- Projects Tech Stack Filter -->
-<section class="tag-filter">
-  <div class="filter-container">
-    <h3>Filter by Technology</h3>
+<!-- Modern Full-Width Header -->
+<header class="listing-header">
+  <div class="header-content">
+    <h1 class="page-title">Projects</h1>
+    <p class="page-description">{{ content | default: "Showcasing data science and AI solutions that drive real-world impact across industries." | strip_html }}</p>
+  </div>
+  
+  <!-- Minimal Filter Bar -->
+  <div class="filter-bar">
     <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="machine-learning">ML/AI</button>
+      <button class="filter-btn" data-filter="web-development">Web Dev</button>
+      <button class="filter-btn" data-filter="data-visualization">Visualization</button>
+      <button class="filter-btn" data-filter="cloud-platforms">Cloud</button>
+    </div>
+  </div>
+</header>
+
+<!-- Modern Two-Column Card Grid -->
+<main class="projects-grid-section">
+  <div class="container">
+    <div class="projects-grid">
+      {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+      {% for project in sorted_projects %}
+        <article class="project-card" data-tech="{{ project.tech_stack | join: ',' | downcase | replace: ' ', '-' }}">
+          {% if project.featured_image %}
+            <div class="card-thumbnail">
+              <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" loading="lazy">
+            </div>
+          {% endif %}
+          
+          <div class="card-content">
+            <header class="card-header">
+              <h2 class="card-title">
+                <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+              </h2>
+              <time class="card-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">{{ project.date | date: "%-d %B %Y" }}</time>
+            </header>
+            
+            {% if project.excerpt %}
+              <p class="card-excerpt">{{ project.excerpt | strip_html | truncatewords: 25 }}</p>
+            {% endif %}
+            
+            <div class="card-footer">
+              {% if project.tech_stack %}
+                <div class="tech-tags">
+                  {% for tech in project.tech_stack limit: 3 %}
+                    <span class="tech-tag">{{ tech }}</span>
+                  {% endfor %}
+                  {% if project.tech_stack.size > 3 %}
+                    <span class="tech-tag more">+{{ project.tech_stack.size | minus: 3 }}</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+              
+              <a href="{{ project.url | relative_url }}" class="read-more-btn">
+                <span>Read More</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    
+    <!-- Load More Section -->
+    <div class="load-more-section">
+      <button class="load-more-btn" id="loadMoreBtn" style="display: none;">
+        <span>Load More Projects</span>
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</main>
+
+<!-- Floating Filter HTML -->
+<div class="floating-filter">
+  <button class="filter-toggle" aria-label="Toggle Filter Menu">
+    <i class="fas fa-filter"></i>
+  </button>
+  <div class="filter-dropdown">
+    <h4>Filter Projects</h4>
+    <div class="floating-filter-buttons">
       <button class="filter-btn active" data-filter="all">All Projects</button>
       <button class="filter-btn" data-filter="python">Python</button>
       <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
@@ -42,76 +95,104 @@ layout: default
       <button class="filter-btn" data-filter="cloud-platforms">Cloud Platforms</button>
     </div>
   </div>
-</section>
-
-<!-- Projects Grid -->
-<section class="projects-archive">
-  <div class="projects-grid">
-    {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
-    {% for project in sorted_projects %}
-      <article class="project-card" data-tech="{{ project.tech_stack | join: ',' | downcase | replace: ' ', '-' }}">
-        <a href="{{ project.url | relative_url }}" class="project-link">
-          {% if project.featured_image %}
-            <div class="project-image">
-              <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}">
-            </div>
-          {% endif %}
-          
-          <div class="project-content">
-            <h3 class="project-title">{{ project.title }}</h3>
-            
-            {% if project.excerpt %}
-              <p class="project-excerpt">{{ project.excerpt | strip_html | truncatewords: 20 }}</p>
-            {% endif %}
-            
-            {% if project.tech_stack %}
-              <div class="project-tags">
-                {% for tech in project.tech_stack %}
-                  <span class="project-tag">{{ tech }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
-            
-            {% if project.client %}
-              <div class="project-client">
-                <small>Client: {{ project.client }}</small>
-              </div>
-            {% endif %}
-          </div>
-        </a>
-      </article>
-    {% endfor %}
-  </div>
-</section>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
+  const headerSection = document.querySelector('.listing-header');
+  const tagFilter = document.querySelector('.tag-filter');
+  const floatingFilter = document.querySelector('.floating-filter');
+  const filterToggle = document.querySelector('.filter-toggle');
+  const filterDropdown = document.querySelector('.filter-dropdown');
   
+  let lastScrollTop = 0;
+  let isDropdownOpen = false;
+  
+  // Filter functionality for project cards
+  function handleFilter(filter) {
+    // Filter project cards
+    projectCards.forEach(card => {
+      const cardTech = card.getAttribute('data-tech');
+      
+      if (filter === 'all') {
+        card.style.display = 'block';
+        card.classList.remove('filter-hidden');
+      } else {
+        if (cardTech && cardTech.includes(filter)) {
+          card.style.display = 'block';
+          card.classList.remove('filter-hidden');
+        } else {
+          card.style.display = 'none';
+          card.classList.add('filter-hidden');
+        }
+      }
+    });
+  }
+  
+  // Add click listeners to all filter buttons
   filterButtons.forEach(button => {
     button.addEventListener('click', function() {
       const filter = this.getAttribute('data-filter');
       
-      // Update active button
+      // Update active button (both regular and floating)
       filterButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
+      document.querySelectorAll(`[data-filter="${filter}"]`).forEach(btn => btn.classList.add('active'));
       
-      // Filter project cards
-      projectCards.forEach(card => {
-        const cardTech = card.getAttribute('data-tech');
-        
-        if (filter === 'all') {
-          card.classList.remove('filter-hidden');
-        } else {
-          if (cardTech && cardTech.includes(filter)) {
-            card.classList.remove('filter-hidden');
-          } else {
-            card.classList.add('filter-hidden');
-          }
-        }
-      });
+      handleFilter(filter);
+      
+      // Close floating dropdown if open
+      if (isDropdownOpen) {
+        filterDropdown.classList.remove('active');
+        isDropdownOpen = false;
+      }
     });
   });
+  
+  // Floating filter toggle
+  filterToggle.addEventListener('click', function() {
+    isDropdownOpen = !isDropdownOpen;
+    filterDropdown.classList.toggle('active', isDropdownOpen);
+  });
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!floatingFilter.contains(event.target) && isDropdownOpen) {
+      filterDropdown.classList.remove('active');
+      isDropdownOpen = false;
+    }
+  });
+  
+  // Scroll handler for hero collapse and floating filter
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // Remove unused hero height calculation
+    
+    // Floating filter visibility based on header height
+    const headerHeight = headerSection ? headerSection.offsetHeight : 0;
+    
+    if (scrollTop > headerHeight + 100) {
+      floatingFilter.classList.add('visible');
+    } else {
+      floatingFilter.classList.remove('visible');
+    }
+    
+    lastScrollTop = scrollTop;
+  }
+  
+  // Throttled scroll listener
+  let scrollTimeout;
+  window.addEventListener('scroll', function() {
+    if (!scrollTimeout) {
+      scrollTimeout = setTimeout(function() {
+        handleScroll();
+        scrollTimeout = null;
+      }, 10);
+    }
+  });
+  
+  // Initialize
+  handleScroll();
 });
 </script>

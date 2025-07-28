@@ -4,7 +4,7 @@ title: "Making Data Science Matter: Reflections on Impact Beyond the Algorithms"
 date: 2025-07-20
 categories: [data-science, career, work]
 tags: ["Work Insights"]
-featured_image: "/assets/img/blog/data-science-impact.jpg"
+featured_image: "/assets/img/blog/matter.png"
 excerpt: "After three years in the field, I've learned that successful data science isn't about having the fanciest models—it's about solving real problems for real people. Here are my reflections on creating meaningful impact."
 ---
 

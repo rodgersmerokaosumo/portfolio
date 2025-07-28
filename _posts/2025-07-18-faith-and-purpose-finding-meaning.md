@@ -4,7 +4,7 @@ title: "Faith and Purpose: Finding Meaning in the Intersection of Technology and
 date: 2025-07-18
 categories: [faith, purpose, reflections]
 tags: ["Spiritual Reflections"]
-featured_image: "/assets/img/blog/faith-purpose.jpg"
+featured_image: "/assets/img/blog/purpose.png"
 excerpt: "How do we reconcile our faith with our professional calling in technology? Reflections on finding purpose and serving others through the work we do in data science and beyond."
 ---
 

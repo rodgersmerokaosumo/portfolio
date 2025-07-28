@@ -5,6 +5,7 @@ date: 2025-07-27
 categories: [education, career, data-science]
 tags: ["Personal Reflections"]
 excerpt: "Pursuing a Master's degree while working full-time isn't just about time management—it's about strategic learning, career growth, and maintaining your sanity. Here's my honest take on the challenges and rewards."
+featured_image: "/assets/img/blog/balance.jpg"
 ---
 
 When I decided to pursue a Master's degree in Data Science while working full-time, well-meaning friends and colleagues had mixed reactions. Some admired the ambition, others questioned the sanity. Six months in, I can confidently say both responses were justified. Here's the unvarnished truth about balancing graduate studies with a demanding career.

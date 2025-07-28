@@ -1,7 +1,7 @@
 ---
 title: "AI-Powered Retail Analytics Dashboard"
 date: 2024-11-20
-featured_image: "/assets/img/projects/retail-analytics.jpg"
+featured_image: "/assets/img/projects/retail.jpg"
 client: "RetailMax Corporation"
 tech_stack:
   - "Python"

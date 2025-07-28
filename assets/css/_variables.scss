@@ -1,21 +1,23 @@
-// Color Palette - Journal-inspired minimal scheme
-$color-primary:   #111111;    // Deep black for headings
+// Color Palette - Modern Journal Design
+$color-primary:   #222222;    // Dark charcoal for text
 $color-secondary: #555555;    // Medium gray for body text
-$color-accent:    #007acc;    // Subtle blue for links/highlights
+$color-accent:    #2a9d8f;    // Teal-green accent
 $color-light:     #888888;    // Light gray for meta text
 $color-border:    #e5e5e5;    // Very light gray for borders
 $color-bg:        #ffffff;    // Pure white background
 $color-bg-alt:    #fafafa;    // Off-white for subtle backgrounds
+$color-card-shadow: rgba(0, 0, 0, 0.08); // Card shadow
 
 // Sidebar specific colors
 $sidebar-bg:      #111111;    // Dark sidebar background
 $sidebar-text:    #ffffff;    // White text on dark sidebar
 $sidebar-accent:  #007acc;    // Accent color for sidebar elements
 
-// Typography - Modern and elegant
-$font-body:       "Georgia", "Times New Roman", serif;
-$font-heading:    "Inter", "Helvetica Neue", "Arial", sans-serif;
+// Typography - Modern Journal Design
+$font-body:       "Inter", "Helvetica Neue", "Arial", sans-serif;
+$font-heading:    "Playfair Display", "Georgia", "Times New Roman", serif;
 $font-mono:       "Monaco", "Menlo", "Consolas", monospace;
+$font-secondary:  "Inter", sans-serif;
 
 // Typography scale - More refined
 $size-xs:         0.75rem;    // 12px - small meta text

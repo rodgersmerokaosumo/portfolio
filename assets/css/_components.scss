@@ -482,21 +482,37 @@
   }
 }
 
-// Blog Hero Section
+// Enhanced Blog Hero Section with Scroll-to-Collapse
 .blog-hero {
   width: 100%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.collapsed {
+    .hero-image,
+    .hero-gradient {
+      height: 100px;
+      min-height: 100px;
+    }
+    
+    .hero-content {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
   
   .hero-image {
     position: relative;
     height: 40vh;
     min-height: 250px;
     overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .hero-overlay {
@@ -509,6 +525,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: background 0.4s ease;
     }
   }
   
@@ -520,6 +537,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     
     &::before {
       content: '';
@@ -529,6 +547,7 @@
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.1);
+      transition: opacity 0.4s ease;
     }
   }
   
@@ -539,6 +558,7 @@
     padding: $space-xl;
     position: relative;
     z-index: 2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     
     h1 {
       font-size: $size-4xl;
@@ -569,139 +589,31 @@
   }
 }
 
-// Blog Archive/Listing (matching projects structure)
+// Blog Archive/Listing (enhanced flex card system)
 .blog-archive {
   max-width: var(--content-max-width);
   margin: 0 auto;
   padding: $space-3xl $space-xl;
   
   .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: $space-xl;
+    justify-content: center;
     
     @media (max-width: $bp-tablet) {
-      grid-template-columns: repeat(2, 1fr);
       gap: $space-lg;
+      justify-content: space-between;
     }
     
     @media (max-width: $bp-mobile) {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      align-items: center;
       gap: $space-lg;
     }
   }
 }
 
-// Blog Card Styling (matching project cards)
-.blog-card {
-  background-color: $color-bg;
-  border-radius: 8px;
-  border: 1px solid $color-border;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  aspect-ratio: 1; // Makes cards square
-  display: flex;
-  flex-direction: column;
-  
-  // Fallback for browsers that don't support aspect-ratio
-  @supports not (aspect-ratio: 1) {
-    &::before {
-      content: '';
-      display: block;
-      padding-top: 100%; // 1:1 aspect ratio
-    }
-  }
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  }
-  
-  .blog-link {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .blog-image {
-    height: 50%; // Take up half the card height
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      transition: transform 0.3s ease;
-    }
-    
-    &:hover img {
-      transform: scale(1.05);
-    }
-  }
-  
-  .blog-content {
-    padding: $space-lg;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .blog-title {
-    font-size: $size-lg;
-    font-weight: 600;
-    color: $color-primary;
-    margin-bottom: $space-sm;
-    line-height: 1.2;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-  
-  .blog-date {
-    font-size: $size-xs;
-    color: $color-light;
-    font-style: italic;
-    margin-bottom: $space-sm;
-  }
-  
-  .blog-excerpt {
-    color: $color-secondary;
-    line-height: 1.4;
-    margin-bottom: $space-md;
-    font-size: $size-sm;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    flex: 1;
-  }
-  
-  .blog-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $space-xs;
-    margin-top: auto;
-    
-    .blog-tag {
-      background-color: lighten($color-primary, 45%);
-      color: darken($color-primary, 15%);
-      padding: $space-xs $space-sm;
-      border-radius: 12px;
-      font-size: $size-xs;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-  }
-}
 
 // Archive/Blog listing page styling
 .archive {
@@ -990,162 +902,169 @@
   }
 }
 
-// Projects Hero Section (matching blog hero)
-.projects-hero {
-  width: 100%;
+// Modern Full-Width Listing Header
+.listing-header {
+  background-color: $color-bg;
+  border-bottom: 1px solid $color-border;
+  padding: 60px 0 40px 0;
+  margin-bottom: 40px;
   
-  .hero-image {
-    position: relative;
-    height: 40vh;
-    min-height: 250px;
-    overflow: hidden;
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-    
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-  
-  .hero-gradient {
-    height: 40vh;
-    min-height: 250px;
-    background: linear-gradient(135deg, $color-primary 0%, $color-accent 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.1);
-    }
-  }
-  
-  .hero-content {
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
     text-align: center;
-    color: white;
-    max-width: 600px;
-    padding: $space-xl;
-    position: relative;
-    z-index: 2;
-    
-    h1 {
-      font-size: $size-4xl;
-      font-weight: 700;
-      margin-bottom: $space-lg;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      
-      @media (max-width: $bp-tablet) {
-        font-size: $size-3xl;
-      }
-      
-      @media (max-width: $bp-mobile) {
-        font-size: $size-2xl;
-      }
-    }
-    
-    .hero-description {
-      font-size: $size-lg;
-      font-weight: 400;
-      opacity: 0.95;
-      line-height: 1.6;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-      
-      @media (max-width: $bp-tablet) {
-        font-size: $size-base;
-      }
-    }
-  }
-}
-
-// Projects Archive/Listing
-.projects-archive {
-  max-width: var(--content-max-width);
-  margin: 0 auto;
-  padding: $space-3xl $space-xl;
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $space-xl;
     
     @media (max-width: $bp-tablet) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: $space-lg;
+      padding: 0 20px;
+    }
+  }
+  
+  .page-title {
+    font-family: $font-heading;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    
+    @media (max-width: $bp-tablet) {
+      font-size: 2.5rem;
     }
     
     @media (max-width: $bp-mobile) {
-      grid-template-columns: 1fr;
-      gap: $space-lg;
+      font-size: 2rem;
+    }
+  }
+  
+  .page-description {
+    font-family: $font-body;
+    font-size: 1.125rem;
+    color: $color-secondary;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    
+    @media (max-width: $bp-mobile) {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+  }
+  
+  // Minimal Filter Bar
+  .filter-bar {
+    margin-top: 40px;
+    
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      
+      @media (max-width: $bp-mobile) {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+    }
+    
+    .filter-btn {
+      background-color: transparent;
+      border: 1px solid $color-border;
+      color: $color-secondary;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-family: $font-body;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 150ms ease;
+      
+      &:hover {
+        background-color: $color-accent;
+        border-color: $color-accent;
+        color: white;
+      }
+      
+      &.active {
+        background-color: $color-primary;
+        border-color: $color-primary;
+        color: white;
+      }
+      
+      &:focus {
+        outline: 2px solid $color-accent;
+        outline-offset: 2px;
+      }
+      
+      @media (max-width: $bp-mobile) {
+        width: 200px;
+        height: 48px; // Touch-friendly height
+      }
     }
   }
 }
 
-// Project Card Styling
-.project-card {
-  background-color: $color-bg;
-  border-radius: 8px;
-  border: 1px solid $color-border;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  aspect-ratio: 1; // Makes cards square
-  display: flex;
-  flex-direction: column;
+// Modern Grid Sections
+.projects-grid-section,
+.blog-grid-section {
+  padding: 0 0 60px 0;
   
-  // Fallback for browsers that don't support aspect-ratio
-  @supports not (aspect-ratio: 1) {
-    &::before {
-      content: '';
-      display: block;
-      padding-top: 100%; // 1:1 aspect ratio
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    
+    @media (max-width: $bp-tablet) {
+      padding: 0 20px;
     }
   }
   
+  .projects-grid,
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+}
+
+// Modern Card Design
+.project-card,
+.blog-card {
+  background-color: $color-bg;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px $color-card-shadow;
+  overflow: hidden;
+  transition: all 150ms ease;
+  border: 1px solid $color-border;
+  
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   }
   
-  .project-link {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    text-decoration: none;
-    color: inherit;
+  &:focus-within {
+    outline: 2px solid $color-accent;
+    outline-offset: 2px;
   }
   
-  .project-image {
-    height: 50%; // Take up half the card height
+  .card-thumbnail {
+    width: 100%;
+    height: 200px;
     overflow: hidden;
     position: relative;
-    flex-shrink: 0;
     
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
-      transition: transform 0.3s ease;
+      transition: transform 200ms ease;
     }
     
     &:hover img {
@@ -1153,61 +1072,152 @@
     }
   }
   
-  .project-content {
-    padding: $space-lg;
-    flex: 1;
+  .card-content {
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    height: calc(100% - 200px); // Subtract thumbnail height
+    min-height: 280px;
   }
   
-  .project-title {
-    font-size: $size-lg;
+  .card-header {
+    margin-bottom: 16px;
+  }
+  
+  .card-title {
+    font-family: $font-heading;
+    font-size: 1.375rem;
     font-weight: 600;
-    color: $color-primary;
-    margin-bottom: $space-sm;
-    line-height: 1.2;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-  
-  .project-excerpt {
-    color: $color-secondary;
-    line-height: 1.4;
-    margin-bottom: $space-md;
-    font-size: $size-sm;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    flex: 1;
-  }
-  
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $space-xs;
-    margin-bottom: $space-sm;
+    line-height: 1.3;
+    margin-bottom: 8px;
     
-    .project-tag {
-      background-color: lighten($color-accent, 40%);
-      color: darken($color-accent, 20%);
-      padding: $space-xs $space-sm;
-      border-radius: 12px;
-      font-size: $size-xs;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+    a {
+      color: $color-primary;
+      text-decoration: none;
+      transition: color 150ms ease;
+      
+      &:hover {
+        color: $color-accent;
+      }
+      
+      &:focus {
+        outline: 2px solid $color-accent;
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
     }
   }
   
-  .project-client {
+  .card-date {
+    font-family: $font-body;
+    font-size: 0.875rem;
     color: $color-light;
-    font-size: $size-xs;
-    font-style: italic;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .card-excerpt {
+    font-family: $font-body;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $color-secondary;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     margin-top: auto;
+    
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      flex: 1;
+      
+      .tech-tag {
+        background-color: lighten($color-accent, 45%);
+        color: darken($color-accent, 20%);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        
+        &.more {
+          background-color: $color-bg-alt;
+          color: $color-light;
+        }
+      }
+    }
+    
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background-color: transparent;
+      color: $color-accent;
+      text-decoration: none;
+      border: 1px solid $color-accent;
+      border-radius: 6px;
+      font-family: $font-body;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 150ms ease;
+      white-space: nowrap;
+      margin-left: 16px;
+      
+      &:hover {
+        background-color: $color-accent;
+        color: white;
+      }
+      
+      &:focus {
+        outline: 2px solid $color-accent;
+        outline-offset: 2px;
+      }
+      
+      i {
+        font-size: 0.75rem;
+        transition: transform 150ms ease;
+      }
+      
+      &:hover i {
+        transform: translateX(2px);
+      }
+    }
+  }
+  
+  // Mobile responsiveness
+  @media (max-width: $bp-mobile) {
+    .card-content {
+      padding: 20px;
+      min-height: 260px;
+    }
+    
+    .card-title {
+      font-size: 1.25rem;
+    }
+    
+    .card-excerpt {
+      font-size: 0.9375rem;
+    }
+    
+    .card-footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      
+      .read-more-btn {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        height: 48px; // Touch-friendly height
+      }
+    }
   }
 }
 
@@ -1314,6 +1324,7 @@
   }
 }
 
+// Enhanced Mobile Responsive Design
 @media (max-width: $bp-mobile) {
   .container {
     padding: $space-xl $space-md;
@@ -1346,122 +1357,429 @@
     }
   }
   
-  .projects-archive {
+  .projects-archive,
+  .blog-archive {
     padding: $space-xl $space-md;
     
-    .projects-grid {
+    .projects-grid,
+    .blog-grid {
       gap: $space-lg;
+      padding: 0;
     }
   }
   
-  .project-card {
-    .project-content {
-      padding: $space-md;
-    }
-    
-    .project-image {
-      height: 50%; // Maintain ratio on mobile
-    }
-    
-    .project-title {
-      font-size: $size-base;
-    }
-    
-    .project-excerpt {
-      font-size: $size-xs;
-      -webkit-line-clamp: 2;
-    }
-  }
-  
+  .project-card,
   .blog-card {
+    // Ensure cards look good on mobile
+    min-width: 280px;
+    max-width: 100%;
+    height: auto;
+    min-height: 320px;
+    
+    .project-content,
     .blog-content {
-      padding: $space-md;
+      padding: $space-lg;
     }
     
+    .project-image,
     .blog-image {
-      height: 50%; // Maintain ratio on mobile
+      height: 180px;
+      flex-shrink: 0;
     }
     
+    .project-title,
     .blog-title {
-      font-size: $size-base;
+      font-size: $size-lg;
+      -webkit-line-clamp: 2;
     }
     
+    .project-excerpt,
     .blog-excerpt {
-      font-size: $size-xs;
-      -webkit-line-clamp: 2;
+      font-size: $size-sm;
+      -webkit-line-clamp: 3;
+    }
+    
+    .project-tags,
+    .blog-tags {
+      margin-top: $space-md;
+      
+      .project-tag,
+      .blog-tag {
+        font-size: $size-xs;
+        padding: $space-xs $space-sm;
+      }
     }
   }
   
   .tag-filter {
     padding: $space-lg $space-md;
+    
+    .filter-container h3 {
+      font-size: $size-base;
+      margin-bottom: $space-md;
+    }
+    
+    .filter-buttons {
+      gap: $space-xs;
+    }
+    
+    .filter-btn {
+      font-size: $size-xs;
+      padding: $space-xs $space-md;
+      width: auto;
+      min-width: 120px;
+    }
+  }
+  
+  // Mobile hero sections
+  .blog-hero,
+  .projects-hero {
+    .hero-image,
+    .hero-gradient {
+      height: 30vh;
+      min-height: 200px;
+    }
+    
+    &.collapsed {
+      .hero-image,
+      .hero-gradient {
+        height: 80px;
+        min-height: 80px;
+      }
+    }
+    
+    .hero-content {
+      padding: $space-lg;
+      
+      h1 {
+        font-size: $size-xl;
+        margin-bottom: $space-md;
+      }
+      
+      .hero-description {
+        font-size: $size-sm;
+      }
+    }
   }
 }
 
-// Tag Filter System
-.tag-filter {
-  background-color: lighten($color-bg, 1%);
-  border-bottom: 1px solid $color-border;
-  padding: $space-2xl $space-xl;
-  
-  .filter-container {
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    text-align: center;
+// Tablet specific improvements
+@media (max-width: $bp-tablet) and (min-width: 481px) {
+  .project-card,
+  .blog-card {
+    min-width: 250px;
+    height: 360px;
     
-    h3 {
-      font-size: $size-lg;
-      font-weight: 600;
-      color: $color-primary;
-      margin-bottom: $space-lg;
+    .project-image,
+    .blog-image {
+      height: 160px;
     }
   }
   
-  .filter-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: $space-sm;
-    
-    @media (max-width: $bp-mobile) {
-      flex-direction: column;
-      align-items: center;
-    }
+  .projects-grid,
+  .blog-grid {
+    justify-content: space-around;
   }
+}
+
+// Load More and Pagination Sections
+.load-more-section {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid $color-border;
   
-  .filter-btn {
-    background-color: transparent;
+  .load-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background-color: $color-bg;
+    color: $color-primary;
     border: 2px solid $color-border;
-    color: $color-secondary;
-    padding: $space-sm $space-lg;
-    border-radius: 25px;
-    font-size: $size-sm;
-    font-weight: 500;
+    border-radius: 8px;
+    font-family: $font-body;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    transition: all 150ms ease;
     
     &:hover {
       background-color: $color-accent;
       border-color: $color-accent;
-      color: $color-bg;
-      transform: translateY(-1px);
+      color: white;
+      transform: translateY(-2px);
     }
     
-    &.active {
-      background-color: $color-primary;
-      border-color: $color-primary;
-      color: $color-bg;
+    &:focus {
+      outline: 2px solid $color-accent;
+      outline-offset: 2px;
     }
     
-    @media (max-width: $bp-mobile) {
-      width: 200px;
-      margin-bottom: $space-xs;
+    i {
+      transition: transform 150ms ease;
+    }
+    
+    &:hover i {
+      transform: translateY(2px);
     }
   }
 }
 
-// Hidden items during filtering
+.pagination-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid $color-border;
+  
+  .pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    
+    @media (max-width: $bp-mobile) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  
+  .pagination-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: $color-bg;
+    color: $color-primary;
+    text-decoration: none;
+    border: 2px solid $color-border;
+    border-radius: 8px;
+    font-family: $font-body;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: all 150ms ease;
+    
+    &:hover {
+      background-color: $color-accent;
+      border-color: $color-accent;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    &:focus {
+      outline: 2px solid $color-accent;
+      outline-offset: 2px;
+    }
+    
+    i {
+      font-size: 0.875rem;
+    }
+    
+    @media (max-width: $bp-mobile) {
+      width: 200px;
+      justify-content: center;
+      height: 48px;
+    }
+  }
+  
+  .pagination-info {
+    font-family: $font-body;
+    font-size: 0.9375rem;
+    color: $color-light;
+    font-weight: 500;
+  }
+}
+
+// Floating Filter (Simplified for modern design)
+.floating-filter {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  transition: all 200ms ease;
+  pointer-events: none;
+  
+  &.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  
+  .filter-toggle {
+    background: linear-gradient(135deg, $color-accent, darken($color-accent, 10%));
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    font-size: 1.125rem;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba($color-accent, 0.3);
+    transition: all 150ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 35px rgba($color-accent, 0.4);
+    }
+    
+    &:focus {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  }
+  
+  .filter-dropdown {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background-color: $color-bg;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid $color-border;
+    padding: 20px;
+    min-width: 220px;
+    transform: translateY(15px) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 200ms ease;
+    
+    &.active {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      right: 22px;
+      width: 16px;
+      height: 16px;
+      background-color: $color-bg;
+      border: 1px solid $color-border;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+    
+    h4 {
+      font-family: $font-body;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $color-primary;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    
+    .floating-filter-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      
+      .filter-btn {
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 0.8125rem;
+        text-align: left;
+        justify-content: flex-start;
+        
+        &:hover {
+          transform: none;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: $bp-mobile) {
+    bottom: 20px;
+    right: 20px;
+    
+    .filter-toggle {
+      width: 48px;
+      height: 48px;
+      font-size: 1rem;
+    }
+    
+    .filter-dropdown {
+      right: -10px;
+      min-width: 200px;
+    }
+  }
+}
+
+// Hidden items during filtering with smooth transitions
 .filter-hidden {
-  display: none !important;
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Smooth show animation for filtered items
+.project-card:not(.filter-hidden),
+.blog-card:not(.filter-hidden) {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Loading skeleton for better UX
+.card-skeleton {
+  background: linear-gradient(90deg, $color-bg 25%, lighten($color-bg, 3%) 50%, $color-bg 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .blog-card,
+  .floating-filter,
+  .blog-hero,
+  .projects-hero {
+    transition: none;
+    animation: none;
+  }
+  
+  .project-card:hover,
+  .blog-card:hover {
+    transform: none;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .project-card,
+  .blog-card {
+    border-color: $color-primary;
+    border-width: 2px;
+    
+    &:hover {
+      border-color: $color-accent;
+      border-width: 3px;
+    }
+  }
+  
+  .filter-btn {
+    border-width: 2px;
+    
+    &.active {
+      border-width: 3px;
+    }
+  }
 }
