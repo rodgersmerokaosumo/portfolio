@@ -29,31 +29,85 @@ layout: default
   {% endif %}
 </section>
 
-<!-- Blog Posts List -->
-<section class="archive">
-  <ul>
+<!-- Blog Tag Filter -->
+<section class="tag-filter">
+  <div class="filter-container">
+    <h3>Filter by Category</h3>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Posts</button>
+      <button class="filter-btn" data-filter="personal-reflections">Personal Reflections</button>
+      <button class="filter-btn" data-filter="work-insights">Work Insights</button>
+      <button class="filter-btn" data-filter="project-journey">Project Journey</button>
+      <button class="filter-btn" data-filter="spiritual-reflections">Spiritual Reflections</button>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Posts Grid -->
+<section class="blog-archive">
+  <div class="blog-grid">
     {% if paginator.posts %}
       {% for post in paginator.posts %}
-        <li>
-          <time datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </time>
-          — 
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </li>
+        <article class="blog-card" data-tags="{{ post.tags | join: ',' | downcase | replace: ' ', '-' }}">
+          <a href="{{ post.url | relative_url }}" class="blog-link">
+            {% if post.featured_image %}
+              <div class="blog-image">
+                <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}">
+              </div>
+            {% endif %}
+            
+            <div class="blog-content">
+              <h3 class="blog-title">{{ post.title }}</h3>
+              
+              <p class="blog-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+              
+              {% if post.excerpt %}
+                <p class="blog-excerpt">{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+              {% endif %}
+              
+              {% if post.tags %}
+                <div class="blog-tags">
+                  {% for tag in post.tags %}
+                    <span class="blog-tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </a>
+        </article>
       {% endfor %}
     {% else %}
       {% for post in site.posts %}
-        <li>
-          <time datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </time>
-          — 
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </li>
+        <article class="blog-card" data-tags="{{ post.tags | join: ',' | downcase | replace: ' ', '-' }}">
+          <a href="{{ post.url | relative_url }}" class="blog-link">
+            {% if post.featured_image %}
+              <div class="blog-image">
+                <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}">
+              </div>
+            {% endif %}
+            
+            <div class="blog-content">
+              <h3 class="blog-title">{{ post.title }}</h3>
+              
+              <p class="blog-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+              
+              {% if post.excerpt %}
+                <p class="blog-excerpt">{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+              {% endif %}
+              
+              {% if post.tags %}
+                <div class="blog-tags">
+                  {% for tag in post.tags %}
+                    <span class="blog-tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </a>
+        </article>
       {% endfor %}
     {% endif %}
-  </ul>
+  </div>
 
   {% if paginator.total_pages > 1 %}
     <nav class="pagination">
@@ -66,3 +120,35 @@ layout: default
     </nav>
   {% endif %}
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const blogCards = document.querySelectorAll('.blog-card');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+      
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter blog cards
+      blogCards.forEach(card => {
+        const cardTags = card.getAttribute('data-tags');
+        
+        if (filter === 'all') {
+          card.classList.remove('filter-hidden');
+        } else {
+          if (cardTags && cardTags.includes(filter)) {
+            card.classList.remove('filter-hidden');
+          } else {
+            card.classList.add('filter-hidden');
+          }
+        }
+      });
+    });
+  });
+});
+</script>

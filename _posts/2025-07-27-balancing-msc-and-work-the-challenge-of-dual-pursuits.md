@@ -3,6 +3,7 @@ layout: post
 title: "Balancing MSc and Work: The Challenge of Dual Pursuits in Data Science"
 date: 2025-07-27
 categories: [education, career, data-science]
+tags: ["Personal Reflections"]
 excerpt: "Pursuing a Master's degree while working full-time isn't just about time management—it's about strategic learning, career growth, and maintaining your sanity. Here's my honest take on the challenges and rewards."
 ---
 

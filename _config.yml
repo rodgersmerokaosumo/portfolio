@@ -55,6 +55,14 @@ kramdown:
   syntax_highlighter: rouge
 
 ###############################################################################
+# Collections
+###############################################################################
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+###############################################################################
 # Layout defaults
 ###############################################################################
 defaults:
@@ -70,6 +78,12 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
 ###############################################################################
 # Navigation (header links)

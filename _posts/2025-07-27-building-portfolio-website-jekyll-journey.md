@@ -3,6 +3,7 @@ layout: post
 title: "Building My Portfolio Website: A Jekyll Journey from Vision to Reality"
 date: 2025-07-27
 categories: [web-development, portfolio, jekyll]
+tags: ["Project Journey"]
 excerpt: "From choosing Jekyll to crafting a custom theme inspired by minimalist design principles, here's the story of building my portfolio website and the lessons learned along the way."
 ---
 

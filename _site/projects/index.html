@@ -101,8 +101,207 @@
     <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
 
     <div class="main-content" id="main-content">
-      <p>Project case studies and write-ups will appear here soon.</p>
+      <!-- Projects Hero Section -->
+<section class="projects-hero">
+  
+    <div class="hero-image">
+      <img src="/portfolio/assets/img/projects-hero.jpg" alt="Projects">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>Projects</h1>
+          
+            <p class="hero-description">Explore my portfolio of data science and AI projects, showcasing real-world solutions and technical expertise across various industries and challen...</p>
+          
+        </div>
+      </div>
+    </div>
+  
+</section>
 
+<!-- Projects Tech Stack Filter -->
+<section class="tag-filter">
+  <div class="filter-container">
+    <h3>Filter by Technology</h3>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+      <button class="filter-btn" data-filter="web-development">Web Development</button>
+      <button class="filter-btn" data-filter="data-visualization">Data Visualization</button>
+      <button class="filter-btn" data-filter="cloud-platforms">Cloud Platforms</button>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="projects-archive">
+  <div class="projects-grid">
+    
+    
+      <article class="project-card" data-tech="python,postgis,react,docker,aws,leaflet">
+        <a href="/portfolio/projects/2024-12-15-geospatial-validation-platform/" class="project-link">
+          
+            <div class="project-image">
+              <img src="/portfolio/assets/img/projects/geospatial-validation.jpg" alt="Geospatial Data Validation Platform">
+            </div>
+          
+          
+          <div class="project-content">
+            <h3 class="project-title">Geospatial Data Validation Platform</h3>
+            
+            
+              <p class="project-excerpt">Built a comprehensive geospatial data validation system processing over 60,000 polygons with automated quality assurance and real-time visualization.</p>
+            
+            
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">Python</span>
+                
+                  <span class="project-tag">PostGIS</span>
+                
+                  <span class="project-tag">React</span>
+                
+                  <span class="project-tag">Docker</span>
+                
+                  <span class="project-tag">AWS</span>
+                
+                  <span class="project-tag">Leaflet</span>
+                
+              </div>
+            
+            
+            
+              <div class="project-client">
+                <small>Client: TechGIS Solutions</small>
+              </div>
+            
+          </div>
+        </a>
+      </article>
+    
+      <article class="project-card" data-tech="python,streamlit,scikit-learn,apache-kafka,redis,postgresql,plotly">
+        <a href="/portfolio/projects/2024-11-20-retail-analytics-dashboard/" class="project-link">
+          
+            <div class="project-image">
+              <img src="/portfolio/assets/img/projects/retail-analytics.jpg" alt="AI-Powered Retail Analytics Dashboard">
+            </div>
+          
+          
+          <div class="project-content">
+            <h3 class="project-title">AI-Powered Retail Analytics Dashboard</h3>
+            
+            
+              <p class="project-excerpt">Developed an intelligent retail analytics platform with predictive modeling, real-time data streaming, and interactive visualizations for enterprise decision-making.</p>
+            
+            
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">Python</span>
+                
+                  <span class="project-tag">Streamlit</span>
+                
+                  <span class="project-tag">Scikit-learn</span>
+                
+                  <span class="project-tag">Apache Kafka</span>
+                
+                  <span class="project-tag">Redis</span>
+                
+                  <span class="project-tag">PostgreSQL</span>
+                
+                  <span class="project-tag">Plotly</span>
+                
+              </div>
+            
+            
+            
+              <div class="project-client">
+                <small>Client: RetailMax Corporation</small>
+              </div>
+            
+          </div>
+        </a>
+      </article>
+    
+      <article class="project-card" data-tech="python,tensorflow,apache-spark,mlflow,kubernetes,mongodb,fastapi">
+        <a href="/portfolio/projects/2024-10-05-financial-risk-ml-system/" class="project-link">
+          
+            <div class="project-image">
+              <img src="/portfolio/assets/img/projects/financial-risk-ml.jpg" alt="ML-Driven Financial Risk Assessment System">
+            </div>
+          
+          
+          <div class="project-content">
+            <h3 class="project-title">ML-Driven Financial Risk Assessment System</h3>
+            
+            
+              <p class="project-excerpt">Engineered a sophisticated machine learning system for credit risk assessment, reducing loan default rates by 23% through advanced ensemble modeling...</p>
+            
+            
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">Python</span>
+                
+                  <span class="project-tag">TensorFlow</span>
+                
+                  <span class="project-tag">Apache Spark</span>
+                
+                  <span class="project-tag">MLflow</span>
+                
+                  <span class="project-tag">Kubernetes</span>
+                
+                  <span class="project-tag">MongoDB</span>
+                
+                  <span class="project-tag">FastAPI</span>
+                
+              </div>
+            
+            
+            
+              <div class="project-client">
+                <small>Client: FinanceSecure Bank</small>
+              </div>
+            
+          </div>
+        </a>
+      </article>
+    
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+      
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter project cards
+      projectCards.forEach(card => {
+        const cardTech = card.getAttribute('data-tech');
+        
+        if (filter === 'all') {
+          card.classList.remove('filter-hidden');
+        } else {
+          if (cardTech && cardTech.includes(filter)) {
+            card.classList.remove('filter-hidden');
+          } else {
+            card.classList.add('filter-hidden');
+          }
+        }
+      });
+    });
+  });
+});
+</script>
     </div>
 
     <script>

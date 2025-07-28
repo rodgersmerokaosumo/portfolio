@@ -1,0 +1,117 @@
+---
+layout: default
+---
+
+<!-- Projects Hero Section -->
+<section class="projects-hero">
+  {% if page.hero_image %}
+    <div class="hero-image">
+      <img src="{{ page.hero_image | relative_url }}" alt="{{ page.title }}">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1>{{ page.title }}</h1>
+          {% if content != empty %}
+            <p class="hero-description">{{ content | strip_html | truncate: 150 }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <!-- Default gradient hero when no image is provided -->
+    <div class="hero-gradient">
+      <div class="hero-content">
+        <h1>{{ page.title }}</h1>
+        {% if content != empty %}
+          <p class="hero-description">{{ content | strip_html }}</p>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+<!-- Projects Tech Stack Filter -->
+<section class="tag-filter">
+  <div class="filter-container">
+    <h3>Filter by Technology</h3>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+      <button class="filter-btn" data-filter="web-development">Web Development</button>
+      <button class="filter-btn" data-filter="data-visualization">Data Visualization</button>
+      <button class="filter-btn" data-filter="cloud-platforms">Cloud Platforms</button>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="projects-archive">
+  <div class="projects-grid">
+    {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+    {% for project in sorted_projects %}
+      <article class="project-card" data-tech="{{ project.tech_stack | join: ',' | downcase | replace: ' ', '-' }}">
+        <a href="{{ project.url | relative_url }}" class="project-link">
+          {% if project.featured_image %}
+            <div class="project-image">
+              <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}">
+            </div>
+          {% endif %}
+          
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            
+            {% if project.excerpt %}
+              <p class="project-excerpt">{{ project.excerpt | strip_html | truncatewords: 20 }}</p>
+            {% endif %}
+            
+            {% if project.tech_stack %}
+              <div class="project-tags">
+                {% for tech in project.tech_stack %}
+                  <span class="project-tag">{{ tech }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+            
+            {% if project.client %}
+              <div class="project-client">
+                <small>Client: {{ project.client }}</small>
+              </div>
+            {% endif %}
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+      
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter project cards
+      projectCards.forEach(card => {
+        const cardTech = card.getAttribute('data-tech');
+        
+        if (filter === 'all') {
+          card.classList.remove('filter-hidden');
+        } else {
+          if (cardTech && cardTech.includes(filter)) {
+            card.classList.remove('filter-hidden');
+          } else {
+            card.classList.add('filter-hidden');
+          }
+        }
+      });
+    });
+  });
+});
+</script>
