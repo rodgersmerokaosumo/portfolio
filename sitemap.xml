@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://rodgersmerokaosumo.github.io/portfolio/faith/purpose/reflections/2025/07/18/faith-and-purpose-finding-meaning.html</loc>
+<lastmod>2025-07-18T00:00:00+03:00</lastmod>
+</url>
+<url>
+<loc>https://rodgersmerokaosumo.github.io/portfolio/data-science/career/work/2025/07/20/work-reflections-data-science-impact.html</loc>
+<lastmod>2025-07-20T00:00:00+03:00</lastmod>
+</url>
+<url>
 <loc>https://rodgersmerokaosumo.github.io/portfolio/blog/2025/07/26/hello-world.html</loc>
 <lastmod>2025-07-26T00:00:00+03:00</lastmod>
 </url>
@@ -11,6 +19,18 @@
 <url>
 <loc>https://rodgersmerokaosumo.github.io/portfolio/web-development/portfolio/jekyll/2025/07/27/building-portfolio-website-jekyll-journey.html</loc>
 <lastmod>2025-07-27T00:00:00+03:00</lastmod>
+</url>
+<url>
+<loc>https://rodgersmerokaosumo.github.io/portfolio/projects/2024-10-05-financial-risk-ml-system/</loc>
+<lastmod>2024-10-05T00:00:00+03:00</lastmod>
+</url>
+<url>
+<loc>https://rodgersmerokaosumo.github.io/portfolio/projects/2024-11-20-retail-analytics-dashboard/</loc>
+<lastmod>2024-11-20T00:00:00+03:00</lastmod>
+</url>
+<url>
+<loc>https://rodgersmerokaosumo.github.io/portfolio/projects/2024-12-15-geospatial-validation-platform/</loc>
+<lastmod>2024-12-15T00:00:00+03:00</lastmod>
 </url>
 <url>
 <loc>https://rodgersmerokaosumo.github.io/portfolio/contact/</loc>
@@ -26,6 +46,6 @@
 </url>
 <url>
 <loc>https://rodgersmerokaosumo.github.io/portfolio/assets/resume.pdf</loc>
-<lastmod>2025-07-28T00:20:07+03:00</lastmod>
+<lastmod>2025-07-28T10:51:39+03:00</lastmod>
 </url>
 </urlset>

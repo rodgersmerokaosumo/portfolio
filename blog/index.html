@@ -121,40 +121,196 @@
   
 </section>
 
-<!-- Blog Posts List -->
-<section class="archive">
-  <ul>
+<!-- Blog Tag Filter -->
+<section class="tag-filter">
+  <div class="filter-container">
+    <h3>Filter by Category</h3>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Posts</button>
+      <button class="filter-btn" data-filter="personal-reflections">Personal Reflections</button>
+      <button class="filter-btn" data-filter="work-insights">Work Insights</button>
+      <button class="filter-btn" data-filter="project-journey">Project Journey</button>
+      <button class="filter-btn" data-filter="spiritual-reflections">Spiritual Reflections</button>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Posts Grid -->
+<section class="blog-archive">
+  <div class="blog-grid">
     
       
-        <li>
-          <time datetime="2025-07-26T00:00:00+03:00">
-            Jul 26, 2025
-          </time>
-          — 
-          <a href="/portfolio/blog/2025/07/26/hello-world.html">Hello World</a>
-        </li>
+        <article class="blog-card" data-tags="spiritual-reflections">
+          <a href="/portfolio/faith/purpose/reflections/2025/07/18/faith-and-purpose-finding-meaning.html" class="blog-link">
+            
+              <div class="blog-image">
+                <img src="/portfolio/assets/img/blog/faith-purpose.jpg" alt="Faith and Purpose: Finding Meaning in the Intersection of Technology and Service">
+              </div>
+            
+            
+            <div class="blog-content">
+              <h3 class="blog-title">Faith and Purpose: Finding Meaning in the Intersection of Technology and Service</h3>
+              
+              <p class="blog-date">July 18, 2025</p>
+              
+              
+                <p class="blog-excerpt">How do we reconcile our faith with our professional calling in technology? Reflections on finding...</p>
+              
+              
+              
+                <div class="blog-tags">
+                  
+                    <span class="blog-tag">Spiritual Reflections</span>
+                  
+                </div>
+              
+            </div>
+          </a>
+        </article>
       
-        <li>
-          <time datetime="2025-07-27T00:00:00+03:00">
-            Jul 27, 2025
-          </time>
-          — 
-          <a href="/portfolio/education/career/data-science/2025/07/27/balancing-msc-and-work-the-challenge-of-dual-pursuits.html">Balancing MSc and Work: The Challenge of Dual Pursuits in Data Science</a>
-        </li>
+        <article class="blog-card" data-tags="work-insights">
+          <a href="/portfolio/data-science/career/work/2025/07/20/work-reflections-data-science-impact.html" class="blog-link">
+            
+              <div class="blog-image">
+                <img src="/portfolio/assets/img/blog/data-science-impact.jpg" alt="Making Data Science Matter: Reflections on Impact Beyond the Algorithms">
+              </div>
+            
+            
+            <div class="blog-content">
+              <h3 class="blog-title">Making Data Science Matter: Reflections on Impact Beyond the Algorithms</h3>
+              
+              <p class="blog-date">July 20, 2025</p>
+              
+              
+                <p class="blog-excerpt">After three years in the field, I've learned that successful data science isn't about having...</p>
+              
+              
+              
+                <div class="blog-tags">
+                  
+                    <span class="blog-tag">Work Insights</span>
+                  
+                </div>
+              
+            </div>
+          </a>
+        </article>
       
-        <li>
-          <time datetime="2025-07-27T00:00:00+03:00">
-            Jul 27, 2025
-          </time>
-          — 
-          <a href="/portfolio/web-development/portfolio/jekyll/2025/07/27/building-portfolio-website-jekyll-journey.html">Building My Portfolio Website: A Jekyll Journey from Vision to Reality</a>
-        </li>
+        <article class="blog-card" data-tags="personal-reflections">
+          <a href="/portfolio/blog/2025/07/26/hello-world.html" class="blog-link">
+            
+              <div class="blog-image">
+                <img src="/portfolio/assets/img/post-example.png" alt="Hello World">
+              </div>
+            
+            
+            <div class="blog-content">
+              <h3 class="blog-title">Hello World</h3>
+              
+              <p class="blog-date">July 26, 2025</p>
+              
+              
+                <p class="blog-excerpt">First post on the new site—checking that the blog works.
+New Changes
+</p>
+              
+              
+              
+                <div class="blog-tags">
+                  
+                    <span class="blog-tag">Personal Reflections</span>
+                  
+                </div>
+              
+            </div>
+          </a>
+        </article>
+      
+        <article class="blog-card" data-tags="personal-reflections">
+          <a href="/portfolio/education/career/data-science/2025/07/27/balancing-msc-and-work-the-challenge-of-dual-pursuits.html" class="blog-link">
+            
+            
+            <div class="blog-content">
+              <h3 class="blog-title">Balancing MSc and Work: The Challenge of Dual Pursuits in Data Science</h3>
+              
+              <p class="blog-date">July 27, 2025</p>
+              
+              
+                <p class="blog-excerpt">Pursuing a Master's degree while working full-time isn't just about time management—it's about strategic learning,...</p>
+              
+              
+              
+                <div class="blog-tags">
+                  
+                    <span class="blog-tag">Personal Reflections</span>
+                  
+                </div>
+              
+            </div>
+          </a>
+        </article>
+      
+        <article class="blog-card" data-tags="project-journey">
+          <a href="/portfolio/web-development/portfolio/jekyll/2025/07/27/building-portfolio-website-jekyll-journey.html" class="blog-link">
+            
+            
+            <div class="blog-content">
+              <h3 class="blog-title">Building My Portfolio Website: A Jekyll Journey from Vision to Reality</h3>
+              
+              <p class="blog-date">July 27, 2025</p>
+              
+              
+                <p class="blog-excerpt">From choosing Jekyll to crafting a custom theme inspired by minimalist design principles, here's the...</p>
+              
+              
+              
+                <div class="blog-tags">
+                  
+                    <span class="blog-tag">Project Journey</span>
+                  
+                </div>
+              
+            </div>
+          </a>
+        </article>
       
     
-  </ul>
+  </div>
 
   
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const blogCards = document.querySelectorAll('.blog-card');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+      
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter blog cards
+      blogCards.forEach(card => {
+        const cardTags = card.getAttribute('data-tags');
+        
+        if (filter === 'all') {
+          card.classList.remove('filter-hidden');
+        } else {
+          if (cardTags && cardTags.includes(filter)) {
+            card.classList.remove('filter-hidden');
+          } else {
+            card.classList.add('filter-hidden');
+          }
+        }
+      });
+    });
+  });
+});
+</script>
 
     </div>
 
