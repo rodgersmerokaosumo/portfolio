@@ -1,0 +1,236 @@
+// Layout variables
+:root { 
+  --sidebar-width: 280px;
+  --content-max-width: 900px;
+}
+
+// Elegant sidebar design
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: $sidebar-bg;
+  color: $sidebar-text;
+  display: flex;
+  flex-direction: column;
+  padding: $space-3xl $space-xl;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+// Sidebar header with refined typography
+.sidebar-header {
+  margin-bottom: $space-3xl;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: $space-xl;
+  text-align: center;
+}
+
+.sidebar-title {
+  font-family: $font-heading;
+  font-size: $size-2xl;
+  font-weight: 700;
+  color: $sidebar-text;
+  margin-bottom: $space-sm;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.sidebar-tagline {
+  font-size: $size-sm;
+  color: rgba($sidebar-text, 0.7);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+// Sidebar avatar styling
+.sidebar-avatar {
+  margin-bottom: $space-lg;
+  
+  .avatar-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      border-color: $color-accent;
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Clean navigation
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: auto;
+}
+
+.sidebar-nav li {
+  margin-bottom: $space-sm;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: $space-md;
+  color: rgba($sidebar-text, 0.8);
+  text-decoration: none;
+  font-size: $size-base;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: $sidebar-text;
+    transform: translateX(2px);
+  }
+  
+  &.active {
+    background-color: $sidebar-accent;
+    color: $sidebar-text;
+  }
+}
+
+// Minimal social icons
+.social-icons {
+  display: flex;
+  gap: $space-md;
+  margin-top: $space-xl;
+  padding-top: $space-xl;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: rgba($sidebar-text, 0.7);
+  text-decoration: none;
+  font-size: $size-base;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: $sidebar-accent;
+    border-color: $sidebar-accent;
+    color: $sidebar-text;
+    transform: translateY(-1px);
+  }
+}
+
+// Subtle copyright
+.sidebar-copyright {
+  font-size: $size-xs;
+  color: rgba($sidebar-text, 0.5);
+  margin-top: $space-lg;
+  text-align: center;
+  font-style: italic;
+}
+
+// Refined toggle button
+.sidebar-toggle {
+  position: fixed;
+  top: $space-lg;
+  left: calc(var(--sidebar-width) + #{$space-lg});
+  background-color: $color-primary;
+  color: $color-bg;
+  border: none;
+  border-radius: 4px;
+  padding: $space-sm $space-md;
+  font-size: $size-base;
+  cursor: pointer;
+  z-index: 1101;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    background-color: darken($color-primary, 10%);
+    transform: translateY(-1px);
+  }
+}
+
+.sidebar.collapsed + .sidebar-toggle {
+  left: $space-lg;
+}
+
+// Content area with optimal reading width
+.main-content {
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+}
+
+.main-content.expanded {
+  margin-left: 0;
+}
+
+// Container for content with optimal line length
+.container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: $space-xl $space-md;
+  
+  @media (max-width: $bp-tablet) {
+    padding: $space-lg $space-sm;
+  }
+}
+
+// Hero section styling
+.hero {
+  text-align: center;
+  margin-bottom: $space-2xl;
+  padding: $space-2xl 0;
+  border-bottom: 1px solid $color-border;
+  
+  h1 {
+    font-size: $size-4xl;
+    margin-bottom: $space-md;
+    
+    @media (max-width: $bp-tablet) {
+      font-size: $size-3xl;
+    }
+  }
+  
+  .tagline {
+    font-size: $size-lg;
+    color: $color-light;
+    font-style: italic;
+    margin: 0;
+  }
+}
+
+// Responsive behavior
+@media (max-width: $bp-tablet) {
+  .sidebar {
+    transform: translateX(-100%);
+    
+    &.collapsed {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .sidebar-toggle {
+    left: $space-lg;
+  }
+}

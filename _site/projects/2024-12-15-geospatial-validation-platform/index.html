@@ -192,12 +192,12 @@
 
 <h3 id="spatial-data-processing">Spatial Data Processing</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">validate_polygon_topology</span><span class="p">(</span><span class="n">gdf</span><span class="p">):</span>
-    <span class="sh">"""</span><span class="s">Comprehensive topology validation for polygon geometries</span><span class="sh">"""</span>
+    <span class="s">"""Comprehensive topology validation for polygon geometries"""</span>
     <span class="n">validation_results</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="sh">'</span><span class="s">valid_geometries</span><span class="sh">'</span><span class="p">:</span> <span class="n">gdf</span><span class="p">.</span><span class="n">is_valid</span><span class="p">.</span><span class="nf">sum</span><span class="p">(),</span>
-        <span class="sh">'</span><span class="s">self_intersections</span><span class="sh">'</span><span class="p">:</span> <span class="p">(</span><span class="o">~</span><span class="n">gdf</span><span class="p">.</span><span class="n">is_valid</span><span class="p">).</span><span class="nf">sum</span><span class="p">(),</span>
-        <span class="sh">'</span><span class="s">overlaps</span><span class="sh">'</span><span class="p">:</span> <span class="nf">check_overlaps</span><span class="p">(</span><span class="n">gdf</span><span class="p">),</span>
-        <span class="sh">'</span><span class="s">gaps</span><span class="sh">'</span><span class="p">:</span> <span class="nf">identify_gaps</span><span class="p">(</span><span class="n">gdf</span><span class="p">)</span>
+        <span class="s">'valid_geometries'</span><span class="p">:</span> <span class="n">gdf</span><span class="p">.</span><span class="n">is_valid</span><span class="p">.</span><span class="nb">sum</span><span class="p">(),</span>
+        <span class="s">'self_intersections'</span><span class="p">:</span> <span class="p">(</span><span class="o">~</span><span class="n">gdf</span><span class="p">.</span><span class="n">is_valid</span><span class="p">).</span><span class="nb">sum</span><span class="p">(),</span>
+        <span class="s">'overlaps'</span><span class="p">:</span> <span class="n">check_overlaps</span><span class="p">(</span><span class="n">gdf</span><span class="p">),</span>
+        <span class="s">'gaps'</span><span class="p">:</span> <span class="n">identify_gaps</span><span class="p">(</span><span class="n">gdf</span><span class="p">)</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">validation_results</span>
 </code></pre></div></div>
