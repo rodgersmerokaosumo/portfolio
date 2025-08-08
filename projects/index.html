@@ -290,34 +290,46 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
   const headerSection = document.querySelector('.listing-header');
   const tagFilter = document.querySelector('.tag-filter');
   const floatingFilter = document.querySelector('.floating-filter');
   const filterToggle = document.querySelector('.filter-toggle');
   const filterDropdown = document.querySelector('.filter-dropdown');
   
+  // Store original cards to preserve event listeners
+  const originalCards = Array.from(document.querySelectorAll('.project-card'));
+  
   let lastScrollTop = 0;
   let isDropdownOpen = false;
   
-  // Filter functionality for project cards
+  // Filter functionality for project cards with proper grid reflow
   function handleFilter(filter) {
-    // Filter project cards
-    projectCards.forEach(card => {
+    const grid = document.querySelector('.projects-grid');
+    
+    // Get visible cards based on filter
+    const visibleCards = originalCards.filter(card => {
       const cardTech = card.getAttribute('data-tech');
+      return filter === 'all' || (cardTech && cardTech.includes(filter));
+    });
+    
+    // Clear the grid
+    grid.innerHTML = '';
+    
+    // Add visible cards back to grid with animation
+    visibleCards.forEach((card, index) => {
+      // Reset card styles and add to grid
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = '';
       
-      if (filter === 'all') {
-        card.style.display = 'block';
-        card.classList.remove('filter-hidden');
-      } else {
-        if (cardTech && cardTech.includes(filter)) {
-          card.style.display = 'block';
-          card.classList.remove('filter-hidden');
-        } else {
-          card.style.display = 'none';
-          card.classList.add('filter-hidden');
-        }
-      }
+      grid.appendChild(card);
+      
+      // Animate in with staggered timing
+      setTimeout(() => {
+        card.style.transition = 'all 0.3s ease';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, index * 50);
     });
   }
   
