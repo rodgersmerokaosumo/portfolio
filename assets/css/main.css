@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: #222222;
   line-height: 1.3;
-  margin: 3rem 0 1rem 0;
+  margin: 2rem 0 0.75rem 0;
 }
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
   margin-top: 0;
@@ -41,28 +41,28 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
 }
 
 h3 {
   font-size: 1.25rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 h4 {
   font-size: 1.125rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 h5, h6 {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 p {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 p:first-child {
   margin-top: 0;
@@ -77,12 +77,12 @@ a {
   transition: color 0.2s ease;
 }
 a:hover {
-  color: rgb(25.8542713568, 96.6457286432, 88.027638191);
+  color: #1a6158;
 }
 
 ul, ol {
-  margin: 1.5rem 0;
-  padding-left: 2rem;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
 }
 
 li {
@@ -90,8 +90,8 @@ li {
 }
 
 blockquote {
-  margin: 2rem 0;
-  padding: 1.5rem 2rem;
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
   border-left: 3px solid #e5e5e5;
   background-color: #fafafa;
   font-style: italic;
@@ -112,10 +112,10 @@ code {
 pre {
   font-family: "Monaco", "Menlo", "Consolas", monospace;
   background-color: #fafafa;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 5px;
   overflow-x: auto;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   border: 1px solid #e5e5e5;
 }
 pre code {
@@ -127,7 +127,7 @@ hr {
   border: none;
   height: 1px;
   background-color: #e5e5e5;
-  margin: 4rem 0;
+  margin: 2.5rem 0;
 }
 
 img {
@@ -139,10 +139,10 @@ img {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 table th, table td {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   text-align: left;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -152,8 +152,8 @@ table th {
 }
 
 .post-summary {
-  margin-bottom: 4rem;
-  padding-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid #e5e5e5;
 }
 .post-summary:last-child {
@@ -161,7 +161,7 @@ table th {
   margin-bottom: 0;
 }
 .post-summary header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .post-summary h2 {
   margin: 0 0 0.5rem 0;
@@ -182,7 +182,7 @@ table th {
 }
 .post-summary .excerpt {
   color: #555555;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   line-height: 1.6;
 }
 .post-summary .excerpt p {
@@ -199,7 +199,7 @@ table th {
   transition: all 0.2s ease;
 }
 .post-summary .read-more:hover {
-  color: rgb(25.8542713568, 96.6457286432, 88.027638191);
+  color: #1a6158;
   transform: translateX(2px);
 }
 .post-summary .read-more::after {
@@ -218,8 +218,8 @@ table th {
 .posts-list li {
   display: flex;
   align-items: baseline;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #e5e5e5;
 }
 .posts-list li:last-child {
@@ -231,12 +231,12 @@ table th {
   color: #888888;
   font-weight: 500;
   min-width: 120px;
-  margin-right: 1.5rem;
+  margin-right: 1rem;
 }
 @media (max-width: 480px) {
   .posts-list time {
     min-width: auto;
-    margin-right: 1rem;
+    margin-right: 0.75rem;
   }
 }
 .posts-list a {
@@ -251,12 +251,12 @@ table th {
 
 .post header {
   text-align: center;
-  margin-bottom: 4rem;
-  padding-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid #e5e5e5;
 }
 .post header h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 .post header .post-meta {
   font-size: 0.875rem;
@@ -266,7 +266,7 @@ table th {
 }
 
 .post-featured-image {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 .post-featured-image img {
@@ -281,7 +281,7 @@ table th {
   line-height: 1.7;
 }
 .post-content p + p {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 .post-content ul li, .post-content ol li {
   margin: 0.5rem 0;
@@ -300,8 +300,8 @@ table th {
 }
 .page-content h1:first-child {
   text-align: center;
-  margin-bottom: 4rem;
-  padding-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -309,13 +309,13 @@ table th {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 4rem;
-  padding-top: 3rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
   border-top: 1px solid #e5e5e5;
 }
 .pagination a {
   display: inline-block;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   background-color: #fafafa;
   color: #222222;
   text-decoration: none;
@@ -339,8 +339,8 @@ table th {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
-  margin-bottom: 2rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .card:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -349,7 +349,7 @@ table th {
 
 .button {
   display: inline-block;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   background-color: #2a9d8f;
   color: #ffffff;
   text-decoration: none;
@@ -363,7 +363,7 @@ table th {
   cursor: pointer;
 }
 .button:hover {
-  background-color: rgb(31.2361809045, 116.7638190955, 106.351758794);
+  background-color: #1f756a;
   transform: translateY(-1px);
   color: #ffffff;
 }
@@ -376,7 +376,7 @@ table th {
   color: #ffffff;
 }
 .button-primary:hover {
-  background-color: rgb(31.2361809045, 116.7638190955, 106.351758794);
+  background-color: #1f756a;
   color: #ffffff;
 }
 
@@ -391,25 +391,25 @@ table th {
 }
 
 .homepage-intro {
-  padding: 4rem 0;
+  padding: 1.5rem 0;
   background-color: white;
 }
 .homepage-intro .intro-content {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 0.75rem;
   text-align: center;
 }
 .homepage-intro .intro-content .intro-lead {
   font-size: 1.25rem;
   line-height: 1.6;
   color: #555555;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-weight: 400;
 }
 .homepage-intro .intro-content .intro-actions {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -421,76 +421,144 @@ table th {
 }
 
 .featured-content {
-  padding: 4rem 0;
+  padding: 1.5rem 0;
 }
 .featured-content .content-grid {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 0.75rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 @media (max-width: 768px) {
   .featured-content .content-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .featured-content .content-grid {
+    padding: 0 0.5rem;
+    gap: 0.75rem;
   }
 }
 .featured-content .featured-section {
-  text-align: center;
-  padding: 2rem;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 150ms ease;
   border: 1px solid #e5e5e5;
-  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
 }
 .featured-content .featured-section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+.featured-content .featured-section:focus-within {
+  outline: 2px solid #2a9d8f;
+  outline-offset: 2px;
+}
+.featured-content .featured-section .card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.featured-content .featured-section .card-header {
+  margin-bottom: 16px;
 }
 .featured-content .featured-section h2 {
-  font-size: 1.25rem;
+  font-family: "Playfair Display", "Georgia", "Times New Roman", serif;
+  font-size: 1.375rem;
   font-weight: 600;
+  line-height: 1.3;
   color: #222222;
-  margin-bottom: 1rem;
+  margin-bottom: 8px;
 }
 .featured-content .featured-section p {
-  color: #555555;
+  font-family: "Inter", "Helvetica Neue", "Arial", sans-serif;
+  font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  color: #555555;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
-.featured-content .featured-section .read-more {
+.featured-content .featured-section .card-footer {
+  margin-top: auto;
+}
+.featured-content .featured-section .read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: transparent;
   color: #2a9d8f;
   text-decoration: none;
+  border: 1px solid #2a9d8f;
+  border-radius: 6px;
+  font-family: "Inter", "Helvetica Neue", "Arial", sans-serif;
+  font-size: 0.875rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: all 150ms ease;
+  white-space: nowrap;
 }
-.featured-content .featured-section .read-more:hover {
-  color: rgb(25.8542713568, 96.6457286432, 88.027638191);
+.featured-content .featured-section .read-more-btn:hover {
+  background-color: #2a9d8f;
+  color: white;
+}
+.featured-content .featured-section .read-more-btn:focus {
+  outline: 2px solid #2a9d8f;
+  outline-offset: 2px;
+}
+.featured-content .featured-section .read-more-btn i {
+  font-size: 0.75rem;
+  transition: transform 150ms ease;
+}
+.featured-content .featured-section .read-more-btn:hover i {
+  transform: translateX(2px);
+}
+@media (max-width: 480px) {
+  .featured-content .featured-section .card-content {
+    padding: 16px;
+  }
+  .featured-content .featured-section h2 {
+    font-size: 1.25rem;
+  }
+  .featured-content .featured-section p {
+    font-size: 0.9375rem;
+  }
+  .featured-content .featured-section .read-more-btn {
+    width: 100%;
+    justify-content: center;
+    height: 48px;
+  }
 }
 
 .about-intro {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
   background-color: white;
 }
 .about-intro .intro-content {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 .about-intro .intro-content h2 {
   font-size: 2rem;
   font-weight: 700;
   color: #222222;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 .about-intro .intro-content .intro-text {
   font-size: 1.125rem;
   line-height: 1.8;
   color: #555555;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .about-intro .intro-content .intro-text strong {
   color: #222222;
@@ -502,9 +570,9 @@ table th {
 }
 .about-intro .intro-content .intro-actions {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 @media (max-width: 480px) {
   .about-intro .intro-content .intro-actions {
@@ -514,19 +582,19 @@ table th {
 }
 
 .comments {
-  margin-top: 4rem;
-  padding-top: 3rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
   border-top: 1px solid #e5e5e5;
 }
 
 .page-header {
   text-align: center;
-  margin-bottom: 4rem;
-  padding-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid #e5e5e5;
 }
 .page-header h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 .page-header p {
   color: #888888;
@@ -547,7 +615,7 @@ table th {
     font-size: 1.25rem;
   }
   .hero {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
   .hero h1 {
     font-size: 2rem;
@@ -619,7 +687,7 @@ table th {
   text-align: center;
   color: white;
   max-width: 600px;
-  padding: 2rem;
+  padding: 1.5rem;
   position: relative;
   z-index: 2;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -627,7 +695,7 @@ table th {
 .blog-hero .hero-content h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 768px) {
@@ -656,17 +724,17 @@ table th {
 .blog-archive {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 2.5rem 1.5rem;
 }
 .blog-archive .blog-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 @media (max-width: 768px) {
   .blog-archive .blog-grid {
-    gap: 1.5rem;
+    gap: 1rem;
     justify-content: space-between;
   }
 }
@@ -674,25 +742,25 @@ table th {
   .blog-archive .blog-grid {
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 }
 
 .archive {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 2.5rem 1.5rem;
 }
 .archive h1 {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .archive .page-description {
   text-align: center;
   color: #888888;
   font-style: italic;
-  margin-bottom: 4rem;
-  padding-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid #e5e5e5;
 }
 .archive ul {
@@ -703,8 +771,8 @@ table th {
 .archive li {
   display: flex;
   align-items: baseline;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #e5e5e5;
 }
 .archive li:last-child {
@@ -716,12 +784,12 @@ table th {
   color: #888888;
   font-weight: 500;
   min-width: 120px;
-  margin-right: 1.5rem;
+  margin-right: 1rem;
 }
 @media (max-width: 480px) {
   .archive time {
     min-width: auto;
-    margin-right: 1rem;
+    margin-right: 0.75rem;
   }
 }
 .archive a {
@@ -735,7 +803,7 @@ table th {
 }
 @media (max-width: 768px) {
   .archive {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
   }
   .archive li {
     flex-direction: column;
@@ -749,26 +817,26 @@ table th {
 }
 
 .contact-intro {
-  padding: 4rem 0;
+  padding: 1.5rem 0;
   background-color: white;
 }
 .contact-intro .intro-content {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 0.75rem;
   text-align: center;
 }
 .contact-intro .intro-content h2 {
   font-size: 2rem;
   font-weight: 700;
   color: #222222;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .contact-intro .intro-content .intro-text {
   font-size: 1.125rem;
   line-height: 1.8;
   color: #555555;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .contact-intro .intro-content .intro-text strong {
   color: #222222;
@@ -776,20 +844,24 @@ table th {
 }
 
 .contact-form-section {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
   background-color: #ffffff;
-  padding: 4rem;
-  border-radius: 8px;
+  padding: 2rem;
+  border-radius: 12px;
   border: 1px solid #e5e5e5;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 150ms ease;
+}
+.contact-form:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 .contact-form .form-group {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .contact-form .form-group label {
   display: block;
@@ -802,7 +874,7 @@ table th {
 .contact-form .form-group input[type=email],
 .contact-form .form-group textarea {
   width: 100%;
-  padding: 1rem;
+  padding: 0.75rem;
   border: 2px solid #e5e5e5;
   border-radius: 4px;
   font-size: 1rem;
@@ -849,13 +921,13 @@ table th {
   text-align: right;
 }
 .contact-form .form-messages {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 .contact-form .form-messages .success-message,
 .contact-form .form-messages .error-message-box {
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   border-radius: 4px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -878,8 +950,15 @@ table th {
   width: 100%;
   justify-content: center;
   font-size: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
   position: relative;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 150ms ease;
+}
+.contact-form .button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(42, 157, 143, 0.3);
 }
 .contact-form .button .btn-loading {
   position: absolute;
@@ -890,24 +969,24 @@ table th {
 @media (min-width: 768px) {
   .contact-form .button {
     width: auto;
-    min-width: 200px;
+    min-width: 180px;
   }
 }
 
 .contact-social {
-  padding: 3rem 0 4rem 0;
+  padding: 1.5rem 0 2rem 0;
   text-align: center;
 }
 .contact-social h3 {
   color: #222222;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   font-size: 1.125rem;
   font-weight: 600;
 }
 .contact-social .social-links {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 .contact-social .social-links .social-link {
@@ -938,18 +1017,18 @@ table th {
 .listing-header {
   background-color: #ffffff;
   border-bottom: 1px solid #e5e5e5;
-  padding: 60px 0 40px 0;
-  margin-bottom: 40px;
+  padding: 40px 0 30px 0;
+  margin-bottom: 30px;
 }
 .listing-header .header-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 16px;
   text-align: center;
 }
 @media (max-width: 768px) {
   .listing-header .header-content {
-    padding: 0 20px;
+    padding: 0 12px;
   }
 }
 .listing-header .page-title {
@@ -1035,18 +1114,18 @@ table th {
 
 .projects-grid-section,
 .blog-grid-section {
-  padding: 0 0 60px 0;
+  padding: 0 0 40px 0;
 }
 .projects-grid-section .container,
 .blog-grid-section .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 16px;
 }
 @media (max-width: 768px) {
   .projects-grid-section .container,
   .blog-grid-section .container {
-    padding: 0 20px;
+    padding: 0 12px;
   }
 }
 .projects-grid-section .projects-grid,
@@ -1055,7 +1134,7 @@ table th {
 .blog-grid-section .blog-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 24px;
 }
 @media (max-width: 768px) {
   .projects-grid-section .projects-grid,
@@ -1063,7 +1142,7 @@ table th {
   .blog-grid-section .projects-grid,
   .blog-grid-section .blog-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
 }
 
@@ -1107,11 +1186,11 @@ table th {
 }
 .project-card .card-content,
 .blog-card .card-content {
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   height: calc(100% - 200px);
-  min-height: 280px;
+  min-height: 260px;
 }
 .project-card .card-header,
 .blog-card .card-header {
@@ -1175,8 +1254,8 @@ table th {
 }
 .project-card .card-footer .tech-tags .tech-tag,
 .blog-card .card-footer .tech-tags .tech-tag {
-  background-color: rgb(190.7010050251, 237.7989949749, 232.0653266332);
-  color: rgb(20.472361809, 76.527638191, 69.7035175879);
+  background-color: #bfeee8;
+  color: #144d46;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.75rem;
@@ -1227,8 +1306,8 @@ table th {
 @media (max-width: 480px) {
   .project-card .card-content,
   .blog-card .card-content {
-    padding: 20px;
-    min-height: 260px;
+    padding: 16px;
+    min-height: 240px;
   }
   .project-card .card-title,
   .blog-card .card-title {
@@ -1255,18 +1334,18 @@ table th {
 
 .project header {
   text-align: center;
-  margin-bottom: 4rem;
-  padding-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid #e5e5e5;
 }
 .project header h1 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .project header .project-meta {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 .project header .project-meta .project-date {
   font-size: 0.875rem;
@@ -1304,7 +1383,7 @@ table th {
 }
 
 .project-featured-image {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 .project-featured-image img {
@@ -1319,7 +1398,7 @@ table th {
   line-height: 1.7;
 }
 .project-content p + p {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 .project-content ul li, .project-content ol li {
   margin: 0.5rem 0;
@@ -1334,23 +1413,23 @@ table th {
 
 @media (max-width: 480px) {
   .container {
-    padding: 2rem 1rem;
+    padding: 1.5rem 0.75rem;
   }
   .pagination {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
   }
   .pagination a {
     text-align: center;
   }
   .archive {
-    padding: 2rem 1rem;
+    padding: 1.5rem 0.75rem;
   }
   .contact-form {
-    padding: 2rem;
+    padding: 1rem;
   }
   .contact-social .social-links {
-    gap: 1rem;
+    gap: 0.75rem;
   }
   .contact-social .social-links .social-link {
     width: 50px;
@@ -1359,13 +1438,13 @@ table th {
   }
   .projects-archive,
   .blog-archive {
-    padding: 2rem 1rem;
+    padding: 1.5rem 0.75rem;
   }
   .projects-archive .projects-grid,
   .projects-archive .blog-grid,
   .blog-archive .projects-grid,
   .blog-archive .blog-grid {
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 0;
   }
   .project-card,
@@ -1379,7 +1458,7 @@ table th {
   .project-card .blog-content,
   .blog-card .project-content,
   .blog-card .blog-content {
-    padding: 1.5rem;
+    padding: 1rem;
   }
   .project-card .project-image,
   .project-card .blog-image,
@@ -1406,7 +1485,7 @@ table th {
   .project-card .blog-tags,
   .blog-card .project-tags,
   .blog-card .blog-tags {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
   }
   .project-card .project-tags .project-tag,
   .project-card .project-tags .blog-tag,
@@ -1420,18 +1499,18 @@ table th {
     padding: 0.25rem 0.5rem;
   }
   .tag-filter {
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.75rem;
   }
   .tag-filter .filter-container h3 {
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
   .tag-filter .filter-buttons {
     gap: 0.25rem;
   }
   .tag-filter .filter-btn {
     font-size: 0.75rem;
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 0.75rem;
     width: auto;
     min-width: 120px;
   }
@@ -1451,12 +1530,12 @@ table th {
   }
   .blog-hero .hero-content,
   .projects-hero .hero-content {
-    padding: 1.5rem;
+    padding: 1rem;
   }
   .blog-hero .hero-content h1,
   .projects-hero .hero-content h1 {
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
   .blog-hero .hero-content .hero-description,
   .projects-hero .hero-content .hero-description {
@@ -1594,7 +1673,7 @@ table th {
   pointer-events: auto;
 }
 .floating-filter .filter-toggle {
-  background: linear-gradient(135deg, #2a9d8f, rgb(31.2361809045, 116.7638190955, 106.351758794));
+  background: linear-gradient(135deg, #2a9d8f, #1f756a);
   color: white;
   border: none;
   border-radius: 50%;
@@ -1750,7 +1829,7 @@ table th {
 }
 :root {
   --sidebar-width: 280px;
-  --content-max-width: 720px;
+  --content-max-width: 900px;
 }
 
 .sidebar {
@@ -1763,7 +1842,7 @@ table th {
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  padding: 4rem 2rem;
+  padding: 2.5rem 1.5rem;
   transition: transform 0.3s ease;
   z-index: 1000;
   overflow-y: auto;
@@ -1775,9 +1854,9 @@ table th {
 }
 
 .sidebar-header {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   text-align: center;
 }
 
@@ -1799,7 +1878,7 @@ table th {
 }
 
 .sidebar-avatar {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .sidebar-avatar .avatar-image {
   width: 80px;
@@ -1827,7 +1906,7 @@ table th {
 
 .sidebar-nav a {
   display: block;
-  padding: 1rem;
+  padding: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-size: 1rem;
@@ -1847,9 +1926,9 @@ table th {
 
 .social-icons {
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-  padding-top: 2rem;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1877,20 +1956,20 @@ table th {
 .sidebar-copyright {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.5);
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   text-align: center;
   font-style: italic;
 }
 
 .sidebar-toggle {
   position: fixed;
-  top: 1.5rem;
-  left: calc(var(--sidebar-width) + 1.5rem);
+  top: 1rem;
+  left: calc(var(--sidebar-width) + 1rem);
   background-color: #222222;
   color: #ffffff;
   border: none;
   border-radius: 4px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   font-size: 1rem;
   cursor: pointer;
   z-index: 1101;
@@ -1898,12 +1977,12 @@ table th {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .sidebar-toggle:hover {
-  background-color: rgb(8.5, 8.5, 8.5);
+  background-color: #090909;
   transform: translateY(-1px);
 }
 
 .sidebar.collapsed + .sidebar-toggle {
-  left: 1.5rem;
+  left: 1rem;
 }
 
 .main-content {
@@ -1919,23 +1998,23 @@ table th {
 .container {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 1.5rem 0.75rem;
 }
 @media (max-width: 768px) {
   .container {
-    padding: 2rem 1.5rem;
+    padding: 1rem 0.5rem;
   }
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 4rem;
-  padding: 4rem 0;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
   border-bottom: 1px solid #e5e5e5;
 }
 .hero h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 @media (max-width: 768px) {
   .hero h1 {
@@ -1960,7 +2039,7 @@ table th {
     margin-left: 0;
   }
   .sidebar-toggle {
-    left: 1.5rem;
+    left: 1rem;
   }
 }
 

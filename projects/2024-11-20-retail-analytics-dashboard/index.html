@@ -194,23 +194,23 @@
 
 <h3 id="machine-learning-pipeline">Machine Learning Pipeline</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SalesForecaster</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="sh">'</span><span class="s">seasonal</span><span class="sh">'</span><span class="p">:</span> <span class="nc">SeasonalDecompose</span><span class="p">(),</span>
-            <span class="sh">'</span><span class="s">trend</span><span class="sh">'</span><span class="p">:</span> <span class="nc">LinearRegression</span><span class="p">(),</span>
-            <span class="sh">'</span><span class="s">ensemble</span><span class="sh">'</span><span class="p">:</span> <span class="nc">RandomForestRegressor</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'seasonal'</span><span class="p">:</span> <span class="n">SeasonalDecompose</span><span class="p">(),</span>
+            <span class="s">'trend'</span><span class="p">:</span> <span class="n">LinearRegression</span><span class="p">(),</span>
+            <span class="s">'ensemble'</span><span class="p">:</span> <span class="n">RandomForestRegressor</span><span class="p">()</span>
         <span class="p">}</span>
     
-    <span class="k">def</span> <span class="nf">predict_sales</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">store_id</span><span class="p">,</span> <span class="n">product_category</span><span class="p">,</span> <span class="n">days_ahead</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Multi-model ensemble for sales forecasting</span><span class="sh">"""</span>
-        <span class="n">features</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">prepare_features</span><span class="p">(</span><span class="n">store_id</span><span class="p">,</span> <span class="n">product_category</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">predict_sales</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">store_id</span><span class="p">,</span> <span class="n">product_category</span><span class="p">,</span> <span class="n">days_ahead</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+        <span class="s">"""Multi-model ensemble for sales forecasting"""</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">prepare_features</span><span class="p">(</span><span class="n">store_id</span><span class="p">,</span> <span class="n">product_category</span><span class="p">)</span>
         <span class="n">predictions</span> <span class="o">=</span> <span class="p">[]</span>
         
-        <span class="k">for</span> <span class="n">model_name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
-            <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-            <span class="n">predictions</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">model_name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+            <span class="n">predictions</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
             
-        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="real-time-data-processing">Real-time Data Processing</h3>

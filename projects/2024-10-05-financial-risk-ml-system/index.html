@@ -201,24 +201,24 @@
 
 <h3 id="credit-risk-scoring-model">Credit Risk Scoring Model</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CreditRiskEnsemble</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="sh">'</span><span class="s">xgboost</span><span class="sh">'</span><span class="p">:</span> <span class="nc">XGBClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span>
-            <span class="sh">'</span><span class="s">neural_net</span><span class="sh">'</span><span class="p">:</span> <span class="nc">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">128</span><span class="p">)),</span>
-            <span class="sh">'</span><span class="s">random_forest</span><span class="sh">'</span><span class="p">:</span> <span class="nc">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'xgboost'</span><span class="p">:</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span>
+            <span class="s">'neural_net'</span><span class="p">:</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">128</span><span class="p">)),</span>
+            <span class="s">'random_forest'</span><span class="p">:</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
         <span class="p">}</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">meta_learner</span> <span class="o">=</span> <span class="nc">LogisticRegression</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">meta_learner</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
     
-    <span class="k">def</span> <span class="nf">predict_risk_score</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">customer_features</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Ensemble prediction for credit risk assessment</span><span class="sh">"""</span>
+    <span class="k">def</span> <span class="nf">predict_risk_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">customer_features</span><span class="p">):</span>
+        <span class="s">"""Ensemble prediction for credit risk assessment"""</span>
         <span class="n">base_predictions</span> <span class="o">=</span> <span class="p">[]</span>
         
-        <span class="k">for</span> <span class="n">model_name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
-            <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">predict_proba</span><span class="p">(</span><span class="n">customer_features</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
-            <span class="n">base_predictions</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">model_name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">models</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">customer_features</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">base_predictions</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
         
-        <span class="n">stacked_features</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">column_stack</span><span class="p">(</span><span class="n">base_predictions</span><span class="p">)</span>
-        <span class="n">final_score</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">meta_learner</span><span class="p">.</span><span class="nf">predict_proba</span><span class="p">(</span><span class="n">stacked_features</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">stacked_features</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">column_stack</span><span class="p">(</span><span class="n">base_predictions</span><span class="p">)</span>
+        <span class="n">final_score</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">meta_learner</span><span class="p">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">stacked_features</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
         
         <span class="k">return</span> <span class="n">final_score</span>
 </code></pre></div></div>
@@ -262,24 +262,24 @@
 <h2 id="implementation-highlights">Implementation Highlights</h2>
 
 <h3 id="scalability-architecture">Scalability Architecture</h3>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@app.post</span><span class="p">(</span><span class="sh">"</span><span class="s">/assess_risk</span><span class="sh">"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/assess_risk"</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">assess_credit_risk</span><span class="p">(</span><span class="n">customer_data</span><span class="p">:</span> <span class="n">CustomerProfile</span><span class="p">):</span>
-    <span class="sh">"""</span><span class="s">High-performance API endpoint for risk assessment</span><span class="sh">"""</span>
+    <span class="s">"""High-performance API endpoint for risk assessment"""</span>
     
     <span class="c1"># Feature preprocessing
-</span>    <span class="n">features</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">customer_data</span><span class="p">)</span>
+</span>    <span class="n">features</span> <span class="o">=</span> <span class="k">await</span> <span class="n">preprocess_features</span><span class="p">(</span><span class="n">customer_data</span><span class="p">)</span>
     
     <span class="c1"># Model inference
-</span>    <span class="n">risk_score</span> <span class="o">=</span> <span class="n">risk_model</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+</span>    <span class="n">risk_score</span> <span class="o">=</span> <span class="n">risk_model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
     
     <span class="c1"># Generate explanation
-</span>    <span class="n">explanation</span> <span class="o">=</span> <span class="n">explainer</span><span class="p">.</span><span class="nf">explain_prediction</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+</span>    <span class="n">explanation</span> <span class="o">=</span> <span class="n">explainer</span><span class="p">.</span><span class="n">explain_prediction</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="p">{</span>
-        <span class="sh">"</span><span class="s">risk_score</span><span class="sh">"</span><span class="p">:</span> <span class="nf">float</span><span class="p">(</span><span class="n">risk_score</span><span class="p">),</span>
-        <span class="sh">"</span><span class="s">risk_category</span><span class="sh">"</span><span class="p">:</span> <span class="nf">categorize_risk</span><span class="p">(</span><span class="n">risk_score</span><span class="p">),</span>
-        <span class="sh">"</span><span class="s">explanation</span><span class="sh">"</span><span class="p">:</span> <span class="n">explanation</span><span class="p">,</span>
-        <span class="sh">"</span><span class="s">processing_time_ms</span><span class="sh">"</span><span class="p">:</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+        <span class="s">"risk_score"</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">risk_score</span><span class="p">),</span>
+        <span class="s">"risk_category"</span><span class="p">:</span> <span class="n">categorize_risk</span><span class="p">(</span><span class="n">risk_score</span><span class="p">),</span>
+        <span class="s">"explanation"</span><span class="p">:</span> <span class="n">explanation</span><span class="p">,</span>
+        <span class="s">"processing_time_ms"</span><span class="p">:</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
     <span class="p">}</span>
 </code></pre></div></div>
 
