@@ -4,7 +4,7 @@ title: "Walking Without Fainting"
 date: 2025-08-24
 categories: [faith, devotional, testimony]
 tags: ["Spiritual Reflections", "Bible Study", "Personal Growth"]
-featured_image: "/assets/img/blog/strength.png"
+featured_image: "/assets/img/blog/walking.png"
 excerpt: "A personal testimony about discovering God's promise of renewed strength through Isaiah 40:29-31, learning to trust His faithfulness during a health crisis, and finding peace by controlling what you can."
 ---
 
