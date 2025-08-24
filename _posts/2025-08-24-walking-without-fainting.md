@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Walking Without Fainting: Finding Strength in the Season You Can't Control"
+title: "Walking Without Fainting"
 date: 2025-08-24
 categories: [faith, devotional, testimony]
 tags: ["Spiritual Reflections", "Bible Study", "Personal Growth"]
