@@ -5,7 +5,7 @@ date: 2025-08-24
 categories: [faith, devotional, testimony]
 tags: ["Spiritual Reflections", "Bible Study", "Personal Growth"]
 featured_image: "/assets/img/blog/strength.png"
-excerpt: "A personal testimony about discovering God's promise of renewed strength through Isaiah 40:29-31, learning to trust His faithfulness during a family health crisis, and finding peace by controlling what you can."
+excerpt: "A personal testimony about discovering God's promise of renewed strength through Isaiah 40:29-31, learning to trust His faithfulness during a health crisis, and finding peace by controlling what you can."
 ---
 
 *"But those who wait for the Lord [who expect, look for, and hope in Him] shall change and renew their strength and power; they shall lift up their wings and mount up [close to God] as eagles [mount up to the sun]; they shall run and not be weary, they shall walk and not faint or become tired." - Isaiah 40:31 (Amplified)*
