@@ -1,4 +1,3 @@
-<!-- themes/journal-clone/_layouts/default.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,56 +51,42 @@
 
   </head>
   <body>
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-  <div class="sidebar-avatar">
-    <img src="/portfolio/assets/img/avatar.jpeg" alt="Rodgers Meroka Osumo" class="avatar-image">
+    <header class="site-header" id="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="/portfolio/" class="navbar-brand">
+      <img src="/portfolio/assets/img/avatar.jpeg" alt="" class="navbar-avatar">
+      <span class="navbar-name">Rodgers Meroka Osumo</span>
+    </a>
+
+    <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <ul class="navbar-nav" id="navbar-nav">
+      
+        <li><a href="/portfolio/" >Home</a></li>
+      
+        <li><a href="/portfolio/blog/" >Blog</a></li>
+      
+        <li><a href="/portfolio/projects/" >Projects</a></li>
+      
+        <li><a href="/portfolio/about/" >About</a></li>
+      
+        <li><a href="/portfolio/contact/" >Contact</a></li>
+      
+    </ul>
   </div>
-  <h1 class="sidebar-title">Rodgers Meroka Osumo</h1>
-  <p class="sidebar-tagline">Data Scientist & AI Strategist</p>
-</div>
+</nav>
 
-<ul class="sidebar-nav">
-  
-    <li><a href="/portfolio/">Home</a></li>
-  
-    <li><a href="/portfolio/blog/">Blog</a></li>
-  
-    <li><a href="/portfolio/projects/">Projects</a></li>
-  
-    <li><a href="/portfolio/about/">About</a></li>
-  
-    <li><a href="/portfolio/contact/">Contact</a></li>
-  
-</ul>
-      <div class="social-icons">
-  
-    <a href="https://twitter.com/osumo_meroka" aria-label="Twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
-  
-  
-    <a href="https://github.com/rodgersmerokaosumo" aria-label="GitHub">
-      <i class="fab fa-github"></i>
-    </a>
-  
-  
-    <a href="https://linkedin.com/in/https://www.linkedin.com/in/rodgersmerokaosumo/" aria-label="LinkedIn">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-  
-  
-</div>
-<p class="sidebar-copyright">
-  &copy; 2026 Rodgers Meroka Osumo
-</p>
+    </header>
 
-    </aside>
+    <main class="site-main">
+      <div class="post-container">
+  <a href="/portfolio/blog/" class="back-link">&larr; Back to Blog</a>
 
-    <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
-
-    <div class="main-content" id="main-content">
-      <div class="container">
   <article class="post">
     
       <div class="post-featured-image">
@@ -111,7 +96,11 @@
 
     <header>
       <h1>Faith and Purpose: Finding Meaning in the Intersection of Technology and Service</h1>
-      <p class="post-meta">July 18, 2025</p>
+      <p class="post-meta">
+        July 18, 2025
+        
+        <span class="reading-time">6 min read</span>
+      </p>
     </header>
 
     <div class="post-content">
@@ -258,18 +247,110 @@
   
 </div>
 
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4 class="footer-heading">Rodgers Meroka Osumo</h4>
+      <p class="footer-tagline">Data Scientist & AI Strategist</p>
+      <p class="footer-description">My portfolio & blog — building AI and data solutions for real-world impact.</p>
     </div>
 
-    <script>
-      const sidebar = document.getElementById('sidebar');
-      const toggle  = document.getElementById('sidebar-toggle');
-      const main    = document.getElementById('main-content');
+    <div class="footer-col">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-links">
+        
+          <li><a href="/portfolio/">Home</a></li>
+        
+          <li><a href="/portfolio/blog/">Blog</a></li>
+        
+          <li><a href="/portfolio/projects/">Projects</a></li>
+        
+          <li><a href="/portfolio/about/">About</a></li>
+        
+          <li><a href="/portfolio/contact/">Contact</a></li>
+        
+      </ul>
+    </div>
 
-      toggle.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
-        main.classList.toggle('expanded');
+    <div class="footer-col">
+      <h4 class="footer-heading">Connect</h4>
+      <div class="footer-social">
+        
+          <a href="https://twitter.com/osumo_meroka" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+        
+          <a href="https://github.com/rodgersmerokaosumo" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        
+        
+          <a href="https://www.linkedin.com/in/rodgersmerokaosumo/" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        
+      </div>
+      <p class="footer-email">
+        <a href="mailto:osumorodgersmeroka@gmail.com">osumorodgersmeroka@gmail.com</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Rodgers Meroka Osumo. All rights reserved.</p>
+  </div>
+</div>
+
+    </footer>
+
+    <script>
+      const siteHeader = document.getElementById('site-header');
+      const navToggle = document.getElementById('navbar-toggle');
+      const navMenu = document.getElementById('navbar-nav');
+
+      // Sticky nav shadow on scroll
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+          siteHeader.classList.add('scrolled');
+        } else {
+          siteHeader.classList.remove('scrolled');
+        }
+      });
+
+      // Mobile hamburger toggle
+      navToggle.addEventListener('click', function() {
+        const isOpen = document.body.classList.toggle('mobile-nav-open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close on nav link click (mobile)
+      navMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.body.classList.remove('mobile-nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Close on outside click
+      document.addEventListener('click', function(e) {
+        if (!siteHeader.contains(e.target) && document.body.classList.contains('mobile-nav-open')) {
+          document.body.classList.remove('mobile-nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.body.classList.contains('mobile-nav-open')) {
+          document.body.classList.remove('mobile-nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
       });
     </script>
   </body>
 </html>
-

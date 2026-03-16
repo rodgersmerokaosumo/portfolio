@@ -1,4 +1,3 @@
-<!-- themes/journal-clone/_layouts/default.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,7 +19,7 @@
   
     <meta property="og:image" content="https://rodgersmerokaosumo.github.io/portfolio/assets/img/avatar.jpeg">
   
-  <meta property="og:url" content="https://rodgersmerokaosumo.github.io/portfolio/projects/">
+  <meta property="og:url" content="https://rodgersmerokaosumo.github.io/portfolio/projects/index.html">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -52,65 +51,49 @@
 
   </head>
   <body>
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-  <div class="sidebar-avatar">
-    <img src="/portfolio/assets/img/avatar.jpeg" alt="Rodgers Meroka Osumo" class="avatar-image">
+    <header class="site-header" id="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="/portfolio/" class="navbar-brand">
+      <img src="/portfolio/assets/img/avatar.jpeg" alt="" class="navbar-avatar">
+      <span class="navbar-name">Rodgers Meroka Osumo</span>
+    </a>
+
+    <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <ul class="navbar-nav" id="navbar-nav">
+      
+        <li><a href="/portfolio/" >Home</a></li>
+      
+        <li><a href="/portfolio/blog/" >Blog</a></li>
+      
+        <li><a href="/portfolio/projects/" >Projects</a></li>
+      
+        <li><a href="/portfolio/about/" >About</a></li>
+      
+        <li><a href="/portfolio/contact/" >Contact</a></li>
+      
+    </ul>
   </div>
-  <h1 class="sidebar-title">Rodgers Meroka Osumo</h1>
-  <p class="sidebar-tagline">Data Scientist & AI Strategist</p>
-</div>
+</nav>
 
-<ul class="sidebar-nav">
-  
-    <li><a href="/portfolio/">Home</a></li>
-  
-    <li><a href="/portfolio/blog/">Blog</a></li>
-  
-    <li><a href="/portfolio/projects/">Projects</a></li>
-  
-    <li><a href="/portfolio/about/">About</a></li>
-  
-    <li><a href="/portfolio/contact/">Contact</a></li>
-  
-</ul>
-      <div class="social-icons">
-  
-    <a href="https://twitter.com/osumo_meroka" aria-label="Twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
-  
-  
-    <a href="https://github.com/rodgersmerokaosumo" aria-label="GitHub">
-      <i class="fab fa-github"></i>
-    </a>
-  
-  
-    <a href="https://linkedin.com/in/https://www.linkedin.com/in/rodgersmerokaosumo/" aria-label="LinkedIn">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-  
-  
-</div>
-<p class="sidebar-copyright">
-  &copy; 2026 Rodgers Meroka Osumo
-</p>
+    </header>
 
-    </aside>
-
-    <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
-
-    <div class="main-content" id="main-content">
-      <!-- Modern Full-Width Header -->
-<header class="listing-header">
+    <main class="site-main">
+      <!-- Projects Header -->
+<section class="listing-header">
   <div class="header-content">
     <h1 class="page-title">Projects</h1>
     <p class="page-description">Explore my portfolio of data science and AI projects, showcasing real-world solutions and technical expertise across various industries and challenges.
 </p>
   </div>
-  
-  <!-- Minimal Filter Bar -->
-  <div class="filter-bar">
+
+  <!-- Filter Bar -->
+  <nav class="filter-bar" aria-label="Project filters">
     <div class="filter-buttons">
       <button class="filter-btn active" data-filter="all">All Projects</button>
       <button class="filter-btn" data-filter="python">Python</button>
@@ -119,157 +102,154 @@
       <button class="filter-btn" data-filter="data-visualization">Visualization</button>
       <button class="filter-btn" data-filter="cloud-platforms">Cloud</button>
     </div>
-  </div>
-</header>
+  </nav>
+</section>
 
-<!-- Modern Two-Column Card Grid -->
-<main class="projects-grid-section">
-  <div class="container">
-    <div class="projects-grid">
-      
-      
-        <article class="project-card" data-tech="python,postgis,react,docker,aws,leaflet">
-          
-            <div class="card-thumbnail">
-              <img src="/portfolio/assets/img/projects/geospatial.jpg" alt="Geospatial Data Validation Platform" loading="lazy">
-            </div>
-          
-          
-          <div class="card-content">
-            <header class="card-header">
-              <h2 class="card-title">
-                <a href="/portfolio/projects/2024-12-15-geospatial-validation-platform/">Geospatial Data Validation Platform</a>
-              </h2>
-              <time class="card-date" datetime="2024-12-15">15 December 2024</time>
-            </header>
-            
-            
-              <p class="card-excerpt">Built a comprehensive geospatial data validation system processing over 60,000 polygons with automated quality assurance and real-time visualization.</p>
-            
-            
-            <div class="card-footer">
-              
-                <div class="tech-tags">
-                  
-                    <span class="tech-tag">Python</span>
-                  
-                    <span class="tech-tag">PostGIS</span>
-                  
-                    <span class="tech-tag">React</span>
-                  
-                  
-                    <span class="tech-tag more">+3</span>
-                  
-                </div>
-              
-              
-              <a href="/portfolio/projects/2024-12-15-geospatial-validation-platform/" class="read-more-btn">
-                <span>Read More</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-      
-        <article class="project-card" data-tech="python,streamlit,scikit-learn,apache-kafka,redis,postgresql,plotly">
-          
-            <div class="card-thumbnail">
-              <img src="/portfolio/assets/img/projects/retail.jpg" alt="AI-Powered Retail Analytics Dashboard" loading="lazy">
-            </div>
-          
-          
-          <div class="card-content">
-            <header class="card-header">
-              <h2 class="card-title">
-                <a href="/portfolio/projects/2024-11-20-retail-analytics-dashboard/">AI-Powered Retail Analytics Dashboard</a>
-              </h2>
-              <time class="card-date" datetime="2024-11-20">20 November 2024</time>
-            </header>
-            
-            
-              <p class="card-excerpt">Developed an intelligent retail analytics platform with predictive modeling, real-time data streaming, and interactive visualizations for enterprise decision-making.</p>
-            
-            
-            <div class="card-footer">
-              
-                <div class="tech-tags">
-                  
-                    <span class="tech-tag">Python</span>
-                  
-                    <span class="tech-tag">Streamlit</span>
-                  
-                    <span class="tech-tag">Scikit-learn</span>
-                  
-                  
-                    <span class="tech-tag more">+4</span>
-                  
-                </div>
-              
-              
-              <a href="/portfolio/projects/2024-11-20-retail-analytics-dashboard/" class="read-more-btn">
-                <span>Read More</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-      
-        <article class="project-card" data-tech="python,tensorflow,apache-spark,mlflow,kubernetes,mongodb,fastapi">
-          
-            <div class="card-thumbnail">
-              <img src="/portfolio/assets/img/projects/financial.jpg" alt="ML-Driven Financial Risk Assessment System" loading="lazy">
-            </div>
-          
-          
-          <div class="card-content">
-            <header class="card-header">
-              <h2 class="card-title">
-                <a href="/portfolio/projects/2024-10-05-financial-risk-ml-system/">ML-Driven Financial Risk Assessment System</a>
-              </h2>
-              <time class="card-date" datetime="2024-10-05">5 October 2024</time>
-            </header>
-            
-            
-              <p class="card-excerpt">Engineered a sophisticated machine learning system for credit risk assessment, reducing loan default rates by 23% through advanced ensemble modeling and real-time scoring.</p>
-            
-            
-            <div class="card-footer">
-              
-                <div class="tech-tags">
-                  
-                    <span class="tech-tag">Python</span>
-                  
-                    <span class="tech-tag">TensorFlow</span>
-                  
-                    <span class="tech-tag">Apache Spark</span>
-                  
-                  
-                    <span class="tech-tag more">+4</span>
-                  
-                </div>
-              
-              
-              <a href="/portfolio/projects/2024-10-05-financial-risk-ml-system/" class="read-more-btn">
-                <span>Read More</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-      
-    </div>
+<!-- Projects List -->
+<main class="blog-list-section">
+  <div class="blog-list-container">
     
-    <!-- Load More Section -->
-    <div class="load-more-section">
-      <button class="load-more-btn" id="loadMoreBtn" style="display: none;">
-        <span>Load More Projects</span>
-        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-      </button>
-    </div>
+
+    
+      <article class="blog-list-item" data-tech="python,postgis,react,docker,aws,leaflet">
+        
+          <a href="/portfolio/projects/2024-12-15-geospatial-validation-platform/" class="blog-list-image">
+            <img src="/portfolio/assets/img/projects/geospatial.jpg" alt="Geospatial Data Validation Platform" loading="lazy">
+          </a>
+        
+
+        <div class="blog-list-meta">
+          <time datetime="2024-12-15">15 December 2024</time>
+          
+            <span class="meta-separator">&middot;</span>
+            <span class="meta-tag">TechGIS Solutions</span>
+          
+        </div>
+
+        <h2 class="blog-list-title">
+          <a href="/portfolio/projects/2024-12-15-geospatial-validation-platform/">Geospatial Data Validation Platform</a>
+        </h2>
+
+        
+          <p class="blog-list-excerpt">Built a comprehensive geospatial data validation system processing over 60,000 polygons with automated quality assurance and real-time visualization.</p>
+        
+
+        
+          <div class="blog-list-tags">
+            
+              <span class="tech-tag">Python</span>
+            
+              <span class="tech-tag">PostGIS</span>
+            
+              <span class="tech-tag">React</span>
+            
+              <span class="tech-tag">Docker</span>
+            
+              <span class="tech-tag">AWS</span>
+            
+          </div>
+        
+
+        <a href="/portfolio/projects/2024-12-15-geospatial-validation-platform/" class="blog-list-readmore">
+          View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </article>
+    
+      <article class="blog-list-item" data-tech="python,streamlit,scikit-learn,apache-kafka,redis,postgresql,plotly">
+        
+          <a href="/portfolio/projects/2024-11-20-retail-analytics-dashboard/" class="blog-list-image">
+            <img src="/portfolio/assets/img/projects/retail.jpg" alt="AI-Powered Retail Analytics Dashboard" loading="lazy">
+          </a>
+        
+
+        <div class="blog-list-meta">
+          <time datetime="2024-11-20">20 November 2024</time>
+          
+            <span class="meta-separator">&middot;</span>
+            <span class="meta-tag">RetailMax Corporation</span>
+          
+        </div>
+
+        <h2 class="blog-list-title">
+          <a href="/portfolio/projects/2024-11-20-retail-analytics-dashboard/">AI-Powered Retail Analytics Dashboard</a>
+        </h2>
+
+        
+          <p class="blog-list-excerpt">Developed an intelligent retail analytics platform with predictive modeling, real-time data streaming, and interactive visualizations for enterprise decision-making.</p>
+        
+
+        
+          <div class="blog-list-tags">
+            
+              <span class="tech-tag">Python</span>
+            
+              <span class="tech-tag">Streamlit</span>
+            
+              <span class="tech-tag">Scikit-learn</span>
+            
+              <span class="tech-tag">Apache Kafka</span>
+            
+              <span class="tech-tag">Redis</span>
+            
+          </div>
+        
+
+        <a href="/portfolio/projects/2024-11-20-retail-analytics-dashboard/" class="blog-list-readmore">
+          View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </article>
+    
+      <article class="blog-list-item" data-tech="python,tensorflow,apache-spark,mlflow,kubernetes,mongodb,fastapi">
+        
+          <a href="/portfolio/projects/2024-10-05-financial-risk-ml-system/" class="blog-list-image">
+            <img src="/portfolio/assets/img/projects/financial.jpg" alt="ML-Driven Financial Risk Assessment System" loading="lazy">
+          </a>
+        
+
+        <div class="blog-list-meta">
+          <time datetime="2024-10-05">5 October 2024</time>
+          
+            <span class="meta-separator">&middot;</span>
+            <span class="meta-tag">FinanceSecure Bank</span>
+          
+        </div>
+
+        <h2 class="blog-list-title">
+          <a href="/portfolio/projects/2024-10-05-financial-risk-ml-system/">ML-Driven Financial Risk Assessment System</a>
+        </h2>
+
+        
+          <p class="blog-list-excerpt">Engineered a sophisticated machine learning system for credit risk assessment, reducing loan default rates by 23% through advanced ensemble modeling and real-time scoring.</p>
+        
+
+        
+          <div class="blog-list-tags">
+            
+              <span class="tech-tag">Python</span>
+            
+              <span class="tech-tag">TensorFlow</span>
+            
+              <span class="tech-tag">Apache Spark</span>
+            
+              <span class="tech-tag">MLflow</span>
+            
+              <span class="tech-tag">Kubernetes</span>
+            
+          </div>
+        
+
+        <a href="/portfolio/projects/2024-10-05-financial-risk-ml-system/" class="blog-list-readmore">
+          View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </article>
+    
+
+    <!-- Pagination -->
+    
   </div>
 </main>
 
-<!-- Floating Filter HTML -->
+<!-- Floating Filter -->
 <div class="floating-filter">
   <button class="filter-toggle" aria-label="Toggle Filter Menu">
     <i class="fas fa-filter"></i>
@@ -291,99 +271,75 @@
 document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const headerSection = document.querySelector('.listing-header');
-  const tagFilter = document.querySelector('.tag-filter');
   const floatingFilter = document.querySelector('.floating-filter');
   const filterToggle = document.querySelector('.filter-toggle');
   const filterDropdown = document.querySelector('.filter-dropdown');
-  
-  // Store original cards to preserve event listeners
-  const originalCards = Array.from(document.querySelectorAll('.project-card'));
-  
-  let lastScrollTop = 0;
+
+  const originalItems = Array.from(document.querySelectorAll('.blog-list-item'));
   let isDropdownOpen = false;
-  
-  // Filter functionality for project cards with proper grid reflow
+
   function handleFilter(filter) {
-    const grid = document.querySelector('.projects-grid');
-    
-    // Get visible cards based on filter
-    const visibleCards = originalCards.filter(card => {
-      const cardTech = card.getAttribute('data-tech');
-      return filter === 'all' || (cardTech && cardTech.includes(filter));
+    const list = document.querySelector('.blog-list-container');
+
+    originalItems.forEach(item => item.remove());
+
+    const visibleItems = originalItems.filter(item => {
+      const tech = item.getAttribute('data-tech');
+      return filter === 'all' || (tech && tech.includes(filter));
     });
-    
-    // Clear the grid
-    grid.innerHTML = '';
-    
-    // Add visible cards back to grid with animation
-    visibleCards.forEach((card, index) => {
-      // Reset card styles and add to grid
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = '';
-      
-      grid.appendChild(card);
-      
-      // Animate in with staggered timing
+
+    visibleItems.forEach((item, index) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = '';
+
+      list.appendChild(item);
+
       setTimeout(() => {
-        card.style.transition = 'all 0.3s ease';
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
+        item.style.transition = 'all 0.3s ease';
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
       }, index * 50);
     });
   }
-  
-  // Add click listeners to all filter buttons
+
   filterButtons.forEach(button => {
     button.addEventListener('click', function() {
       const filter = this.getAttribute('data-filter');
-      
-      // Update active button (both regular and floating)
       filterButtons.forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll(`[data-filter="${filter}"]`).forEach(btn => btn.classList.add('active'));
-      
+      document.querySelectorAll('[data-filter="' + filter + '"]').forEach(btn => btn.classList.add('active'));
       handleFilter(filter);
-      
-      // Close floating dropdown if open
+
       if (isDropdownOpen) {
         filterDropdown.classList.remove('active');
         isDropdownOpen = false;
       }
     });
   });
-  
-  // Floating filter toggle
+
   filterToggle.addEventListener('click', function() {
     isDropdownOpen = !isDropdownOpen;
     filterDropdown.classList.toggle('active', isDropdownOpen);
   });
-  
-  // Close dropdown when clicking outside
+
   document.addEventListener('click', function(event) {
     if (!floatingFilter.contains(event.target) && isDropdownOpen) {
       filterDropdown.classList.remove('active');
       isDropdownOpen = false;
     }
   });
-  
-  // Scroll handler for hero collapse and floating filter
+
   function handleScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    // Remove unused hero height calculation
-    
-    // Floating filter visibility based on header height
     const headerHeight = headerSection ? headerSection.offsetHeight : 0;
-    
+
     if (scrollTop > headerHeight + 100) {
       floatingFilter.classList.add('visible');
     } else {
       floatingFilter.classList.remove('visible');
     }
-    
-    lastScrollTop = scrollTop;
   }
-  
-  // Throttled scroll listener
+
   let scrollTimeout;
   window.addEventListener('scroll', function() {
     if (!scrollTimeout) {
@@ -393,23 +349,115 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 10);
     }
   });
-  
-  // Initialize
+
   handleScroll();
 });
 </script>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4 class="footer-heading">Rodgers Meroka Osumo</h4>
+      <p class="footer-tagline">Data Scientist & AI Strategist</p>
+      <p class="footer-description">My portfolio & blog — building AI and data solutions for real-world impact.</p>
     </div>
 
-    <script>
-      const sidebar = document.getElementById('sidebar');
-      const toggle  = document.getElementById('sidebar-toggle');
-      const main    = document.getElementById('main-content');
+    <div class="footer-col">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-links">
+        
+          <li><a href="/portfolio/">Home</a></li>
+        
+          <li><a href="/portfolio/blog/">Blog</a></li>
+        
+          <li><a href="/portfolio/projects/">Projects</a></li>
+        
+          <li><a href="/portfolio/about/">About</a></li>
+        
+          <li><a href="/portfolio/contact/">Contact</a></li>
+        
+      </ul>
+    </div>
 
-      toggle.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
-        main.classList.toggle('expanded');
+    <div class="footer-col">
+      <h4 class="footer-heading">Connect</h4>
+      <div class="footer-social">
+        
+          <a href="https://twitter.com/osumo_meroka" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+        
+          <a href="https://github.com/rodgersmerokaosumo" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        
+        
+          <a href="https://www.linkedin.com/in/rodgersmerokaosumo/" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        
+      </div>
+      <p class="footer-email">
+        <a href="mailto:osumorodgersmeroka@gmail.com">osumorodgersmeroka@gmail.com</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Rodgers Meroka Osumo. All rights reserved.</p>
+  </div>
+</div>
+
+    </footer>
+
+    <script>
+      const siteHeader = document.getElementById('site-header');
+      const navToggle = document.getElementById('navbar-toggle');
+      const navMenu = document.getElementById('navbar-nav');
+
+      // Sticky nav shadow on scroll
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+          siteHeader.classList.add('scrolled');
+        } else {
+          siteHeader.classList.remove('scrolled');
+        }
+      });
+
+      // Mobile hamburger toggle
+      navToggle.addEventListener('click', function() {
+        const isOpen = document.body.classList.toggle('mobile-nav-open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close on nav link click (mobile)
+      navMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.body.classList.remove('mobile-nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Close on outside click
+      document.addEventListener('click', function(e) {
+        if (!siteHeader.contains(e.target) && document.body.classList.contains('mobile-nav-open')) {
+          document.body.classList.remove('mobile-nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.body.classList.contains('mobile-nav-open')) {
+          document.body.classList.remove('mobile-nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
       });
     </script>
   </body>
 </html>
-
