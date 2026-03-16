@@ -29,6 +29,14 @@ plugins:
 include:
   - assets/css/main.scss
 
+exclude:
+  - scripts/
+  - CLAUDE.md
+  - COMPREHENSIVE_PROJECT_JOURNAL.md
+  - portfolio_website_journal.md
+  - portfolio_website_journal_v2.md
+  - portfolio_website_project_docs.md
+
 
 ###############################################################################
 # Pagination settings
@@ -40,6 +48,8 @@ pagination:                       # global settings for paginate-v2
   per_page: 5                     # 5 posts per page
   permalink: "/blog/page/:num/"   # URL pattern for page 2+
   first_page_url: "/blog/"        # your blog’s main page
+  sort_field: ‘date’              # sort by date
+  sort_reverse: true              # newest first
 
 
 ###############################################################################
