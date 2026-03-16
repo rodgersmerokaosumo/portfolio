@@ -1,236 +1,352 @@
-// Layout variables
-:root { 
-  --sidebar-width: 280px;
-  --content-max-width: 900px;
-}
-
-// Elegant sidebar design
-.sidebar {
-  position: fixed;
+// ============================================================
+// Site Header — sticky top navbar
+// ============================================================
+.site-header {
+  position: sticky;
   top: 0;
-  left: 0;
-  width: var(--sidebar-width);
-  height: 100vh;
-  background-color: $sidebar-bg;
-  color: $sidebar-text;
+  z-index: 100;
+  background-color: $navbar-bg;
+  border-bottom: 1px solid $navbar-border;
+  transition: box-shadow $transition-base;
+
+  &.scrolled {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.navbar-inner {
+  max-width: $content-wide;
+  margin: 0 auto;
+  padding: 0 $space-xl;
+  height: $navbar-height;
   display: flex;
-  flex-direction: column;
-  padding: $space-3xl $space-xl;
-  transition: transform 0.3s ease;
-  z-index: 1000;
-  overflow-y: auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: space-between;
 }
 
-.sidebar.collapsed {
-  transform: translateX(-100%);
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  text-decoration: none;
+  color: $color-primary;
+  transition: opacity $transition-fast;
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+  }
 }
 
-// Sidebar header with refined typography
-.sidebar-header {
-  margin-bottom: $space-3xl;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: $space-xl;
-  text-align: center;
+.navbar-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.sidebar-title {
+.navbar-name {
   font-family: $font-heading;
-  font-size: $size-2xl;
-  font-weight: 700;
-  color: $sidebar-text;
-  margin-bottom: $space-sm;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+  font-size: $size-lg;
+  font-weight: $weight-black;
+  letter-spacing: -0.03em;
 }
 
-.sidebar-tagline {
-  font-size: $size-sm;
-  color: rgba($sidebar-text, 0.7);
-  font-style: italic;
-  line-height: 1.4;
-}
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: $space-xl;
+  margin: 0;
+  padding: 0;
 
-// Sidebar avatar styling
-.sidebar-avatar {
-  margin-bottom: $space-lg;
-  
-  .avatar-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    
-    &:hover {
-      border-color: $color-accent;
-      transform: scale(1.05);
+  a {
+    color: $color-secondary;
+    text-decoration: none;
+    font-size: $size-sm;
+    font-weight: $weight-medium;
+    padding: $space-sm 0;
+    position: relative;
+    transition: color $transition-fast;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color-accent;
+      transition: width $transition-base;
+    }
+
+    &:hover,
+    &.active {
+      color: $color-primary;
+      text-decoration: none;
+
+      &::after {
+        width: 100%;
+      }
     }
   }
 }
 
-// Clean navigation
-.sidebar-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: auto;
-}
-
-.sidebar-nav li {
-  margin-bottom: $space-sm;
-}
-
-.sidebar-nav a {
-  display: block;
-  padding: $space-md;
-  color: rgba($sidebar-text, 0.8);
-  text-decoration: none;
-  font-size: $size-base;
-  font-weight: 500;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: $sidebar-text;
-    transform: translateX(2px);
-  }
-  
-  &.active {
-    background-color: $sidebar-accent;
-    color: $sidebar-text;
-  }
-}
-
-// Minimal social icons
-.social-icons {
-  display: flex;
-  gap: $space-md;
-  margin-top: $space-xl;
-  padding-top: $space-xl;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.social-icons a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-  color: rgba($sidebar-text, 0.7);
-  text-decoration: none;
-  font-size: $size-base;
-  transition: all 0.2s ease;
-  
-  &:hover {
-    background-color: $sidebar-accent;
-    border-color: $sidebar-accent;
-    color: $sidebar-text;
-    transform: translateY(-1px);
-  }
-}
-
-// Subtle copyright
-.sidebar-copyright {
-  font-size: $size-xs;
-  color: rgba($sidebar-text, 0.5);
-  margin-top: $space-lg;
-  text-align: center;
-  font-style: italic;
-}
-
-// Refined toggle button
-.sidebar-toggle {
-  position: fixed;
-  top: $space-lg;
-  left: calc(var(--sidebar-width) + #{$space-lg});
-  background-color: $color-primary;
-  color: $color-bg;
+// CSS hamburger
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
   border: none;
-  border-radius: 4px;
-  padding: $space-sm $space-md;
-  font-size: $size-base;
   cursor: pointer;
-  z-index: 1101;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  
-  &:hover {
-    background-color: darken($color-primary, 10%);
-    transform: translateY(-1px);
+  padding: $space-sm;
+
+  .hamburger-line {
+    width: 24px;
+    height: 2px;
+    background-color: $color-primary;
+    transition: transform $transition-base, opacity $transition-base;
   }
 }
 
-.sidebar.collapsed + .sidebar-toggle {
-  left: $space-lg;
+// Mobile nav
+@media (max-width: $bp-tablet) {
+  .navbar-inner {
+    height: $navbar-height-mobile;
+    padding: 0 $space-lg;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: $navbar-height-mobile;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    gap: 0;
+    padding: $space-lg;
+    border-bottom: 1px solid $color-border;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity $transition-base, transform $transition-base;
+
+    a {
+      padding: $space-md 0;
+      font-size: $size-base;
+    }
+  }
+
+  .mobile-nav-open {
+    .navbar-nav {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .navbar-toggle {
+      .hamburger-line:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger-line:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+  }
+
+  // Lock body scroll when mobile nav is open
+  body.mobile-nav-open {
+    overflow: hidden;
+  }
 }
 
-// Content area with optimal reading width
-.main-content {
-  margin-left: var(--sidebar-width);
-  transition: margin-left 0.3s ease;
-  min-height: 100vh;
+// ============================================================
+// Site Main
+// ============================================================
+.site-main {
+  min-height: calc(100vh - #{$navbar-height});
 }
 
-.main-content.expanded {
-  margin-left: 0;
-}
-
-// Container for content with optimal line length
+// ============================================================
+// Container
+// ============================================================
 .container {
-  max-width: var(--content-max-width);
+  max-width: $content-max;
   margin: 0 auto;
-  padding: $space-xl $space-md;
-  
+  padding: $space-xl $space-xl;
+
   @media (max-width: $bp-tablet) {
-    padding: $space-lg $space-sm;
+    padding: $space-lg $space-lg;
   }
 }
 
-// Hero section styling
+// Narrow container for reading content (posts, projects)
+.post-container {
+  max-width: $content-reading;
+  margin: 0 auto;
+  padding: $space-xl $space-xl;
+
+  @media (max-width: $bp-tablet) {
+    padding: $space-lg $space-lg;
+  }
+}
+
+// ============================================================
+// Hero — large, agency-style with grain texture
+// ============================================================
 .hero {
   text-align: center;
-  margin-bottom: $space-2xl;
-  padding: $space-2xl 0;
-  border-bottom: 1px solid $color-border;
-  
+  padding: $space-5xl $space-xl;
+  position: relative;
+
   h1 {
-    font-size: $size-4xl;
-    margin-bottom: $space-md;
-    
+    font-size: $size-6xl;
+    font-weight: $weight-black;
+    letter-spacing: -0.03em;
+    margin-bottom: $space-lg;
+    line-height: 1.1;
+
     @media (max-width: $bp-tablet) {
+      font-size: $size-4xl;
+    }
+
+    @media (max-width: $bp-mobile) {
       font-size: $size-3xl;
     }
   }
-  
+
   .tagline {
-    font-size: $size-lg;
+    font-size: $size-xl;
     color: $color-light;
-    font-style: italic;
-    margin: 0;
+    font-weight: $weight-light;
+    margin: 0 0 $space-2xl 0;
+  }
+
+  // Grain texture overlay
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
   }
 }
 
-// Responsive behavior
-@media (max-width: $bp-tablet) {
-  .sidebar {
-    transform: translateX(-100%);
-    
-    &.collapsed {
-      transform: translateX(-100%);
+// ============================================================
+// Site Footer — multi-column, dark
+// ============================================================
+.site-footer {
+  background-color: $footer-bg;
+  color: $footer-text;
+  padding: $space-4xl 0 $space-xl 0;
+}
+
+.footer-inner {
+  max-width: $content-wide;
+  margin: 0 auto;
+  padding: 0 $space-xl;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: $space-3xl;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+    gap: $space-2xl;
+  }
+}
+
+.footer-heading {
+  font-family: $font-heading;
+  font-size: $size-lg;
+  font-weight: $weight-bold;
+  color: white;
+  margin-bottom: $space-lg;
+  letter-spacing: -0.02em;
+}
+
+.footer-tagline {
+  color: $color-accent;
+  font-size: $size-sm;
+  font-weight: $weight-medium;
+  margin-bottom: $space-md;
+}
+
+.footer-description {
+  color: rgba(white, 0.6);
+  font-size: $size-sm;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: $space-sm;
+  }
+
+  a {
+    color: rgba(white, 0.6);
+    text-decoration: none;
+    font-size: $size-sm;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-accent;
+      text-decoration: none;
     }
   }
-  
-  .main-content {
-    margin-left: 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: $space-md;
+  margin-bottom: $space-lg;
+
+  a {
+    color: rgba(white, 0.5);
+    font-size: $size-lg;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-accent;
+      text-decoration: none;
+    }
   }
-  
-  .sidebar-toggle {
-    left: $space-lg;
+}
+
+.footer-email a {
+  color: rgba(white, 0.6);
+  font-size: $size-sm;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-accent;
+    text-decoration: none;
+  }
+}
+
+.footer-bottom {
+  margin-top: $space-3xl;
+  padding-top: $space-xl;
+  border-top: 1px solid rgba(white, 0.08);
+  text-align: center;
+
+  p {
+    color: rgba(white, 0.3);
+    font-size: $size-xs;
+    margin: 0;
   }
 }

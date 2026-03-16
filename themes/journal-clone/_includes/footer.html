@@ -1,25 +1,46 @@
-<div class="social-icons">
-  {% if site.social_links.twitter %}
-    <a href="https://twitter.com/{{ site.social_links.twitter }}" aria-label="Twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
-  {% endif %}
-  {% if site.social_links.github %}
-    <a href="https://github.com/{{ site.social_links.github }}" aria-label="GitHub">
-      <i class="fab fa-github"></i>
-    </a>
-  {% endif %}
-  {% if site.social_links.linkedin %}
-    <a href="https://linkedin.com/in/{{ site.social_links.linkedin }}" aria-label="LinkedIn">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-  {% endif %}
-  {% if site.social_links.instagram %}
-    <a href="https://instagram.com/{{ site.social_links.instagram }}" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-  {% endif %}
+<div class="footer-inner">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4 class="footer-heading">{{ site.title }}</h4>
+      <p class="footer-tagline">{{ site.tagline }}</p>
+      <p class="footer-description">{{ site.description }}</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-links">
+        {% for item in site.nav %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Connect</h4>
+      <div class="footer-social">
+        {% if site.social_links.twitter %}
+          <a href="https://twitter.com/{{ site.social_links.twitter }}" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        {% endif %}
+        {% if site.social_links.github %}
+          <a href="https://github.com/{{ site.social_links.github }}" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        {% endif %}
+        {% if site.social_links.linkedin %}
+          <a href="{{ site.social_links.linkedin }}" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        {% endif %}
+      </div>
+      <p class="footer-email">
+        <a href="mailto:osumorodgersmeroka@gmail.com">osumorodgersmeroka@gmail.com</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.</p>
+  </div>
 </div>
-<p class="sidebar-copyright">
-  &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}
-</p>

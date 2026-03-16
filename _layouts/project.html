@@ -2,7 +2,9 @@
 layout: default
 ---
 
-<div class="container">
+<div class="post-container">
+  <a href="{{ '/projects/' | relative_url }}" class="back-link">&larr; Back to Projects</a>
+
   <article class="project">
     {% if page.featured_image %}
       <div class="project-featured-image">

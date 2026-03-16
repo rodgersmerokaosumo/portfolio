@@ -1,31 +1,65 @@
-<!-- themes/journal-clone/_layouts/default.html -->
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.locale }}">
   <head>
     {% include head.html %}
   </head>
   <body>
-    <aside class="sidebar" id="sidebar">
+    <header class="site-header" id="site-header">
       {% include header.html %}
-      {% include footer.html %}
-    </aside>
+    </header>
 
-    <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
-
-    <div class="main-content" id="main-content">
+    <main class="site-main">
       {{ content }}
-    </div>
+    </main>
+
+    <footer class="site-footer">
+      {% include footer.html %}
+    </footer>
 
     <script>
-      const sidebar = document.getElementById('sidebar');
-      const toggle  = document.getElementById('sidebar-toggle');
-      const main    = document.getElementById('main-content');
+      const siteHeader = document.getElementById('site-header');
+      const navToggle = document.getElementById('navbar-toggle');
+      const navMenu = document.getElementById('navbar-nav');
 
-      toggle.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
-        main.classList.toggle('expanded');
+      // Sticky nav shadow on scroll
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+          siteHeader.classList.add('scrolled');
+        } else {
+          siteHeader.classList.remove('scrolled');
+        }
+      });
+
+      // Mobile hamburger toggle
+      navToggle.addEventListener('click', function() {
+        const isOpen = document.body.classList.toggle('mobile-nav-open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close on nav link click (mobile)
+      navMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.body.classList.remove('mobile-nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Close on outside click
+      document.addEventListener('click', function(e) {
+        if (!siteHeader.contains(e.target) && document.body.classList.contains('mobile-nav-open')) {
+          document.body.classList.remove('mobile-nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.body.classList.contains('mobile-nav-open')) {
+          document.body.classList.remove('mobile-nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.focus();
+        }
       });
     </script>
   </body>
 </html>
-

@@ -2,15 +2,15 @@
 layout: default
 ---
 
-<!-- Modern Full-Width Header -->
-<header class="listing-header">
+<!-- Projects Header -->
+<section class="listing-header">
   <div class="header-content">
     <h1 class="page-title">Projects</h1>
     <p class="page-description">{{ content | default: "Showcasing data science and AI solutions that drive real-world impact across industries." | strip_html }}</p>
   </div>
-  
-  <!-- Minimal Filter Bar -->
-  <div class="filter-bar">
+
+  <!-- Filter Bar -->
+  <nav class="filter-bar" aria-label="Project filters">
     <div class="filter-buttons">
       <button class="filter-btn active" data-filter="all">All Projects</button>
       <button class="filter-btn" data-filter="python">Python</button>
@@ -19,67 +19,84 @@ layout: default
       <button class="filter-btn" data-filter="data-visualization">Visualization</button>
       <button class="filter-btn" data-filter="cloud-platforms">Cloud</button>
     </div>
-  </div>
-</header>
+  </nav>
+</section>
 
-<!-- Modern Two-Column Card Grid -->
-<main class="projects-grid-section">
-  <div class="container">
-    <div class="projects-grid">
-      {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
-      {% for project in sorted_projects %}
-        <article class="project-card" data-tech="{{ project.tech_stack | join: ',' | downcase | replace: ' ', '-' }}">
-          {% if project.featured_image %}
-            <div class="card-thumbnail">
-              <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" loading="lazy">
-            </div>
+<!-- Projects List -->
+<main class="blog-list-section">
+  <div class="blog-list-container">
+    {% if paginator.documents %}
+      {% assign projects_list = paginator.documents %}
+    {% else %}
+      {% assign projects_list = site.projects | sort: 'date' | reverse %}
+    {% endif %}
+
+    {% for project in projects_list %}
+      <article class="blog-list-item" data-tech="{{ project.tech_stack | join: ',' | downcase | replace: ' ', '-' }}">
+        {% if project.featured_image %}
+          <a href="{{ project.url | relative_url }}" class="blog-list-image">
+            <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" loading="lazy">
+          </a>
+        {% endif %}
+
+        <div class="blog-list-meta">
+          <time datetime="{{ project.date | date: '%Y-%m-%d' }}">{{ project.date | date: "%-d %B %Y" }}</time>
+          {% if project.client %}
+            <span class="meta-separator">&middot;</span>
+            <span class="meta-tag">{{ project.client }}</span>
           {% endif %}
-          
-          <div class="card-content">
-            <header class="card-header">
-              <h2 class="card-title">
-                <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
-              </h2>
-              <time class="card-date" datetime="{{ project.date | date: '%Y-%m-%d' }}">{{ project.date | date: "%-d %B %Y" }}</time>
-            </header>
-            
-            {% if project.excerpt %}
-              <p class="card-excerpt">{{ project.excerpt | strip_html | truncatewords: 25 }}</p>
-            {% endif %}
-            
-            <div class="card-footer">
-              {% if project.tech_stack %}
-                <div class="tech-tags">
-                  {% for tech in project.tech_stack limit: 3 %}
-                    <span class="tech-tag">{{ tech }}</span>
-                  {% endfor %}
-                  {% if project.tech_stack.size > 3 %}
-                    <span class="tech-tag more">+{{ project.tech_stack.size | minus: 3 }}</span>
-                  {% endif %}
-                </div>
-              {% endif %}
-              
-              <a href="{{ project.url | relative_url }}" class="read-more-btn">
-                <span>Read More</span>
-                <i class="fas fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
+        </div>
+
+        <h2 class="blog-list-title">
+          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+        </h2>
+
+        {% if project.excerpt %}
+          <p class="blog-list-excerpt">{{ project.excerpt | strip_html | truncatewords: 35 }}</p>
+        {% endif %}
+
+        {% if project.tech_stack %}
+          <div class="blog-list-tags">
+            {% for tech in project.tech_stack limit: 5 %}
+              <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
           </div>
-        </article>
-      {% endfor %}
-    </div>
-    
-    <!-- Load More Section -->
-    <div class="load-more-section">
-      <button class="load-more-btn" id="loadMoreBtn" style="display: none;">
-        <span>Load More Projects</span>
-        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-      </button>
-    </div>
+        {% endif %}
+
+        <a href="{{ project.url | relative_url }}" class="blog-list-readmore">
+          View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </article>
+    {% endfor %}
+
+    <!-- Pagination -->
+    {% if paginator.total_pages > 1 %}
+      <nav class="pagination-section" aria-label="Projects pagination">
+        <div class="pagination-controls">
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-btn prev">
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>
+              <span>Newer Projects</span>
+            </a>
+          {% endif %}
+
+          <span class="pagination-info">
+            Page {{ paginator.page }} of {{ paginator.total_pages }}
+          </span>
+
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-btn next">
+              <span>Older Projects</span>
+              <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </a>
+          {% endif %}
+        </div>
+      </nav>
+    {% endif %}
   </div>
 </main>
 
-<!-- Floating Filter HTML -->
+<!-- Floating Filter -->
 <div class="floating-filter">
   <button class="filter-toggle" aria-label="Toggle Filter Menu">
     <i class="fas fa-filter"></i>
@@ -101,99 +118,75 @@ layout: default
 document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const headerSection = document.querySelector('.listing-header');
-  const tagFilter = document.querySelector('.tag-filter');
   const floatingFilter = document.querySelector('.floating-filter');
   const filterToggle = document.querySelector('.filter-toggle');
   const filterDropdown = document.querySelector('.filter-dropdown');
-  
-  // Store original cards to preserve event listeners
-  const originalCards = Array.from(document.querySelectorAll('.project-card'));
-  
-  let lastScrollTop = 0;
+
+  const originalItems = Array.from(document.querySelectorAll('.blog-list-item'));
   let isDropdownOpen = false;
-  
-  // Filter functionality for project cards with proper grid reflow
+
   function handleFilter(filter) {
-    const grid = document.querySelector('.projects-grid');
-    
-    // Get visible cards based on filter
-    const visibleCards = originalCards.filter(card => {
-      const cardTech = card.getAttribute('data-tech');
-      return filter === 'all' || (cardTech && cardTech.includes(filter));
+    const list = document.querySelector('.blog-list-container');
+
+    originalItems.forEach(item => item.remove());
+
+    const visibleItems = originalItems.filter(item => {
+      const tech = item.getAttribute('data-tech');
+      return filter === 'all' || (tech && tech.includes(filter));
     });
-    
-    // Clear the grid
-    grid.innerHTML = '';
-    
-    // Add visible cards back to grid with animation
-    visibleCards.forEach((card, index) => {
-      // Reset card styles and add to grid
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = '';
-      
-      grid.appendChild(card);
-      
-      // Animate in with staggered timing
+
+    visibleItems.forEach((item, index) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = '';
+
+      list.appendChild(item);
+
       setTimeout(() => {
-        card.style.transition = 'all 0.3s ease';
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
+        item.style.transition = 'all 0.3s ease';
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
       }, index * 50);
     });
   }
-  
-  // Add click listeners to all filter buttons
+
   filterButtons.forEach(button => {
     button.addEventListener('click', function() {
       const filter = this.getAttribute('data-filter');
-      
-      // Update active button (both regular and floating)
       filterButtons.forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll(`[data-filter="${filter}"]`).forEach(btn => btn.classList.add('active'));
-      
+      document.querySelectorAll('[data-filter="' + filter + '"]').forEach(btn => btn.classList.add('active'));
       handleFilter(filter);
-      
-      // Close floating dropdown if open
+
       if (isDropdownOpen) {
         filterDropdown.classList.remove('active');
         isDropdownOpen = false;
       }
     });
   });
-  
-  // Floating filter toggle
+
   filterToggle.addEventListener('click', function() {
     isDropdownOpen = !isDropdownOpen;
     filterDropdown.classList.toggle('active', isDropdownOpen);
   });
-  
-  // Close dropdown when clicking outside
+
   document.addEventListener('click', function(event) {
     if (!floatingFilter.contains(event.target) && isDropdownOpen) {
       filterDropdown.classList.remove('active');
       isDropdownOpen = false;
     }
   });
-  
-  // Scroll handler for hero collapse and floating filter
+
   function handleScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    // Remove unused hero height calculation
-    
-    // Floating filter visibility based on header height
     const headerHeight = headerSection ? headerSection.offsetHeight : 0;
-    
+
     if (scrollTop > headerHeight + 100) {
       floatingFilter.classList.add('visible');
     } else {
       floatingFilter.classList.remove('visible');
     }
-    
-    lastScrollTop = scrollTop;
   }
-  
-  // Throttled scroll listener
+
   let scrollTimeout;
   window.addEventListener('scroll', function() {
     if (!scrollTimeout) {
@@ -203,8 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 10);
     }
   });
-  
-  // Initialize
+
   handleScroll();
 });
 </script>

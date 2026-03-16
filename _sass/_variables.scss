@@ -1,42 +1,76 @@
-// Color Palette - Modern Journal Design
-$color-primary:   #222222;    // Dark charcoal for text
-$color-secondary: #555555;    // Medium gray for body text
-$color-accent:    #2a9d8f;    // Teal-green accent
-$color-light:     #888888;    // Light gray for meta text
-$color-border:    #e5e5e5;    // Very light gray for borders
-$color-bg:        #ffffff;    // Pure white background
-$color-bg-alt:    #fafafa;    // Off-white for subtle backgrounds
-$color-card-shadow: rgba(0, 0, 0, 0.08); // Card shadow
+// Color Palette — Warm, muted (Sand Warm inspired)
+$color-primary:   #1c1917;    // Warm dark for headings
+$color-secondary: #1a1a1a;    // Near-black for body text
+$color-accent:    #b45309;    // Warm amber accent
+$color-accent-hover: #92400e; // Darker amber for hover
+$color-accent-subtle: rgba(180, 83, 9, 0.06); // Amber wash
+$color-light:     #a8a29e;    // Stone for meta text
+$color-border:    #e7e5e4;    // Warm border
+$color-bg:        #fafaf9;    // Warm off-white
+$color-bg-alt:    #f5f5f4;    // Slightly darker off-white
+$color-card-shadow: rgba(0, 0, 0, 0.04);
 
-// Sidebar specific colors
-$sidebar-bg:      #111111;    // Dark sidebar background
-$sidebar-text:    #ffffff;    // White text on dark sidebar
-$sidebar-accent:  #007acc;    // Accent color for sidebar elements
+// Navbar
+$navbar-height:        72px;
+$navbar-height-mobile: 60px;
+$navbar-bg:            white;
+$navbar-border:        $color-border;
 
-// Typography - Modern Journal Design
+// Footer
+$footer-bg:   #1c1917;
+$footer-text: #f5f5f5;
+
+// Typography
 $font-body:       "Inter", "Helvetica Neue", "Arial", sans-serif;
 $font-heading:    "Playfair Display", "Georgia", "Times New Roman", serif;
 $font-mono:       "Monaco", "Menlo", "Consolas", monospace;
-$font-secondary:  "Inter", sans-serif;
 
-// Typography scale - More refined
-$size-xs:         0.75rem;    // 12px - small meta text
-$size-sm:         0.875rem;   // 14px - smaller text
-$size-base:       1rem;       // 16px - body text
-$size-lg:         1.125rem;   // 18px - larger body text
-$size-xl:         1.25rem;    // 20px - small headings
-$size-2xl:        1.5rem;     // 24px - medium headings
-$size-3xl:        2rem;       // 32px - large headings
-$size-4xl:        2.5rem;     // 40px - hero headings
+// Font weights — extreme contrast
+$weight-light:    300;
+$weight-normal:   400;
+$weight-medium:   500;
+$weight-bold:     700;
+$weight-black:    900;
 
-// Spacing scale - Reduced for narrower margins
+// Typography scale
+$size-xs:         0.75rem;    // 12px
+$size-sm:         0.875rem;   // 14px
+$size-base:       1rem;       // 16px
+$size-lg:         1.125rem;   // 18px
+$size-xl:         1.25rem;    // 20px
+$size-2xl:        1.5rem;     // 24px
+$size-3xl:        2rem;       // 32px
+$size-4xl:        2.5rem;     // 40px
+$size-5xl:        3rem;       // 48px
+$size-6xl:        3.5rem;     // 56px
+
+// Spacing — strict scale
 $space-xs:        0.25rem;    // 4px
 $space-sm:        0.5rem;     // 8px
 $space-md:        0.75rem;    // 12px
 $space-lg:        1rem;       // 16px
 $space-xl:        1.5rem;     // 24px
 $space-2xl:       2rem;       // 32px
-$space-3xl:       2.5rem;     // 40px
+$space-3xl:       3rem;       // 48px
+$space-4xl:       4rem;       // 64px
+$space-5xl:       5rem;       // 80px
+
+// Content widths
+$content-max:     1100px;
+$content-wide:    1200px;
+$content-reading: 800px;
+
+// Border radius — nothing above 12px
+$radius-sm:       4px;
+$radius-md:       8px;
+$radius-lg:       12px;
+
+// Transitions — simple, fast
+$transition-fast: 150ms ease;
+$transition-base: 200ms ease;
+
+// Motion — page-load only
+$ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
 
 // Breakpoints
 $bp-mobile:       480px;
