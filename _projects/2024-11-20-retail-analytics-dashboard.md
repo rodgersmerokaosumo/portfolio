@@ -12,6 +12,9 @@ tech_stack:
   - "PostgreSQL"
   - "Plotly"
 excerpt: "Developed an intelligent retail analytics platform with predictive modeling, real-time data streaming, and interactive visualizations for enterprise decision-making."
+service_category: "Analytics"
+key_metric: "15%"
+key_metric_label: "Revenue increase"
 comments: true
 ---
 

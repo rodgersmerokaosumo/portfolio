@@ -1,0 +1,19 @@
+# Generated files
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Ruby
+vendor/
+.bundle/
+
+# macOS
+.DS_Store
+
+# IDE / tools
+.superpowers/
+.playwright-mcp/
+.gstack/
+
+# Research artifacts
+/pula-*.png

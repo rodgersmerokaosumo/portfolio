@@ -12,6 +12,9 @@ tech_stack:
   - "MongoDB"
   - "FastAPI"
 excerpt: "Engineered a sophisticated machine learning system for credit risk assessment, reducing loan default rates by 23% through advanced ensemble modeling and real-time scoring."
+service_category: "AI Strategy"
+key_metric: "23%"
+key_metric_label: "Less defaults"
 comments: true
 ---
 

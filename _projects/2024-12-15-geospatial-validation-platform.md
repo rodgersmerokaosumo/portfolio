@@ -11,6 +11,9 @@ tech_stack:
   - "AWS"
   - "Leaflet"
 excerpt: "Built a comprehensive geospatial data validation system processing over 60,000 polygons with automated quality assurance and real-time visualization."
+service_category: "Geospatial"
+key_metric: "99.7%"
+key_metric_label: "Accuracy"
 comments: true
 ---
 
