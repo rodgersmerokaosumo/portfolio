@@ -9,13 +9,13 @@
   <title>Faith and Purpose: Finding Meaning in the Intersection of Technology and Service</title>
 
   <!-- Primary Meta Tags -->
-  <meta name="description" content="My portfolio & blog — building AI and data solutions for real-world impact.">
+  <meta name="description" content="Data consulting, AI strategy, and geospatial solutions — turning complex data into business impact.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Faith and Purpose: Finding Meaning in the Intersection of Technology and Service">
-  <meta property="og:description" content="My portfolio & blog — building AI and data solutions for real-world impact.">
+  <meta property="og:description" content="Data consulting, AI strategy, and geospatial solutions — turning complex data into business impact.">
   
     <meta property="og:image" content="https://rodgersmerokaosumo.github.io/portfolio/assets/img/avatar.jpeg">
   
@@ -24,7 +24,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Faith and Purpose: Finding Meaning in the Intersection of Technology and Service">
-  <meta name="twitter:description" content="My portfolio & blog — building AI and data solutions for real-world impact.">
+  <meta name="twitter:description" content="Data consulting, AI strategy, and geospatial solutions — turning complex data into business impact.">
   
     <meta name="twitter:image" content="https://rodgersmerokaosumo.github.io/portfolio/assets/img/avatar.jpeg">
   
@@ -67,15 +67,15 @@
 
     <ul class="navbar-nav" id="navbar-nav">
       
-        <li><a href="/portfolio/" >Home</a></li>
+        <li><a href="/portfolio/services/" class="">Services</a></li>
       
-        <li><a href="/portfolio/blog/" >Blog</a></li>
+        <li><a href="/portfolio/projects/" class="">Work</a></li>
       
-        <li><a href="/portfolio/projects/" >Projects</a></li>
+        <li><a href="/portfolio/blog/" class=" nav-highlight">Blog</a></li>
       
-        <li><a href="/portfolio/about/" >About</a></li>
+        <li><a href="/portfolio/about/" class="">About</a></li>
       
-        <li><a href="/portfolio/contact/" >Contact</a></li>
+        <li><a href="/portfolio/contact/" class="">Contact</a></li>
       
     </ul>
   </div>
@@ -254,19 +254,19 @@
   <div class="footer-grid">
     <div class="footer-col">
       <h4 class="footer-heading">Rodgers Meroka Osumo</h4>
-      <p class="footer-tagline">Data Scientist & AI Strategist</p>
-      <p class="footer-description">My portfolio & blog — building AI and data solutions for real-world impact.</p>
+      <p class="footer-tagline">Data Consulting & AI Strategy</p>
+      <p class="footer-description">Data consulting, AI strategy, and geospatial solutions — turning complex data into business impact.</p>
     </div>
 
     <div class="footer-col">
       <h4 class="footer-heading">Quick Links</h4>
       <ul class="footer-links">
         
-          <li><a href="/portfolio/">Home</a></li>
+          <li><a href="/portfolio/services/">Services</a></li>
+        
+          <li><a href="/portfolio/projects/">Work</a></li>
         
           <li><a href="/portfolio/blog/">Blog</a></li>
-        
-          <li><a href="/portfolio/projects/">Projects</a></li>
         
           <li><a href="/portfolio/about/">About</a></li>
         
@@ -351,6 +351,28 @@
           navToggle.focus();
         }
       });
+
+      // Scroll-reveal: Intersection Observer
+      (function() {
+        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-children');
+
+        if (prefersReduced || !('IntersectionObserver' in window)) {
+          targets.forEach(function(el) { el.classList.add('revealed'); });
+          return;
+        }
+
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        targets.forEach(function(el) { observer.observe(el); });
+      })();
     </script>
   </body>
 </html>
