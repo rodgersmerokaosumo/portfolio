@@ -3,223 +3,146 @@ layout: default
 ---
 
 <!-- Blog Header -->
-<section class="listing-header">
-  <div class="header-content">
-    <h1 class="page-title">Blog</h1>
-    <p class="page-description">{{ content | default: "Explore my thoughts on data science, technology, and the journey of continuous learning and growth in the field of AI and analytics." | strip_html }}</p>
+<section class="blog-header reveal">
+  <div class="blog-header-inner">
+    <p class="hero-eyebrow">Blog</p>
+    <h1>Insights & Reflections</h1>
+    <p class="blog-header-desc">Thoughts on data science, faith, technology, and the journey of continuous learning.</p>
   </div>
-
-  <!-- Filter Bar -->
-  <nav class="filter-bar" aria-label="Post filters">
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All Posts</button>
-      <button class="filter-btn" data-filter="personal-reflections">Personal</button>
-      <button class="filter-btn" data-filter="work-insights">Work</button>
-      <button class="filter-btn" data-filter="project-journey">Projects</button>
-      <button class="filter-btn" data-filter="spiritual-reflections">Reflections</button>
-    </div>
-  </nav>
 </section>
 
-<!-- Blog Post List -->
-<main class="blog-list-section">
-  <div class="blog-list-container">
-    {% if paginator.posts %}
-      {% for post in paginator.posts %}
-        <article class="blog-list-item" data-tags="{{ post.tags | join: ',' | downcase | replace: ' ', '-' }}">
-          {% if post.featured_image %}
-            <a href="{{ post.url | relative_url }}" class="blog-list-image">
-              <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
-            </a>
-          {% endif %}
+<!-- Filter Bar -->
+<nav class="blog-filter-bar reveal" aria-label="Post filters">
+  <div class="blog-filter-inner">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="personal-reflections">Personal</button>
+    <button class="filter-chip" data-filter="work-insights">Work</button>
+    <button class="filter-chip" data-filter="project-journey">Projects</button>
+    <button class="filter-chip" data-filter="spiritual-reflections">Reflections</button>
+  </div>
+</nav>
 
-          <div class="blog-list-meta">
-            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time>
-            {% if post.tags.size > 0 %}
-              <span class="meta-separator">&middot;</span>
-              <span class="meta-tag">{{ post.tags | first }}</span>
-            {% endif %}
-          </div>
+<!-- Featured Post (latest) -->
+{% assign all_posts = site.posts %}
+{% if paginator.posts %}
+  {% assign all_posts = paginator.posts %}
+{% endif %}
 
-          <h2 class="blog-list-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          </h2>
-
-          {% if post.excerpt %}
-            <p class="blog-list-excerpt">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
-          {% endif %}
-
-          <a href="{{ post.url | relative_url }}" class="blog-list-readmore">
-            Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </article>
-      {% endfor %}
-    {% else %}
-      {% for post in site.posts %}
-        <article class="blog-list-item" data-tags="{{ post.tags | join: ',' | downcase | replace: ' ', '-' }}">
-          {% if post.featured_image %}
-            <a href="{{ post.url | relative_url }}" class="blog-list-image">
-              <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
-            </a>
-          {% endif %}
-
-          <div class="blog-list-meta">
-            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time>
-            {% if post.tags.size > 0 %}
-              <span class="meta-separator">&middot;</span>
-              <span class="meta-tag">{{ post.tags | first }}</span>
-            {% endif %}
-          </div>
-
-          <h2 class="blog-list-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          </h2>
-
-          {% if post.excerpt %}
-            <p class="blog-list-excerpt">{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
-          {% endif %}
-
-          <a href="{{ post.url | relative_url }}" class="blog-list-readmore">
-            Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </article>
-      {% endfor %}
+{% assign featured = all_posts | first %}
+{% if featured %}
+<section class="blog-featured reveal">
+  <a href="{{ featured.url | relative_url }}" class="blog-featured-card">
+    {% if featured.featured_image %}
+    <div class="blog-featured-image">
+      <img src="{{ featured.featured_image | relative_url }}" alt="{{ featured.title }}" loading="lazy">
+    </div>
     {% endif %}
+    <div class="blog-featured-content">
+      <div class="blog-card-meta">
+        <time datetime="{{ featured.date | date: '%Y-%m-%d' }}">{{ featured.date | date: "%-d %b %Y" }}</time>
+        {% if featured.tags.size > 0 %}
+          <span class="meta-dot">&middot;</span>
+          <span class="meta-tag">{{ featured.tags | first }}</span>
+        {% endif %}
+      </div>
+      <h2>{{ featured.title }}</h2>
+      {% if featured.excerpt %}
+        <p>{{ featured.excerpt | strip_html | truncatewords: 30 }}</p>
+      {% endif %}
+      <span class="blog-card-readmore">Read Article <i class="fas fa-arrow-right"></i></span>
+    </div>
+  </a>
+</section>
+{% endif %}
 
-    <!-- Pagination -->
-    {% if paginator.total_pages > 1 %}
-      <nav class="pagination-section" aria-label="Blog pagination">
-        <div class="pagination-controls">
-          {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-btn prev">
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>
-              <span>Newer Posts</span>
-            </a>
-          {% endif %}
-
-          <span class="pagination-info">
-            Page {{ paginator.page }} of {{ paginator.total_pages }}
-          </span>
-
-          {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-btn next">
-              <span>Older Posts</span>
-              <i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </a>
+<!-- Post Grid -->
+<section class="blog-grid-section reveal-children">
+  <div class="blog-grid">
+    {% for post in all_posts offset:1 %}
+    <a href="{{ post.url | relative_url }}" class="blog-card reveal-child" data-tags="{{ post.tags | join: ',' | downcase | replace: ' ', '-' }}">
+      {% if post.featured_image %}
+      <div class="blog-card-image">
+        <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+      </div>
+      {% endif %}
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %b %Y" }}</time>
+          {% if post.tags.size > 0 %}
+            <span class="meta-dot">&middot;</span>
+            <span class="meta-tag">{{ post.tags | first }}</span>
           {% endif %}
         </div>
-      </nav>
+        <h3>{{ post.title }}</h3>
+        {% if post.excerpt %}
+          <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+        {% endif %}
+        <span class="blog-card-readmore">Read More <i class="fas fa-arrow-right"></i></span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Pagination -->
+{% if paginator.total_pages > 1 %}
+<nav class="blog-pagination" aria-label="Blog pagination">
+  <div class="blog-pagination-inner">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link prev">
+        <i class="fas fa-arrow-left"></i> Newer
+      </a>
+    {% endif %}
+    <span class="pagination-current">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link next">
+        Older <i class="fas fa-arrow-right"></i>
+      </a>
     {% endif %}
   </div>
-</main>
-
-<!-- Floating Filter -->
-<div class="floating-filter">
-  <button class="filter-toggle" aria-label="Toggle Filter Menu">
-    <i class="fas fa-filter"></i>
-  </button>
-  <div class="filter-dropdown">
-    <h4>Filter Posts</h4>
-    <div class="floating-filter-buttons">
-      <button class="filter-btn active" data-filter="all">All Posts</button>
-      <button class="filter-btn" data-filter="personal-reflections">Personal Reflections</button>
-      <button class="filter-btn" data-filter="work-insights">Work Insights</button>
-      <button class="filter-btn" data-filter="project-journey">Project Journey</button>
-      <button class="filter-btn" data-filter="spiritual-reflections">Spiritual Reflections</button>
-    </div>
-  </div>
-</div>
+</nav>
+{% endif %}
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const headerSection = document.querySelector('.listing-header');
-  const floatingFilter = document.querySelector('.floating-filter');
-  const filterToggle = document.querySelector('.filter-toggle');
-  const filterDropdown = document.querySelector('.filter-dropdown');
+  var chips = document.querySelectorAll('.filter-chip');
+  var featuredCard = document.querySelector('.blog-featured');
+  var gridCards = document.querySelectorAll('.blog-card');
 
-  const originalItems = Array.from(document.querySelectorAll('.blog-list-item'));
-  let isDropdownOpen = false;
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      var filter = this.getAttribute('data-filter');
 
-  function handleFilter(filter) {
-    const list = document.querySelector('.blog-list-container');
-    const pagination = list.querySelector('.pagination-section');
+      // Update active chip
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      this.classList.add('active');
 
-    // Remove all items (keep pagination)
-    originalItems.forEach(item => item.remove());
+      // Filter grid cards
+      gridCards.forEach(function(card) {
+        var tags = card.getAttribute('data-tags') || '';
+        if (filter === 'all' || tags.includes(filter)) {
+          card.style.display = '';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(16px)';
+          setTimeout(function() {
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 30);
+        } else {
+          card.style.display = 'none';
+        }
+      });
 
-    const visibleItems = originalItems.filter(item => {
-      const tags = item.getAttribute('data-tags');
-      return filter === 'all' || (tags && tags.includes(filter));
-    });
-
-    // Re-insert before pagination (or at end)
-    visibleItems.forEach((item, index) => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(20px)';
-      item.style.transition = '';
-
-      if (pagination) {
-        list.insertBefore(item, pagination);
-      } else {
-        list.appendChild(item);
-      }
-
-      setTimeout(() => {
-        item.style.transition = 'all 0.3s ease';
-        item.style.opacity = '1';
-        item.style.transform = 'translateY(0)';
-      }, index * 50);
-    });
-  }
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const filter = this.getAttribute('data-filter');
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('[data-filter="' + filter + '"]').forEach(btn => btn.classList.add('active'));
-      handleFilter(filter);
-
-      if (isDropdownOpen) {
-        filterDropdown.classList.remove('active');
-        isDropdownOpen = false;
+      // Show/hide featured post based on filter
+      if (featuredCard) {
+        if (filter === 'all') {
+          featuredCard.style.display = '';
+        } else {
+          featuredCard.style.display = 'none';
+        }
       }
     });
   });
-
-  filterToggle.addEventListener('click', function() {
-    isDropdownOpen = !isDropdownOpen;
-    filterDropdown.classList.toggle('active', isDropdownOpen);
-  });
-
-  document.addEventListener('click', function(event) {
-    if (!floatingFilter.contains(event.target) && isDropdownOpen) {
-      filterDropdown.classList.remove('active');
-      isDropdownOpen = false;
-    }
-  });
-
-  function handleScroll() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const headerHeight = headerSection ? headerSection.offsetHeight : 0;
-
-    if (scrollTop > headerHeight + 100) {
-      floatingFilter.classList.add('visible');
-    } else {
-      floatingFilter.classList.remove('visible');
-    }
-  }
-
-  let scrollTimeout;
-  window.addEventListener('scroll', function() {
-    if (!scrollTimeout) {
-      scrollTimeout = setTimeout(function() {
-        handleScroll();
-        scrollTimeout = null;
-      }, 10);
-    }
-  });
-
-  handleScroll();
 });
 </script>

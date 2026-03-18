@@ -208,12 +208,12 @@
 // ============================================================
 .hero {
   text-align: center;
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: $space-5xl $space-xl;
+  padding: $space-4xl $space-xl;
   position: relative;
 
   h1 {
