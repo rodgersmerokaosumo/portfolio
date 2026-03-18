@@ -75,10 +75,11 @@ collections:
 defaults:
   -
     scope:
-      path: ""          
+      path: ""
       type: "posts"
     values:
       layout: "post"
+      featured_image: "/assets/img/blog-hero.jpg"
   -
     scope:
       path: ""          
@@ -116,6 +117,7 @@ github_username: rodgersmerokaosumo
 author:
   name: "Rodgers Meroka Osumo"
   avatar: "/assets/img/avatar.jpeg"
+  email: "osumorodgersmeroka@gmail.com"
 
 social_links:
   twitter: osumo_meroka
