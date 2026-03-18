@@ -16,6 +16,31 @@ permalink: /
   </div>
 </section>
 
+<section class="featured-cards-section">
+  <div class="section-inner">
+    <div class="featured-cards">
+      <a href="{{ '/projects/' | relative_url }}" class="featured-card">
+        <div class="featured-card-icon"><i class="fas fa-briefcase"></i></div>
+        <h3>Latest Projects</h3>
+        <p>Explore my recent work in AI strategy, geospatial analysis, and data engineering solutions.</p>
+        <span class="featured-card-link">See All Projects <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="{{ '/blog/' | relative_url }}" class="featured-card">
+        <div class="featured-card-icon"><i class="fas fa-pen-fancy"></i></div>
+        <h3>Recent Insights</h3>
+        <p>Thoughts on data science, faith, technology, and the journey of continuous learning.</p>
+        <span class="featured-card-link">Read the Blog <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="{{ '/contact/' | relative_url }}" class="featured-card">
+        <div class="featured-card-icon"><i class="fas fa-envelope"></i></div>
+        <h3>Get In Touch</h3>
+        <p>Let's discuss how data science and AI can solve your business challenges.</p>
+        <span class="featured-card-link">Contact Me <i class="fas fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section class="service-list-section">
   <div class="section-inner">
     <div class="service-list">
@@ -83,31 +108,6 @@ permalink: /
         {% endfor %}
         <a href="{{ '/blog/' | relative_url }}" class="link-arrow">Read the Blog →</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="featured-cards-section">
-  <div class="section-inner">
-    <div class="featured-cards">
-      <a href="{{ '/projects/' | relative_url }}" class="featured-card">
-        <div class="featured-card-icon"><i class="fas fa-briefcase"></i></div>
-        <h3>Latest Projects</h3>
-        <p>Explore my recent work in AI strategy, geospatial analysis, and data engineering solutions.</p>
-        <span class="featured-card-link">See All Projects <i class="fas fa-arrow-right"></i></span>
-      </a>
-      <a href="{{ '/blog/' | relative_url }}" class="featured-card">
-        <div class="featured-card-icon"><i class="fas fa-pen-fancy"></i></div>
-        <h3>Recent Insights</h3>
-        <p>Thoughts on data science, faith, technology, and the journey of continuous learning.</p>
-        <span class="featured-card-link">Read the Blog <i class="fas fa-arrow-right"></i></span>
-      </a>
-      <a href="{{ '/contact/' | relative_url }}" class="featured-card">
-        <div class="featured-card-icon"><i class="fas fa-envelope"></i></div>
-        <h3>Get In Touch</h3>
-        <p>Let's discuss how data science and AI can solve your business challenges.</p>
-        <span class="featured-card-link">Contact Me <i class="fas fa-arrow-right"></i></span>
-      </a>
     </div>
   </div>
 </section>
