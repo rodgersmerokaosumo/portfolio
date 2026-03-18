@@ -13,7 +13,7 @@
 
     <ul class="navbar-nav" id="navbar-nav">
       {% for item in site.nav %}
-        <li><a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a></li>
+        <li><a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}{% if item.highlight %} nav-highlight{% endif %}">{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </div>

@@ -2,201 +2,126 @@
 layout: default
 ---
 
-<!-- Projects Header -->
 <section class="listing-header">
   <div class="header-content">
-    <h1 class="page-title">Projects</h1>
-    <p class="page-description">{{ content | default: "Showcasing data science and AI solutions that drive real-world impact across industries." | strip_html }}</p>
+    <h1 class="page-title">Work</h1>
+    <p class="page-description">{{ content | default: "Data science and AI solutions that drive real-world impact." | strip_html }}</p>
   </div>
-
-  <!-- Filter Bar -->
   <nav class="filter-bar" aria-label="Project filters">
     <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="python">Python</button>
-      <button class="filter-btn" data-filter="machine-learning">ML/AI</button>
-      <button class="filter-btn" data-filter="web-development">Web Dev</button>
-      <button class="filter-btn" data-filter="data-visualization">Visualization</button>
-      <button class="filter-btn" data-filter="cloud-platforms">Cloud</button>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="AI Strategy">AI Strategy</button>
+      <button class="filter-btn" data-filter="Analytics">Analytics</button>
+      <button class="filter-btn" data-filter="Geospatial">Geospatial</button>
+      <button class="filter-btn" data-filter="Data Collection">Data Collection</button>
     </div>
   </nav>
 </section>
 
-<!-- Projects List -->
-<main class="blog-list-section">
-  <div class="blog-list-container">
-    {% if paginator.documents %}
-      {% assign projects_list = paginator.documents %}
-    {% else %}
-      {% assign projects_list = site.projects | sort: 'date' | reverse %}
-    {% endif %}
-
+<main class="projects-section">
+  <div class="projects-container">
+    <h2 class="section-label">Case Studies</h2>
+    {% assign projects_list = site.projects | sort: 'date' | reverse %}
     {% for project in projects_list %}
-      <article class="blog-list-item" data-tech="{{ project.tech_stack | join: ',' | downcase | replace: ' ', '-' }}">
-        {% if project.featured_image %}
-          <a href="{{ project.url | relative_url }}" class="blog-list-image">
+      <article class="project-row {% cycle 'normal', 'reversed' %}" data-category="{{ project.service_category }}">
+        <div class="project-row-visual">
+          {% if project.featured_image %}
             <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" loading="lazy">
-          </a>
-        {% endif %}
-
-        <div class="blog-list-meta">
-          <time datetime="{{ project.date | date: '%Y-%m-%d' }}">{{ project.date | date: "%-d %B %Y" }}</time>
-          {% if project.client %}
-            <span class="meta-separator">&middot;</span>
-            <span class="meta-tag">{{ project.client }}</span>
+          {% else %}
+            <div class="project-row-placeholder"></div>
           {% endif %}
         </div>
-
-        <h2 class="blog-list-title">
-          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
-        </h2>
-
-        {% if project.excerpt %}
-          <p class="blog-list-excerpt">{{ project.excerpt | strip_html | truncatewords: 35 }}</p>
-        {% endif %}
-
-        {% if project.tech_stack %}
-          <div class="blog-list-tags">
-            {% for tech in project.tech_stack limit: 5 %}
-              <span class="tech-tag">{{ tech }}</span>
-            {% endfor %}
-          </div>
-        {% endif %}
-
-        <a href="{{ project.url | relative_url }}" class="blog-list-readmore">
-          View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </a>
+        <div class="project-row-content">
+          {% if project.service_category %}
+            <span class="project-category-tag">{{ project.service_category }}</span>
+          {% endif %}
+          <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+          <p>{{ project.excerpt | strip_html | truncatewords: 30 }}</p>
+          {% if project.key_metric %}
+            <div class="project-metric">
+              <span class="metric-value">{{ project.key_metric }}</span>
+              <span class="metric-label">{{ project.key_metric_label }}</span>
+            </div>
+          {% endif %}
+          {% if project.tech_stack %}
+            <div class="project-tech-tags">
+              {% for tech in project.tech_stack limit: 4 %}
+                <span class="tech-tag">{{ tech }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <a href="{{ project.url | relative_url }}" class="link-arrow">View Case Study →</a>
+        </div>
       </article>
     {% endfor %}
+  </div>
 
-    <!-- Pagination -->
-    {% if paginator.total_pages > 1 %}
-      <nav class="pagination-section" aria-label="Projects pagination">
-        <div class="pagination-controls">
-          {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-btn prev">
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>
-              <span>Newer Projects</span>
-            </a>
-          {% endif %}
-
-          <span class="pagination-info">
-            Page {{ paginator.page }} of {{ paginator.total_pages }}
-          </span>
-
-          {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-btn next">
-              <span>Older Projects</span>
-              <i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </a>
-          {% endif %}
-        </div>
-      </nav>
-    {% endif %}
+  <div class="projects-container" id="github-projects">
+    <h2 class="section-label">Open Source & GitHub</h2>
+    <div class="github-projects-grid" id="github-grid">
+      <p class="loading-text">Loading projects from GitHub...</p>
+    </div>
   </div>
 </main>
 
-<!-- Floating Filter -->
-<div class="floating-filter">
-  <button class="filter-toggle" aria-label="Toggle Filter Menu">
-    <i class="fas fa-filter"></i>
-  </button>
-  <div class="filter-dropdown">
-    <h4>Filter Projects</h4>
-    <div class="floating-filter-buttons">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="python">Python</button>
-      <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
-      <button class="filter-btn" data-filter="web-development">Web Development</button>
-      <button class="filter-btn" data-filter="data-visualization">Data Visualization</button>
-      <button class="filter-btn" data-filter="cloud-platforms">Cloud Platforms</button>
-    </div>
+<section class="cta-band">
+  <div class="cta-inner">
+    <h2>Have a data challenge?</h2>
+    <p>Let's discuss how I can help your organization.</p>
+    <a href="{{ '/contact/' | relative_url }}" class="button button-primary">Get In Touch</a>
   </div>
-</div>
+</section>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const headerSection = document.querySelector('.listing-header');
-  const floatingFilter = document.querySelector('.floating-filter');
-  const filterToggle = document.querySelector('.filter-toggle');
-  const filterDropdown = document.querySelector('.filter-dropdown');
-
-  const originalItems = Array.from(document.querySelectorAll('.blog-list-item'));
-  let isDropdownOpen = false;
-
-  function handleFilter(filter) {
-    const list = document.querySelector('.blog-list-container');
-
-    originalItems.forEach(item => item.remove());
-
-    const visibleItems = originalItems.filter(item => {
-      const tech = item.getAttribute('data-tech');
-      return filter === 'all' || (tech && tech.includes(filter));
+  var filterButtons = document.querySelectorAll('.filter-btn');
+  var projectRows = document.querySelectorAll('.project-row');
+  filterButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = this.getAttribute('data-filter');
+      filterButtons.forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      projectRows.forEach(function(row) {
+        var cat = row.getAttribute('data-category');
+        row.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+      });
     });
-
-    visibleItems.forEach((item, index) => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(20px)';
-      item.style.transition = '';
-
-      list.appendChild(item);
-
-      setTimeout(() => {
-        item.style.transition = 'all 0.3s ease';
-        item.style.opacity = '1';
-        item.style.transform = 'translateY(0)';
-      }, index * 50);
-    });
-  }
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const filter = this.getAttribute('data-filter');
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('[data-filter="' + filter + '"]').forEach(btn => btn.classList.add('active'));
-      handleFilter(filter);
-
-      if (isDropdownOpen) {
-        filterDropdown.classList.remove('active');
-        isDropdownOpen = false;
+  });
+  async function loadGitHubProjects() {
+    var grid = document.getElementById('github-grid');
+    try {
+      var response = await fetch('https://api.github.com/users/{{ site.github_username }}/repos?per_page=100&sort=updated');
+      if (!response.ok) throw new Error('API error');
+      var repos = await response.json();
+      var goodRepos = repos.filter(function(r) {
+        return r.description && r.size > 10 && !r.fork && r.name !== 'portfolio';
+      });
+      var html = '';
+      var count = 0;
+      for (var i = 0; i < goodRepos.length && count < 6; i++) {
+        var repo = goodRepos[i];
+        try {
+          var rr = await fetch('https://api.github.com/repos/{{ site.github_username }}/' + repo.name + '/readme');
+          if (!rr.ok) continue;
+          var rd = await rr.json();
+          if (rd.size < 100) continue;
+        } catch (e) { continue; }
+        html += '<a href="' + repo.html_url + '" class="github-card" target="_blank" rel="noopener">';
+        html += '<h4>' + repo.name.replace(/-/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); }) + '</h4>';
+        html += '<p>' + repo.description + '</p>';
+        html += '<div class="github-card-meta">';
+        if (repo.language) html += '<span class="tech-tag">' + repo.language + '</span>';
+        html += '<span class="github-stars"><i class="fas fa-star"></i> ' + repo.stargazers_count + '</span>';
+        html += '</div></a>';
+        count++;
       }
-    });
-  });
-
-  filterToggle.addEventListener('click', function() {
-    isDropdownOpen = !isDropdownOpen;
-    filterDropdown.classList.toggle('active', isDropdownOpen);
-  });
-
-  document.addEventListener('click', function(event) {
-    if (!floatingFilter.contains(event.target) && isDropdownOpen) {
-      filterDropdown.classList.remove('active');
-      isDropdownOpen = false;
-    }
-  });
-
-  function handleScroll() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const headerHeight = headerSection ? headerSection.offsetHeight : 0;
-
-    if (scrollTop > headerHeight + 100) {
-      floatingFilter.classList.add('visible');
-    } else {
-      floatingFilter.classList.remove('visible');
+      grid.innerHTML = count === 0
+        ? '<p class="empty-state">No public repositories with READMEs found.</p>'
+        : html;
+    } catch (err) {
+      grid.innerHTML = '<p class="empty-state">Could not load GitHub projects. <a href="https://github.com/{{ site.github_username }}" target="_blank">View on GitHub</a></p>';
     }
   }
-
-  let scrollTimeout;
-  window.addEventListener('scroll', function() {
-    if (!scrollTimeout) {
-      scrollTimeout = setTimeout(function() {
-        handleScroll();
-        scrollTimeout = null;
-      }, 10);
-    }
-  });
-
-  handleScroll();
+  loadGitHubProjects();
 });
 </script>

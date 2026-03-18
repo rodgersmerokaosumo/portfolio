@@ -2,8 +2,8 @@
 # Site identity
 ###############################################################################
 title:       "Rodgers Meroka Osumo"
-tagline:     "Data Scientist & AI Strategist"
-description: "My portfolio & blog — building AI and data solutions for real-world impact."
+tagline:     "Data Consulting & AI Strategy"
+description: "Data consulting, AI strategy, and geospatial solutions — turning complex data into business impact."
 locale:      "en"
 og_image:    "/assets/img/avatar.jpeg"
 twitter_image: "/assets/img/avatar.jpeg"
@@ -32,10 +32,7 @@ include:
 exclude:
   - scripts/
   - CLAUDE.md
-  - COMPREHENSIVE_PROJECT_JOURNAL.md
-  - portfolio_website_journal.md
-  - portfolio_website_journal_v2.md
-  - portfolio_website_project_docs.md
+  - docs/
 
 
 ###############################################################################
@@ -99,16 +96,19 @@ defaults:
 # Navigation (header links)
 ###############################################################################
 nav:
-  - title: "Home"
-    url: "/"
+  - title: "Services"
+    url: "/services/"
+  - title: "Work"
+    url: "/projects/"
   - title: "Blog"
     url: "/blog/"
-  - title: "Projects"
-    url: "/projects/"
+    highlight: true
   - title: "About"
     url: "/about/"
   - title: "Contact"
     url: "/contact/"
+
+github_username: rodgersmerokaosumo
 
 ###############################################################################
 # Author & Social (for footer or bio includes)

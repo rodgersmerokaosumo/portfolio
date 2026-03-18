@@ -28,8 +28,8 @@ Currently pursuing an **MSc in Data Science** while working full-time, I bring b
 I'm fascinated by the intersection of technology and human behavior. Whether it's predicting customer churn, optimizing operational efficiency, or uncovering market trends, I approach each challenge with curiosity and systematic thinking.
 
 <div class="intro-actions">
-  <a href="/portfolio/assets/resume.pdf" class="button button-primary" download="Ozeks_Resume.pdf">
+  <a href="{{ '/assets/resume.pdf' | relative_url }}" class="button button-primary" download="Rodgers_Osumo_Resume.pdf">
     <i class="fas fa-download"></i> Download Resume
   </a>
-  <a href="/portfolio/contact" class="button button-secondary">Get In Touch</a>
+  <a href="{{ '/contact/' | relative_url }}" class="button button-secondary">Get In Touch</a>
 </div>

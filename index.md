@@ -5,111 +5,92 @@ permalink: /
 ---
 
 <section class="hero">
-  <h1>{{ site.title }}</h1>
-  <p class="tagline">{{ site.tagline }}</p>
+  <p class="hero-eyebrow">Data Consulting & AI Strategy</p>
+  <h1>Turning complex data<br>into clear decisions.</h1>
   <p class="hero-description">
-    I transform complex data into clear, actionable insights that drive strategic decisions. Currently pursuing an MSc in Data Science while delivering real-world solutions through machine learning, analytics, and data visualization.
+    I help organizations collect, analyze, and act on their data — from survey design and geospatial validation to machine learning systems that drive real impact.
   </p>
   <div class="hero-actions">
     <a href="{{ '/projects/' | relative_url }}" class="button button-primary">View My Work</a>
-    <a href="{{ '/contact/' | relative_url }}" class="button button-secondary">Get In Touch</a>
+    <a href="{{ '/services/' | relative_url }}" class="button button-secondary">Services</a>
   </div>
 </section>
 
-<section class="about-preview">
+<section class="service-list-section">
   <div class="section-inner">
-    <div class="about-preview-grid">
-      <div class="about-preview-content">
-        <h2>About Me</h2>
-        <p>
-          I'm an INTP-J data scientist who thrives at the intersection of theoretical depth and practical application. With experience spanning machine learning, geospatial analysis, and business intelligence, I bring a unique blend of analytical rigor and creative problem-solving to every project.
-        </p>
-        <a href="{{ '/about/' | relative_url }}" class="button button-secondary">
-          Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </a>
+    <div class="service-list">
+      <div class="service-list-item">
+        <span class="service-number">01</span>
+        <div class="service-list-content">
+          <h3>Data Collection & Engineering</h3>
+          <p>Survey design, ODK pipelines, ETL workflows, and data quality frameworks.</p>
+        </div>
       </div>
-      <div class="about-preview-image">
-        <img src="{{ '/assets/img/avatar.jpeg' | relative_url }}" alt="{{ site.title }}">
+      <div class="service-list-item">
+        <span class="service-number">02</span>
+        <div class="service-list-content">
+          <h3>Analytics & Business Intelligence</h3>
+          <p>Dashboards, statistical analysis, and reporting systems that drive decisions.</p>
+        </div>
       </div>
+      <div class="service-list-item">
+        <span class="service-number">03</span>
+        <div class="service-list-content">
+          <h3>AI & Machine Learning Strategy</h3>
+          <p>Feasibility assessment to production deployment — ML systems that solve real problems.</p>
+        </div>
+      </div>
+      <div class="service-list-item">
+        <span class="service-number">04</span>
+        <div class="service-list-content">
+          <h3>Geospatial Intelligence</h3>
+          <p>Spatial analysis, validation platforms, and location-based insights.</p>
+        </div>
+      </div>
+    </div>
+    <div class="service-list-footer">
+      <a href="{{ '/services/' | relative_url }}" class="button button-secondary">All Services <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </div>
   </div>
 </section>
 
-<section class="recent-posts-section">
+<section class="side-by-side-section">
   <div class="section-inner">
-    <div class="section-header">
-      <h2>Recent Insights</h2>
-      <p>Thoughts on data science, technology, and continuous learning</p>
-    </div>
-    <div class="posts-preview-grid">
-      {% for post in site.posts limit:3 %}
-        <article class="post-preview-card">
-          {% if post.featured_image %}
-            <div class="preview-thumbnail">
-              <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
-            </div>
-          {% endif %}
-          <div class="preview-content">
-            <time class="preview-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-            <h3 class="preview-title">
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </h3>
-            <p class="preview-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-    <div class="section-footer">
-      <a href="{{ '/blog/' | relative_url }}" class="button button-secondary">View All Posts</a>
+    <div class="side-by-side">
+      <div class="side-by-side-block">
+        <h2>Latest Work</h2>
+        <p>Recent projects in AI strategy, geospatial analysis, and data engineering.</p>
+        {% for project in site.projects limit:3 %}
+        <div class="side-item">
+          <a href="{{ project.url | relative_url }}">
+            <span class="side-item-title">{{ project.title }}</span>
+            {% if project.key_metric %}<span class="side-item-metric">{{ project.key_metric }}</span>{% endif %}
+          </a>
+        </div>
+        {% endfor %}
+        <a href="{{ '/projects/' | relative_url }}" class="link-arrow">View All Work →</a>
+      </div>
+      <div class="side-by-side-block">
+        <h2>Recent Writing</h2>
+        <p>Thoughts on data science, faith, and continuous learning.</p>
+        {% for post in site.posts limit:3 %}
+        <div class="side-item">
+          <a href="{{ post.url | relative_url }}">
+            <span class="side-item-title">{{ post.title | truncatewords: 8 }}</span>
+            <span class="side-item-date">{{ post.date | date: "%b %Y" }}</span>
+          </a>
+        </div>
+        {% endfor %}
+        <a href="{{ '/blog/' | relative_url }}" class="link-arrow">Read the Blog →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="featured-content">
-  <div class="content-grid">
-    <div class="featured-section">
-      <div class="card-content">
-        <div class="card-header">
-          <h2>Latest Projects</h2>
-        </div>
-        <p>Explore my recent work in spatial analysis, machine learning, data analysis, and AI solutions.</p>
-        <div class="card-footer">
-          <a href="{{ '/projects/' | relative_url }}" class="read-more-btn">
-            <span>See All Projects</span>
-            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="featured-section">
-      <div class="card-content">
-        <div class="card-header">
-          <h2>Resume</h2>
-        </div>
-        <p>Download my resume for a detailed overview of my skills, experience, and qualifications.</p>
-        <div class="card-footer">
-          <a href="{{ '/assets/resume.pdf' | relative_url }}" class="read-more-btn" download="Ozeks_Resume.pdf">
-            <span>Download Resume</span>
-            <i class="fas fa-download" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="featured-section">
-      <div class="card-content">
-        <div class="card-header">
-          <h2>Get In Touch</h2>
-        </div>
-        <p>Let's discuss how data science can solve your business challenges.</p>
-        <div class="card-footer">
-          <a href="{{ '/contact/' | relative_url }}" class="read-more-btn">
-            <span>Contact Me</span>
-            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </div>
+<section class="cta-band">
+  <div class="cta-inner">
+    <h2>Have a data challenge?</h2>
+    <p>Let's discuss how data and AI can drive your organization's next big decision.</p>
+    <a href="{{ '/contact/' | relative_url }}" class="button button-primary">Get In Touch</a>
   </div>
 </section>

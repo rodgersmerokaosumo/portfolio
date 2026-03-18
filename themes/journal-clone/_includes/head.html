@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <!-- Google Fonts - Modern Journal-inspired typography -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- FontAwesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -46,5 +46,19 @@
 {% if site.google_analytics %}
   {% include ga.html %}
 {% endif %}
+
+{% if site.disqus.shortname %}
+<!-- Disqus comment count -->
+<script id="dsq-count-scr" src="//{{ site.disqus.shortname }}.disqus.com/count.js" async></script>
+{% endif %}
+
+<!-- View tracking (localStorage) -->
+<script>
+(function() {
+  var key = 'views:' + location.pathname;
+  var views = parseInt(localStorage.getItem(key) || '0', 10);
+  localStorage.setItem(key, views + 1);
+})();
+</script>
 
 {% seo %}

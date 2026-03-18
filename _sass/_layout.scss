@@ -88,6 +88,11 @@
         width: 100%;
       }
     }
+
+    &.nav-highlight {
+      color: $color-accent;
+      font-weight: $weight-bold;
+    }
   }
 }
 
