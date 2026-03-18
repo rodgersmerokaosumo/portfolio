@@ -1855,3 +1855,517 @@
     border-width: 2px;
   }
 }
+
+// ============================================================
+// Hero eyebrow — small text above hero heading
+// ============================================================
+.hero-eyebrow {
+  font-size: $size-sm;
+  font-weight: $weight-medium;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin-bottom: $space-lg;
+}
+
+// ============================================================
+// Link arrow — inline text link with arrow
+// ============================================================
+.link-arrow {
+  font-size: $size-sm;
+  font-weight: $weight-medium;
+  color: $color-accent;
+  text-decoration: none;
+  transition: color $transition-fast;
+  display: inline-block;
+  margin-top: $space-lg;
+
+  &:hover {
+    color: $color-accent-hover;
+    text-decoration: none;
+  }
+}
+
+// ============================================================
+// Section label — small heading for content groups
+// ============================================================
+.section-label {
+  font-size: $size-xs;
+  font-weight: $weight-bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-light;
+  margin-bottom: $space-2xl;
+}
+
+// ============================================================
+// Service list — numbered vertical list on homepage
+// ============================================================
+.service-list-section {
+  padding: $space-4xl 0;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+}
+
+.service-list {
+  max-width: $content-max;
+  margin: 0 auto;
+}
+
+.service-list-item {
+  display: flex;
+  gap: $space-2xl;
+  padding: $space-xl 0;
+  border-bottom: 1px solid $color-border;
+  align-items: flex-start;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.service-number {
+  font-size: $size-sm;
+  font-weight: $weight-bold;
+  color: $color-accent;
+  min-width: 2rem;
+  padding-top: 2px;
+}
+
+.service-list-content {
+  h3 {
+    font-size: $size-xl;
+    font-weight: $weight-bold;
+    margin: 0 0 $space-sm 0;
+    color: $color-primary;
+  }
+
+  p {
+    font-size: $size-sm;
+    color: $color-light;
+    margin: 0;
+    line-height: 1.6;
+  }
+}
+
+.service-list-footer {
+  text-align: center;
+  margin-top: $space-2xl;
+}
+
+// ============================================================
+// Side-by-side — two-column content blocks
+// ============================================================
+.side-by-side-section {
+  padding: $space-4xl 0;
+}
+
+.side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-4xl;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+    gap: $space-2xl;
+  }
+}
+
+.side-by-side-block {
+  h2 {
+    font-size: $size-2xl;
+    font-weight: $weight-black;
+    margin: 0 0 $space-sm 0;
+    letter-spacing: -0.02em;
+  }
+
+  > p {
+    font-size: $size-sm;
+    color: $color-light;
+    margin: 0 0 $space-xl 0;
+  }
+}
+
+.side-item {
+  border-bottom: 1px solid $color-border;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $space-lg 0;
+    text-decoration: none;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      .side-item-title {
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+.side-item-title {
+  font-size: $size-base;
+  font-weight: $weight-medium;
+  color: $color-primary;
+  transition: color $transition-fast;
+}
+
+.side-item-metric {
+  font-size: $size-sm;
+  font-weight: $weight-bold;
+  color: $color-accent;
+}
+
+.side-item-date {
+  font-size: $size-xs;
+  color: $color-light;
+}
+
+// ============================================================
+// CTA band — full-width call to action
+// ============================================================
+.cta-band {
+  background-color: $color-accent-subtle;
+  padding: $space-4xl $space-xl;
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: $content-reading;
+  margin: 0 auto;
+
+  h2 {
+    font-size: $size-3xl;
+    font-weight: $weight-black;
+    margin: 0 0 $space-md 0;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    font-size: $size-lg;
+    color: $color-light;
+    margin: 0 0 $space-2xl 0;
+  }
+}
+
+// ============================================================
+// Project rows — alternating image/content showcase
+// ============================================================
+.projects-section {
+  padding: $space-3xl 0;
+}
+
+.projects-container {
+  max-width: $content-max;
+  margin: 0 auto $space-3xl auto;
+  padding: 0 $space-xl;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-3xl;
+  align-items: center;
+  margin-bottom: $space-3xl;
+  padding-bottom: $space-3xl;
+  border-bottom: 1px solid $color-border;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &.reversed {
+    .project-row-visual {
+      order: 2;
+    }
+    .project-row-content {
+      order: 1;
+    }
+  }
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+    gap: $space-xl;
+
+    &.reversed {
+      .project-row-visual { order: 1; }
+      .project-row-content { order: 2; }
+    }
+  }
+}
+
+.project-row-visual {
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background-color: $color-bg-alt;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: $radius-lg;
+  }
+}
+
+.project-row-placeholder {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, $color-primary, lighten($color-primary, 20%));
+  border-radius: $radius-lg;
+}
+
+.project-row-content {
+  h3 {
+    font-size: $size-2xl;
+    font-weight: $weight-black;
+    margin: 0 0 $space-md 0;
+    letter-spacing: -0.02em;
+
+    a {
+      color: $color-primary;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  > p {
+    font-size: $size-base;
+    color: $color-light;
+    line-height: 1.6;
+    margin: 0 0 $space-lg 0;
+  }
+}
+
+.project-category-tag {
+  display: inline-block;
+  font-size: $size-xs;
+  font-weight: $weight-bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin-bottom: $space-md;
+}
+
+.project-metric {
+  display: flex;
+  align-items: baseline;
+  gap: $space-sm;
+  margin-bottom: $space-lg;
+}
+
+.metric-value {
+  font-size: $size-3xl;
+  font-weight: $weight-black;
+  color: $color-accent;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  font-size: $size-sm;
+  color: $color-light;
+}
+
+.project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  margin-bottom: $space-lg;
+}
+
+// ============================================================
+// GitHub cards — grid of GitHub repo cards
+// ============================================================
+.github-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-xl;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.github-card {
+  display: block;
+  padding: $space-xl;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  text-decoration: none;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    border-color: $color-accent;
+    box-shadow: 0 2px 8px $color-card-shadow;
+    text-decoration: none;
+  }
+
+  h4 {
+    font-size: $size-base;
+    font-weight: $weight-bold;
+    color: $color-primary;
+    margin: 0 0 $space-sm 0;
+  }
+
+  p {
+    font-size: $size-sm;
+    color: $color-light;
+    line-height: 1.5;
+    margin: 0 0 $space-lg 0;
+  }
+}
+
+.github-card-meta {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+}
+
+.github-stars {
+  font-size: $size-xs;
+  color: $color-light;
+
+  i {
+    color: $color-accent;
+  }
+}
+
+.loading-text,
+.empty-state {
+  font-size: $size-sm;
+  color: $color-light;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: $space-2xl;
+
+  a {
+    color: $color-accent;
+  }
+}
+
+// ============================================================
+// Services page — grid of service cards
+// ============================================================
+.services-hero {
+  text-align: center;
+  padding: $space-3xl $space-xl $space-xl;
+
+  h1 {
+    font-size: $size-4xl;
+    font-weight: $weight-black;
+    letter-spacing: -0.03em;
+    margin: 0 0 $space-md 0;
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-2xl;
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: $space-xl $space-xl $space-4xl;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  padding: $space-2xl;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  transition: border-color $transition-fast;
+
+  &:hover {
+    border-color: $color-accent;
+  }
+
+  h3 {
+    font-size: $size-xl;
+    font-weight: $weight-bold;
+    margin: 0 0 $space-md 0;
+  }
+
+  > p {
+    font-size: $size-sm;
+    color: $color-light;
+    line-height: 1.6;
+    margin: 0 0 $space-xl 0;
+  }
+}
+
+.service-icon {
+  font-size: $size-2xl;
+  color: $color-accent;
+  margin-bottom: $space-lg;
+}
+
+.service-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    font-size: $size-sm;
+    color: $color-secondary;
+    padding: $space-sm 0;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &::before {
+      content: '→ ';
+      color: $color-accent;
+    }
+  }
+}
+
+// ============================================================
+// Filter bar — horizontal filter buttons (top of listing pages)
+// ============================================================
+.filter-bar {
+  margin-top: $space-xl;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: $space-sm $space-xl;
+  border: 1px solid $color-border;
+  border-radius: 100px;
+  background: white;
+  font-size: $size-sm;
+  font-weight: $weight-medium;
+  color: $color-secondary;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $color-accent;
+    color: $color-accent;
+  }
+
+  &.active {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: white;
+  }
+}
